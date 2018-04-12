@@ -76,7 +76,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/04/11/test/">test</a>
+      <a class="article-title" href="/2018/04/11/test/">GITHUB+HEXO搭建博客</a>
     </h1>
   
 
@@ -84,14 +84,31 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>test<br>test<br>test<br>test<br>test<br>test<br>test<br>test<br>test<br>test</p>
+        <p>本文主要介绍用github与hexo搭建个人博客。</p>
+<p>网上此类文章比较多，在此列举几条，可以按照下面链接的内容一步一步操作。</p>
+<ul>
+<li>基本框架<br><a href="https://github.com/limedroid/HexoLearning" target="_blank" rel="noopener">https://github.com/limedroid/HexoLearning</a></li>
+<li>域名等其他内容添加<br><a href="https://linghucong.js.org/2016/04/15/2016-04-15-hexo-github-pages-blog/" target="_blank" rel="noopener">https://linghucong.js.org/2016/04/15/2016-04-15-hexo-github-pages-blog/</a></li>
+</ul>
+<p>几个注意事项：</p>
+<ul>
+<li>本地部署<code>hexo s</code>的时候win10可能无法打开默认的<code>localhost:4000</code>，此时需要使用自定义端口<code>hexo s -p 3600</code></li>
+<li>本地文件与<code>xxx.github.io</code>仓库中文件的关系：<ul>
+<li>将本地目录中<code>public</code>文件夹下内容上传到仓库，本人在此文件夹下使用<code>git init</code>。</li>
+<li>部署时可以直接在本地博客目录下使用<code>hexo d</code>部署，如果当前已经部署导致报错，删除<code>.deploy_git</code>即可。</li>
+<li>不要轻易使用<code>hexo clean</code>，此操作会重新生成<code>public</code>文件夹,从而导致<code>public</code>文件夹下<code>.git</code>被删除，需要重新与仓库建立关系。此处可使用<code>git push --force origin master</code>强行覆盖。</li>
+</ul>
+</li>
+</ul>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/04/11/test/" data-id="cjfvxfezf0000loufr1f1a7fk" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/04/11/test/" data-id="cjfvy9vw40000pkuf3o10hw5o" class="article-share-link">Share</a>
       
       
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/搭建博客/">-搭建博客</a></li></ul>
+
     </footer>
   </div>
   
@@ -134,7 +151,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/04/11/hello-world/" data-id="cjfvxfezk0001loufow447ij5" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/04/11/hello-world/" data-id="cjfvy9vw90001pkuf0x98h087" class="article-share-link">Share</a>
       
       
     </footer>
@@ -153,9 +170,23 @@
 
   
     
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/搭建博客/">-搭建博客</a></li></ul>
+    </div>
+  </div>
+
 
   
     
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/搭建博客/" style="font-size: 10px;">-搭建博客</a>
+    </div>
+  </div>
+
   
     
   <div class="widget-wrap">
@@ -174,7 +205,7 @@
       <ul>
         
           <li>
-            <a href="/2018/04/11/test/">test</a>
+            <a href="/2018/04/11/test/">GITHUB+HEXO搭建博客</a>
           </li>
         
           <li>
