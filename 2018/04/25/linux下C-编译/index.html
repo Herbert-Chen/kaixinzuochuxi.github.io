@@ -5,18 +5,18 @@
   
   <title>linux下C++编译 | 开心做出戏</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="[TOC] linux下C++编译本文来自http://wiki.ubuntu.org.cn/Compiling_Cpp">
+  <meta name="description" content="linux下C++编译本文来自http://wiki.ubuntu.org.cn/Compiling_Cpp C++编译有不同指令，所有指令都需要源码作为输入，根据输出结果不同可以分为以下几类：  生成可执行文件单个文件1234567891011g++ helloworld.cpp      # 生成a.out的可执行文件g++ helloworld.cpp -o helloworld    #">
 <meta name="keywords" content="C++,linux">
 <meta property="og:type" content="article">
 <meta property="og:title" content="linux下C++编译">
 <meta property="og:url" content="http://yoursite.com/2018/04/25/linux下C-编译/index.html">
 <meta property="og:site_name" content="开心做出戏">
-<meta property="og:description" content="[TOC] linux下C++编译本文来自http://wiki.ubuntu.org.cn/Compiling_Cpp">
+<meta property="og:description" content="linux下C++编译本文来自http://wiki.ubuntu.org.cn/Compiling_Cpp C++编译有不同指令，所有指令都需要源码作为输入，根据输出结果不同可以分为以下几类：  生成可执行文件单个文件1234567891011g++ helloworld.cpp      # 生成a.out的可执行文件g++ helloworld.cpp -o helloworld    #">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-04-25T06:17:37.386Z">
+<meta property="og:updated_time" content="2018-04-25T06:47:19.329Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="linux下C++编译">
-<meta name="twitter:description" content="[TOC] linux下C++编译本文来自http://wiki.ubuntu.org.cn/Compiling_Cpp">
+<meta name="twitter:description" content="linux下C++编译本文来自http://wiki.ubuntu.org.cn/Compiling_Cpp C++编译有不同指令，所有指令都需要源码作为输入，根据输出结果不同可以分为以下几类：  生成可执行文件单个文件1234567891011g++ helloworld.cpp      # 生成a.out的可执行文件g++ helloworld.cpp -o helloworld    #">
   
     <link rel="alternate" href="/atom.xml" title="开心做出戏" type="application/atom+xml">
   
@@ -87,13 +87,24 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>[TOC]</p>
-<h1 id="linux下C-编译"><a href="#linux下C-编译" class="headerlink" title="linux下C++编译"></a>linux下C++编译</h1><p>本文来自<a href="http://wiki.ubuntu.org.cn/Compiling_Cpp" target="_blank" rel="noopener">http://wiki.ubuntu.org.cn/Compiling_Cpp</a></p>
+        <h1 id="linux下C-编译"><a href="#linux下C-编译" class="headerlink" title="linux下C++编译"></a>linux下C++编译</h1><p>本文来自<a href="http://wiki.ubuntu.org.cn/Compiling_Cpp" target="_blank" rel="noopener">http://wiki.ubuntu.org.cn/Compiling_Cpp</a></p>
+<p>C++编译有不同指令，所有指令都需要源码作为输入，根据输出结果不同可以分为以下几类：</p>
+<ul>
+<li>生成可执行文件<br>单个文件<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">g++ helloworld.cpp      # 生成a.out的可执行文件</span><br><span class="line">g++ helloworld.cpp -o helloworld    # 自定义可执行文件名</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># g++是gcc的一个特殊版本，链接是使用C++标准库不使用C标准库，可以指定编译库的名称</span><br><span class="line">gcc helloworld.cpp -lstdc++ -o helloworld</span><br><span class="line"># 某些系统GCC安装也会有c++,可以替代g++</span><br><span class="line">c++ helloworld.cpp -o helloworld</span><br><span class="line"># 执行</span><br><span class="line">./xxx.out</span><br><span class="line">./xxx</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>多个文件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">g++ xxx.cpp xxx.cpp -o xxxx</span><br></pre></td></tr></table></figure></p>
+<p>参数不需要<code>.h</code>文件，只需要<code>.cpp</code></p>
+<ul>
+<li>生成对象文件<br>仅编译，不链接城可执行文件，文件名默认与源文件名相同</li>
+<li>编译预处理</li>
+<li>生成汇编代码</li>
+</ul>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/04/25/linux下C-编译/" data-id="cjgepjmjr0001i0uf585g3la7" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/04/25/linux下C-编译/" data-id="cjgf1fqyr0001couf3lpnpfem" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C/">C++</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li></ul>
