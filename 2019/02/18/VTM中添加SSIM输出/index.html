@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   
   <title>VTM中添加SSIM输出 | 开心做出戏</title>
-  
+  <meta name="author" content="Herbert">
   
   <meta name="description" content="步骤Typedef.h 中加入宏1#define PrintSSIM 1
 Analyze.h 中成员和函数成员ssim数组Analyze.h 中，在class Analyze的private成员中加入double的ssim数组
@@ -22,23 +22,32 @@ Analyze.h 中成员和函数成员ssim数组Analyze.h 中，在class Analyze的p
 
   
   
-    <link href="/favicon.ico" rel="icon">
+    <link href="/favicon.png" rel="icon">
   
 
   <!-- CSS -->
-
-
   <link rel="stylesheet" href="/css/themes/cerulean.css" media="screen" type="text/css">
   <link rel="stylesheet" href="/css/font-awesome.css" media="screen" type="text/css">
   <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
   <link rel="stylesheet" href="/css/responsive.css" media="screen" type="text/css">
   <link rel="stylesheet" href="/css/highlight.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/highlight-default.min.css" media="screen" type="text/css">
   <link rel="stylesheet" href="/css/google-fonts.css" media="screen" type="text/css">
-  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  <link rel="stylesheet" href="/css/comment.css" media="screen" type="text/css">
+  <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/es5-shim/4.5.9/es5-shim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/es5-shim/4.5.7/es5-sham.min.js"></script>
+  <![endif]-->
 
   <script src="/js/jquery-2.0.3.min.js"></script>
-  <script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
-
+  
+    <script src="/js/marked.js"></script>
+    <script src="/js/comment.js"></script>
+    <script src="/js/timeago.min.js"></script>
+    <script src="/js/highlight.min.js"></script>
+	<script src="/js/spin.min.js"></script>
+  
   <!-- analytics -->
   
 
@@ -60,32 +69,26 @@ Analyze.h 中成员和函数成员ssim数组Analyze.h 中，在class Analyze的p
 		<ul class="nav navbar-nav">
 		  
 		  <li>
-			<a href="/tags/热点文章/" title="All the tags.">
-			  <i class="fa fa-fire"></i>热点文章
-			</a>
-		  </li>
-		  
-		  <li>
-			<a href="/tags/博主推荐/" title="All the tags.">
-			  <i class="fa fa-volume-up"></i>博主推荐
-			</a>
-		  </li>
-		  
-		  <li>
 			<a href="/archives" title="All the articles.">
-			  <i class="fa fa-archive"></i>文章归档
+			  <i class="fa fa-archive"></i>Archives
 			</a>
 		  </li>
 		  
 		  <li>
-			<a href="/message" title="All the tags.">
-			  <i class="fa fa-pencil"></i>给我留言
+			<a href="/categories" title="All the categories.">
+			  <i class="fa fa-folder"></i>Categories
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/tags" title="All the tags.">
+			  <i class="fa fa-tags"></i>Tags
 			</a>
 		  </li>
 		  
 		  <li>
 			<a href="/about" title="About me.">
-			  <i class="fa fa-info-circle"></i>关于本站
+			  <i class="fa fa-user"></i>About
 			</a>
 		  </li>
 		  
@@ -100,6 +103,16 @@ Analyze.h 中成员和函数成员ssim数组Analyze.h 中，在class Analyze的p
     	 
 
 
+	
+		<div class="page-header page-header-inverse ">		
+			<h1 class="title title-inverse "> VTM中添加SSIM输出</h1>
+		</div>		
+	
+
+
+
+
+
 
 <div class="row post">
 	<!-- cols -->
@@ -108,49 +121,11 @@ Analyze.h 中成员和函数成员ssim数组Analyze.h 中，在class Analyze的p
 	<div class="col-md-9">
 	
 
-		<!-- content -->
+	<!-- content -->
+	<div class="mypage">		
+	  		
 
-		<div class="slogan" style="margin-bottom: 17px">
-		  <h4 style="margin-top: 0;color: #333;font-size:15px;font-weight: normal;">
-			  当前位置&nbsp;:&nbsp;<a href="/" >首页&nbsp;</a>»&nbsp;文章分类&nbsp;:&nbsp;
-			
-		  &nbsp;</a>»&nbsp; VTM中添加SSIM输出 </h4>
-		</div>
-
-		<div id="top_search"></div>
-				 
-		
-
-		<div class="archive">	  
-			<div id="archives"> 
-				
-				<header class="entry-header">
-					<div class="entry-info" text-transform : capitalize>				     					      	      
-							
-						<span class="entry-date">
-							<span class="fa fa-calendar" aria-hidden="true"></span>
-							2019-02-18						      
-						</span>
-							  
-							  
-						<span class="author vcard">
-							<span class="fa fa-user" aria-hidden="true"></span>
-							<a href="/"></a> 	 	
-						</span>
-
-						<span class="comments-link">
-							<span class="fa fa-comments" aria-hidden="true"></span>
-							<span class="ds-thread-count" data-thread-key="2019/02/18/VTM中添加SSIM输出/">暂无评论</span>
-						</span>						
-							
-					</div>	
-
-									
-					<h3 class="entry-title"> 
-						<a href="/2019/02/18/VTM中添加SSIM输出/" >VTM中添加SSIM输出</a>
-					</h3>		
-						
-					<span style="font-size:15px"><h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><h3 id="Typedef-h-中加入宏"><a href="#Typedef-h-中加入宏" class="headerlink" title="Typedef.h 中加入宏"></a>Typedef.h 中加入宏</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#define PrintSSIM 1</span><br></pre></td></tr></table></figure>
+	  <h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><h3 id="Typedef-h-中加入宏"><a href="#Typedef-h-中加入宏" class="headerlink" title="Typedef.h 中加入宏"></a>Typedef.h 中加入宏</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#define PrintSSIM 1</span><br></pre></td></tr></table></figure>
 <h3 id="Analyze-h-中成员和函数"><a href="#Analyze-h-中成员和函数" class="headerlink" title="Analyze.h 中成员和函数"></a>Analyze.h 中成员和函数</h3><h4 id="成员"><a href="#成员" class="headerlink" title="成员"></a>成员</h4><h5 id="ssim数组"><a href="#ssim数组" class="headerlink" title="ssim数组"></a>ssim数组</h5><p>Analyze.h 中，在class Analyze的private成员中加入double的ssim数组</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">#if PrintSSIM</span><br><span class="line">  double    m_MSSSIM[MAX_NUM_COMPONENT];</span><br><span class="line">#endif</span><br></pre></td></tr></table></figure>
 <h4 id="函数声明"><a href="#函数声明" class="headerlink" title="函数声明"></a>函数声明</h4><h5 id="Analyze-addResult"><a href="#Analyze-addResult" class="headerlink" title="Analyze::addResult"></a>Analyze::addResult</h5><p>Analyze.h 中，在class Analyze的private成员中加入新的addResult函数,传递SSIM参数。此处用于累加每帧SSIM用来输出最后sequence level的SSIM<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">#if PrintSSIM </span><br><span class="line">  void  addResult(double psnr[MAX_NUM_COMPONENT], double bits, const double MSEyuvframe[MAX_NUM_COMPONENT], const double MSSSIM[MAX_NUM_COMPONENT], bool isEncodeLtRef)</span><br><span class="line">#else</span><br><span class="line">  void  addResult( double psnr[MAX_NUM_COMPONENT], double bits, const double MSEyuvframe[MAX_NUM_COMPONENT]</span><br><span class="line">    , bool isEncodeLtRef</span><br><span class="line">  )</span><br><span class="line">#endif</span><br></pre></td></tr></table></figure></p>
@@ -180,259 +155,126 @@ Analyze.h 中成员和函数成员ssim数组Analyze.h 中，在class Analyze的p
 <h5 id="EncGOP-xCalculateInterlacedAddPSNR"><a href="#EncGOP-xCalculateInterlacedAddPSNR" class="headerlink" title="EncGOP::xCalculateInterlacedAddPSNR"></a>EncGOP::xCalculateInterlacedAddPSNR</h5><p>xCalculateInterlacedAddPSNR中暂时不修改，因为现在不需要field coding。但需要增加两项内容避免报错：</p>
 <p>计算ssim,在计算psnr之后和<figure class="highlight plain"><figcaption><span>uibits </span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">```</span><br><span class="line">#if PrintSSIM</span><br><span class="line">  //===== calculate MS-SSIM =====</span><br><span class="line">  double MSSSIM[MAX_NUM_COMPONENT] = &#123; 0,0,0 &#125;;</span><br><span class="line">  /*</span><br><span class="line">  </span><br><span class="line">    for (int chan = 0; chan&lt;numValidComponents; chan++)</span><br><span class="line">    &#123;</span><br><span class="line">      const ComponentID ch = ComponentID(chan);</span><br><span class="line">      assert(acPicRecFields[0]-&gt;getWidth(ch) == acPicRecFields[1]-&gt;getWidth(ch));</span><br><span class="line">      assert(acPicRecFields[0]-&gt;getHeight(ch) == acPicRecFields[1]-&gt;getHeight(ch));</span><br><span class="line"></span><br><span class="line">      double sumOverFieldsMSSSIM = 0.0;</span><br><span class="line">      const uint32_t width = acPicRecFields[0].get(ch).width - (m_pcEncLib-&gt;getPad(0) &gt;&gt; ::getComponentScaleX(ch, format));</span><br><span class="line">      const uint32_t height = acPicRecFields[0].get(ch).height - ((m_pcEncLib-&gt;getPad(1) &gt;&gt; 1) &gt;&gt; ::getComponentScaleY(ch, format));</span><br><span class="line"></span><br><span class="line">      for (uint32_t fieldNum = 0; fieldNum&lt;2; fieldNum++)</span><br><span class="line">      &#123;</span><br><span class="line">        Picture    pcPic = *apcPicOrgFields[fieldNum];</span><br><span class="line">        PelUnitBuf pcPicD = acPicRecFields[fieldNum];</span><br><span class="line">        const CPelBuf&amp;    p = pcPic.get(ch);</span><br><span class="line">        const CPelBuf&amp;    o = pcPicD.get(ch);</span><br><span class="line">        const Pel*  pOrg = (conversion != IPCOLOURSPACE_UNCHANGED) ? pcPic.getPicYuvTrueOrg()-&gt;getAddr(ch) : pcPic-&gt;getPicYuvOrg()-&gt;getAddr(ch);</span><br><span class="line">        const uint32_t   orgStride = (conversion != IPCOLOURSPACE_UNCHANGED) ? pcPic-&gt;getPicYuvTrueOrg()-&gt;getStride(ch) : pcPic-&gt;getPicYuvOrg()-&gt;getStride(ch);</span><br><span class="line">        Pel*        pRec = pcPicD-&gt;getAddr(ch);</span><br><span class="line">        const uint32_t   recStride = pcPicD-&gt;getStride(ch);</span><br><span class="line">        const uint32_t  bitDepth = sps.getBitDepth(toChannelType(ch));</span><br><span class="line"></span><br><span class="line">        sumOverFieldsMSSSIM += xCalculateMSSSIM(pOrg, orgStride, pRec, recStride, width, height, bitDepth);</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      MSSSIM[ch] = sumOverFieldsMSSSIM / 2;</span><br><span class="line">    &#125;</span><br><span class="line">    */</span><br><span class="line">#endif</span><br></pre></td></tr></table></figure></p>
 <p>addResult，和先前非field coding编码一样<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">#if PrintSSIM</span><br><span class="line">  m_gcAnalyzeAll_in.addResult(dPSNR, (double)uibits, MSEyuvframe, MSSSIM, isEncodeLtRef);</span><br><span class="line">#else</span><br><span class="line">  m_gcAnalyzeAll_in.addResult(dPSNR, (double)uibits, MSEyuvframe</span><br><span class="line">    , isEncodeLtRef</span><br><span class="line">  );</span><br><span class="line">#endif</span><br></pre></td></tr></table></figure></p>
-</span>
-				</header>
+	  
+	</div>
 
-				<!-- share -->
-				
-					
+	<!-- recommended posts -->
+	
 
-					
-     <footer class="entry-meta">      
-
-	    <div class="fenlei" style="font-size:13.5px">
-			<span class="entry-categories">
-				<span class="fa fa-folder" aria-hidden="true"></span> 
-
-				
-
-			</span>
-			
-			<span class="entry-tags">        
-				<span class="fa fa-tags" aria-hidden="true"></span> 
-
-				
-					<a href="/tags/VTM/">VTM</a>&nbsp;
-				
-
-			</span>
-		</div>
-
-     
-		<!-- JiaThis Button BEGIN -->
-		<div class="jiathis_style" style="float:right;">
-			<span class="jiathis_txt">分享到：</span>
-			<a class="jiathis_button_qzone">QQ空间</a>
-			<a class="jiathis_button_tsina">新浪微博</a>
-			<a class="jiathis_button_weixin">微信</a>
-			<a class="jiathis_button_copy">复制</a>
-			<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
-			<a class="jiathis_counter_style"></a>
-		</div>
-		<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
-		<!-- JiaThis Button END -->
-		<br>
-    </footer>
-
-
-				
-			</div>	
-		</div>	 	        
-
-		 
-				
-
-				
-				   <p class="p2">下一篇 <a href="/2018/04/25/linux下C-编译/">linux下C++编译</a></p> 
-			
+	<div>
+  	<center>
+	<div class="pagination">
+<ul class="pagination">
+	 
 		
-		<!-- comment -->
+          <li class="prev disabled"><a><i class="fa fa-arrow-circle-o-left"></i>Prev</a></li>
+        
+
+        <li><a href="/archives"><i class="fa fa-archive"></i>Archive</a></li>
+
 		
+		   <li class="next"><a href="/2018/04/25/linux下C-编译/" class="alignright next">Next<i class="fa fa-arrow-circle-o-right"></i></a></li>         
+        
+	
+</ul>
+</div>
+
+    </center>
+	</div>
+
+    <!-- share -->
+    
+        
+    <div class="bdsharebuttonbox">
+        <a href="#" class="bds_more" data-cmd="more"></a>
+        <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+        <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+        <a href="#" class="bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+        <a href="#" class="bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+        <a href="#" class="bds_linkedin" data-cmd="linkedin" title="分享到linkedin"></a>
+        <a href="#" class="bds_evernotecn" data-cmd="evernotecn" title="分享到印象笔记"></a>
+        <a href="#" class="bds_youdao" data-cmd="youdao" title="分享到有道云笔记"></a>
+        <a href="#" class="bds_copy" data-cmd="copy" title="分享到复制网址"></a>
+    </div>
+    <script>
+        window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"1","bdSize":"24"},"share":{}};
+        with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+    </script>
+
+
+        
+
+    
+	
+	<!-- comment -->
+	
 <section id="comment">
-  
-  	 <div class="ds-thread" data-thread-key="2019/02/18/VTM中添加SSIM输出/" data-title="VTM中添加SSIM输出" data-url="http://yoursite.com/2019/02/18/VTM中添加SSIM输出/"></div>  
+  <h2 class="title">Comments</h2>
+    	 
+	 <div id="comment-thread"></div>
+	 <div id="loading-spin"></div>
+	 <script type="text/javascript">
+	   getComments({
+           type: "github" ? "github" : "github",       
+	       user: "wzpan",
+	       repo: "hexo-theme-freemind-blog",
+		   client_id: "bf7d4ba11877db88543e",
+           client_secret: "bff8a6b06b745c0bfcdccbe225623ea8e2a057bb",
+		   no_comment: "No comments yet. Press the button and go to comment now!",
+		   go_to_comment: "Go to comment",
+		   no_issue: "no_issue",
+		   issue_title: "VTM中添加SSIM输出",
+		   issue_id: "",
+		   btn_class: "btn btn-primary",
+		   comments_target: "#comment-thread",
+		   loading_target: "#loading_spin"
+		   });
+	 </script>
   
 </section>
 
+
+	</div> <!-- col-md-9/col-md-12 -->
 		
-	</div> <!-- col-md-9/col-md-12 -->	
-
 	
-		<div id="side_meta">
-			
-      <div class="col-md-3">
-	      <div id="sidebar">
-	      
-  <div class="form-group has-success has-feedback" id="site_search">
-    <form class="site-search-form">
-        <input type="text" id="st-search-input" name="q" results="0" placeholder="搜索" class="st-search-input st-default-search-input form-control" />
-    </form>
-  </div>  
+	<div id="side_meta">
+		<div class="col-md-3" id="post_meta"> 
 
-	      <style type="text/css">
-  .cls_container{height:24px;overflow:hidden;}
-  .cls_container ul{list-style-type:none;margin:0;padding:0;margin-left:0px;}
-  .cls_container ul li{height:24px;line-height:24px;float:left;display:inline;}
-</style>
-
-<div class="widget">
-	<h4 style="font-weight: bold; color: #333;font-family: "Helvetica Neue", Helvetica, Arial, sans-serif">本站公告</h4>
-
-	<div id="myscroll" class="cls_container">
-		<ul>
-		  <li><span style="color:red"><i class="fa fa-warning"></i>欢迎访问本站!</span></li></br>
-		  <li><span style="color:red"><i class="fa fa-warning"></i>本站内容已经全部进行迁移</span></li></br>
-		  <li><span style="color:red"><i class="fa fa-warning"></i>谷歌浏览器访问本站效果最佳!</span></li></br>
-		  <li><span style="color:red"><i class="fa fa-warning"></i>若URL失效，请使用本站内部搜索</span></li></br>
-		</ul>
+	<!-- date -->
+	
+	<div class="meta-widget">
+	<i class="fa fa-clock-o"></i>
+	2019-02-18 
 	</div>
+	
 
-	<div id="showhint"></div>
-</div>
+	<!-- categories -->
+    
 
-<script type="text/javascript">
-	function $(element){
-	 if(arguments.length>1){
-	  for(var i=0,length=arguments.length,elements=[];i<length;i++){
-	   elements.push($(arguments[i]));
-	  }
-	  return elements;
-	 }
-	 if(typeof element=="string"){
-	  return document.getElementById(element);
-	 }else{
-	  return element;
-	 }
-	}
-	var Class={
-	 create:function(){
-	  return function(){
-	   this.initialize.apply(this,arguments);
-	  }
-	 }
-	}
-	Function.prototype.bind=function(object){
-	 var method=this;
-	 return function(){
-	  method.apply(object,arguments);
-	 }
-	}
-	var Scroll=Class.create();
-	Scroll.prototype={
-	 initialize:function(element,height){
-	  this.element=$(element);
-	  this.element.innerHTML+=this.element.innerHTML;
-	  this.height=height;
-	  this.maxHeight=this.element.scrollHeight/2;
-	  this.counter=0;
-	  this.scroll();
-	  this.timer="";
-	  this.element.onmouseover=this.stop.bind(this);
-	  this.element.onmouseout=function(){this.timer=setTimeout(this.scroll.bind(this),1000);}.bind(this);
-	 },
-	 scroll:function(){
-	  if(this.element.scrollTop<this.maxHeight){
-	   this.element.scrollTop++;
-	   this.counter++;
-	  }else{
-	   this.element.scrollTop=0;
-	   this.counter=0;
-	  }
-	  if(this.counter<this.height){
-	   this.timer=setTimeout(this.scroll.bind(this),20);
-	  }else{
-	   this.counter=0;
-	   this.timer=setTimeout(this.scroll.bind(this),3000);
-	  }
-	 },
-	 stop:function(){
-	  clearTimeout(this.timer);
-	 }
-	}
-	var myscroll=new Scroll("myscroll",24);
-</script>
-
-
-	      <!-- toc -->	      
-	      	      
-
-	      	
-	      
-	<div class="widget">
-		<h4 style="font-weight: bold; color: #333 ">标签云</h4>
-		<ul class="tag_box inline list-unstyled">		
-		
-			<li><a href="/tags/linux/">linux<span>1</span></a></li>
-		
-			<li><a href="/tags/VTM/">VTM<span>1</span></a></li>
-		
-			<li><a href="/tags/搭建博客/">搭建博客<span>1</span></a></li>
-		
-			<li><a href="/tags/C/">C++<span>1</span></a></li>
-		
-		 
-		</ul>
+	<!-- tags -->
+	
+	<div class="meta-widget">
+	<a data-toggle="collapse" data-target="#tags"><i class="fa fa-tags"></i></a>		  
+    <ul id="tags" class="tag_box list-unstyled collapse in">	  
+	    
+  <li><a href="/tags/VTM/">VTM<span>1</span></a></li>
+    </ul>
 	</div>
+	
 
+	<!-- toc -->
+	<div class="meta-widget">
+	
+	</div>
+	
+    <hr>
+	
+</div><!-- col-md-3 -->
 
-	      
-<div class="widget">
-	<h4 style="font-weight: bold; color: #333;font-family: "Helvetica Neue", Helvetica, Arial, sans-serif">友情链接</h4>
-	<ul class="blogroll list-unstyled">
-	
-		<li style="font-size:14px"><i class="fa fa-share"></i><a href="http://hexo.io" title="My Linkin account." target="_blank"]);">Hexo</a></li>
-	
-		<li style="font-size:14px"><i class="fa fa-github"></i><a href="http://www.github.com/rudy-yuan" title="My Github account." target="_blank"]);">我的github</a></li>
-	
-		<li style="font-size:14px"><i class="fa fa-trash"></i><a href="http://yjiehn.sinaapp.com" title="My Linkin account." target="_blank"]);">我的旧版博客</a></li>
-	
-		<li style="font-size:14px"><i class="fa fa-cloud-upload"></i><a href="http://www.qiniu.com" title="My Weibo account." target="_blank"]);">七牛云存储</a></li>
-	
-		<li style="font-size:14px"><i class="fa fa-chain"></i><a href="http://netlab.pkusz.edu.cn" title="My Weibo account." target="_blank"]);">北大互联网信息工程研发中心</a></li>
-	
-		<li style="font-size:14px"><i class="fa fa-chain"></i><a href="http://cs.whu.edu.cn" title="My Weibo account." target="_blank"]);">武汉大学 计算机学院</a></li>
-	
-		<li style="font-size:14px"><i class="fa fa-chain"></i><a href="http://github.com/wzpan/hexo-theme-freemind" title="My Weibo account." target="_blank"]);">Hexo-Theme-Freemind</a></li>
-	
-		<li style="font-size:14px"><i class="fa fa-chain"></i><a href="http://www.wengweitao.com" title="My Weibo account." target="_blank"]);">WWT的博客</a></li>
-	
-	</ul>
-</div>
-
-
-	      <div class="widget">
-	<h4 style="font-weight: bold; color: #333;font-family: "Helvetica Neue", Helvetica, Arial, sans-serif">近期评论</h4>
-	<ul class="ds-recent-comments" data-num-items="5" data-show-avatars="1" data-show-time="0" data-show-admin="1" data-excerpt-length="100" ></ul>
-	
-	<script type="text/javascript">
-	    var duoshuoQuery = { short_name: 'rudy-yuan' };
-	    (function() {
-	    var ds = document.createElement('script');
-		ds.type = 'text/javascript';ds.async = true;
-		ds.src = 'http://static.duoshuo.com/embed.js';
-		ds.charset = 'UTF-8';
-		(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
-		})();
-	</script>
-
-</div>
-
-
-	
-	      <section id="recent-visitors" class="widget widget_recent_comments">
-	<h4 style="font-weight: bold; color: #333;font-family: "Helvetica Neue", Helvetica, Arial, sans-serif">最近访客</h4>
-  	<div class="panelbody clearfix"><ul class="ds-recent-visitors" data-num-items="30"></ul></div>
-</section>    
-	      </div> <!-- sidebar -->
-      </div> <!-- col-md-3 -->
-
-		</div>
-			
+	</div>
+		
 
 </div><!-- row -->
-
-
-	<script type="text/javascript">
-	  var duoshuoQuery = { short_name: 'rudy-yuan' };
-	  (function() {
-		var ds = document.createElement('script');
-		ds.type = 'text/javascript';
-		ds.async = true;
-		ds.src = 'http://static.duoshuo.com/embed.js';
-		ds.charset = 'UTF-8';
-		(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
-	  })();
-	</script>
 
 
 
@@ -440,23 +282,12 @@ Analyze.h 中成员和函数成员ssim数组Analyze.h 中，在class Analyze的p
   </div>
   <div class="container-narrow">
   <footer> <p>
-  开心做出戏 &copy; 2013-2019.
+  &copy; 2019 Herbert
   
-       Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>, <a href="https://swiftype.com/" target="_blank">Swiftype</a> and <a href="http://www.qiniu.com/" target="_blank">七牛云存储</a>.
-      <i class="fa fa-sitemap "></i> <a href="/sitemap.xml" target="_blank"> 站点地图</a>. <a href="http://www.miitbeian.gov.cn/">粤ICP备15038546号</a>.
-      <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1255163192'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s11.cnzz.com/z_stat.php%3Fid%3D1255163192' type='text/javascript'%3E%3C/script%3E"));</script>   
+      with help from <a href="http://hexo.io/" target="_blank">Hexo</a> and <a href="http://getbootstrap.com/" target="_blank">Twitter Bootstrap</a>. Theme by <a href="http://github.com/wzpan/hexo-theme-freemind/">Freemind</a>.    
 </p> </footer>
 </div> <!-- container-narrow -->
   
-  <script type="text/javascript">
-  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
-    (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
-    e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
-  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
-
-  _st('install', 'YYG5W2xNQTns7U8J3YqW','2.0.0');
-  </script>
-
 
 
   
@@ -479,6 +310,35 @@ Analyze.h 中成员和函数成员ssim数组Analyze.h 中，在class Analyze的p
 })(jQuery);
 </script>
 
+
+
+   <script type="text/javascript">      
+     var search_path = "search.xml";
+	 if (search_path.length == 0) {
+	 	search_path = "search.xml";
+	 }
+	 var path = "/" + search_path;
+     searchFunc(path, 'local-search-input', 'local-search-result');
+   </script>
+
+
+<!-- syntax highlighting -->
+
+  <script>
+  marked.setOptions({
+    highlight: function (code, lang) {
+        return hljs.highlightAuto(code).value;
+    }
+  });
+  function Highlighting(){
+    var markdowns = document.getElementsByClassName('markdown');
+    for(var i=0;i<markdowns.length;i++){
+        if(markdowns[i].innerHTML) markdowns[i].innerHTML =marked(markdowns[i].innerHTML);
+    }
+  }
+  window.addEventListener('DOMContentLoaded', Highlighting, false);
+  window.addEventListener('load', Highlighting, false);
+  </script>
 
 
 </body>

@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   
   <title>搭建博客 | 开心做出戏</title>
-  
+  <meta name="author" content="Herbert">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -18,23 +18,32 @@
 
   
   
-    <link href="/favicon.ico" rel="icon">
+    <link href="/favicon.png" rel="icon">
   
 
   <!-- CSS -->
-
-
   <link rel="stylesheet" href="/css/themes/cerulean.css" media="screen" type="text/css">
   <link rel="stylesheet" href="/css/font-awesome.css" media="screen" type="text/css">
   <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
   <link rel="stylesheet" href="/css/responsive.css" media="screen" type="text/css">
   <link rel="stylesheet" href="/css/highlight.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/highlight-default.min.css" media="screen" type="text/css">
   <link rel="stylesheet" href="/css/google-fonts.css" media="screen" type="text/css">
-  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  <link rel="stylesheet" href="/css/comment.css" media="screen" type="text/css">
+  <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/es5-shim/4.5.9/es5-shim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/es5-shim/4.5.7/es5-sham.min.js"></script>
+  <![endif]-->
 
   <script src="/js/jquery-2.0.3.min.js"></script>
-  <script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
-
+  
+    <script src="/js/marked.js"></script>
+    <script src="/js/comment.js"></script>
+    <script src="/js/timeago.min.js"></script>
+    <script src="/js/highlight.min.js"></script>
+	<script src="/js/spin.min.js"></script>
+  
   <!-- analytics -->
   
 
@@ -56,32 +65,26 @@
 		<ul class="nav navbar-nav">
 		  
 		  <li>
-			<a href="/tags/热点文章/" title="All the tags.">
-			  <i class="fa fa-fire"></i>热点文章
-			</a>
-		  </li>
-		  
-		  <li>
-			<a href="/tags/博主推荐/" title="All the tags.">
-			  <i class="fa fa-volume-up"></i>博主推荐
-			</a>
-		  </li>
-		  
-		  <li>
 			<a href="/archives" title="All the articles.">
-			  <i class="fa fa-archive"></i>文章归档
+			  <i class="fa fa-archive"></i>Archives
 			</a>
 		  </li>
 		  
 		  <li>
-			<a href="/message" title="All the tags.">
-			  <i class="fa fa-pencil"></i>给我留言
+			<a href="/categories" title="All the categories.">
+			  <i class="fa fa-folder"></i>Categories
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/tags" title="All the tags.">
+			  <i class="fa fa-tags"></i>Tags
 			</a>
 		  </li>
 		  
 		  <li>
 			<a href="/about" title="About me.">
-			  <i class="fa fa-info-circle"></i>关于本站
+			  <i class="fa fa-user"></i>About
 			</a>
 		  </li>
 		  
@@ -95,14 +98,10 @@
   	<div class="content">
     	 
 
-
-		
-		   
-		    <div class="slogan" style="margin-bottom: 17px">
-		      <h4 style="margin-top: 0;color: #333;font-size:15px;font-weight: normal;">当前位置&nbsp;:&nbsp;<a href="/" >首页&nbsp;</a>»&nbsp;标签&nbsp;: 搭建博客</h4>
-		    </div>
-		   
-		
+<!-- title -->
+<div class="page-header page-header-inverse ">
+  <h1 class="archive-title-tag title title-inverse ">搭建博客</h1>
+</div>
 
 <div class="row page">
   <!-- cols -->
@@ -112,196 +111,171 @@
 
 	  <div id="top_search"></div>
 
-	  <div class="archive">
-		
-		
-		
-			
-			
-			<h4 class="archive-ul" data-toggle="collapse" data-target="#2018">2018<b class="caret"></b></h4>
-			<ul id="2018" class="collapse in">
-			
-		
-		<li class="listing-item">
-		<span class="date_class"> 2018-04-11 </span> &raquo;
-		
-		   <span class="title"><a href="/2018/04/11/GITHUB+HEXO搭建博客/" >GITHUB+HEXO搭建博客</a></span>
-		
-		</li>			
-		
-		</ul>
-		</div>
+      
+         <!-- display as entry -->
+	     <div class="mypage">
+	       
+		     
+	
+	<!-- display as entry -->	
+		<h3 class="title">
+			<div class="date"> 2018-04-11 </div>
+			<div class="article-title"><a href="/2018/04/11/GITHUB+HEXO搭建博客/" >GITHUB+HEXO搭建博客</a></div>						
+		</h3>
+	
+
+
+		     <div class="entry">
+  <div class="row">
+	
+	
+		<p>本文主要介绍用github与hexo搭建个人博客。</p>
+<p>网上此类文章比较多，在此列举几条，可以按照下面链接的内容一步一步操作。</p>
+<ul>
+<li>基本框架(安装程序，搭建博客，发表文章，配置信息，更改主题)<br><a href="https://github.com/limedroid/HexoLearning" target="_blank" rel="noopener">https://github.com/limedroid/HexoLearning</a></li>
+<li>域名等其他内容添加<br><a href="https://linghucong.js.org/2016/04/15/2016-04-15-hexo-github-pages-blog/" target="_blank" rel="noopener">https://linghucong.js.org/2016/04/15/2016-04-15-hexo-github-pages-blog/</a></li>
+<li>常见报错<br><a href="https://xuanwo.org/2014/08/14/hexo-usual-problem/#Deploy%E4%B9%8B%E5%90%8E%EF%BC%8C%E9%A1%B5%E9%9D%A2%E9%95%BF%E6%97%B6%E9%97%B4404" target="_blank" rel="noopener">https://xuanwo.org/2014/08/14/hexo-usual-problem/#Deploy%E4%B9%8B%E5%90%8E%EF%BC%8C%E9%A1%B5%E9%9D%A2%E9%95%BF%E6%97%B6%E9%97%B4404</a></li>
+<li><p>常见命令<br>  <a href="https://hexo.io/zh-cn/docs/commands.html" target="_blank" rel="noopener">https://hexo.io/zh-cn/docs/commands.html</a></p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"># 新文章</span><br><span class="line">hexo new [layout] &lt;title&gt;   # layout缺省，使用 _config.yml中default_layout代替</span><br><span class="line"># generate</span><br><span class="line">hexo generate   #简写hexo g</span><br><span class="line">--deploy/-d 文件生成后立即部署网站</span><br><span class="line">--watch/-w  监视文件变动</span><br><span class="line"># 发布草稿</span><br><span class="line">hexo publish [layout] &lt;filename&gt;</span><br><span class="line"># server</span><br><span class="line">hexo server #默认端口4000</span><br><span class="line">-p/--port   指定端口</span><br><span class="line">-s/--static 只使用静态文件</span><br><span class="line">-l/--log    启动日记记录，使用覆盖记录格式</span><br><span class="line"></span><br><span class="line"># deploy</span><br><span class="line">hexo deploy # 简写为hexo d</span><br><span class="line">-g/--generate 部署之前预先生成静态文件</span><br><span class="line"></span><br><span class="line">未完待定</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>写作格式：</p>
+<ul>
+<li>tags<ul>
+<li>[tag1,tag2…]</li>
+<li>YAML格式，类似markdown中的格式</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>几个注意事项：</p>
+<ul>
+<li>本地部署<code>hexo s</code>的时候win10可能无法打开默认的<code>localhost:4000</code>，此时需要使用自定义端口<code>hexo s -p 3600</code></li>
+<li>本地文件与<code>xxx.github.io</code>仓库中文件的关系：<ul>
+<li>将本地目录中<code>public</code>文件夹下内容上传到仓库，本人在此文件夹下使用<code>git init</code>。</li>
+<li>部署时可以直接在本地博客目录下使用<code>hexo g</code>,<code>hexo d</code>部署，如果当前已经部署导致报错，删除<code>.deploy_git</code>即可。</li>
+<li>不要轻易使用<code>hexo clean</code>，此操作会重新生成<code>public</code>文件夹,从而导致<code>public</code>文件夹下<code>.git</code>被删除，需要重新与仓库建立关系。此处可使用<code>git push --force origin master</code>强行覆盖。</li>
+</ul>
+</li>
+<li><code>xxx.github.io</code>网址上内容的更新需要一段时间，可以先本地测试</li>
+</ul>
+
+	
+	</div>
+  <a type="button" href="/2018/04/11/GITHUB+HEXO搭建博客/#more" class="btn btn-default more">Read More</a>
+</div>
+
+	       
+	     </div>
+	     <div>
+	       <center>
+	         <div class="pagination">
+<ul class="pagination">
+	 
+</ul>
+</div>
+
+	       </center>
+	     </div>	
+      
 
 </div> <!-- col-md-9/col-md-12 -->
 
 
 <div class="col-md-3">
 	<div id="sidebar">
-		
-				
-  <div class="form-group has-success has-feedback" id="site_search">
-    <form class="site-search-form">
-        <input type="text" id="st-search-input" name="q" results="0" placeholder="搜索" class="st-search-input st-default-search-input form-control" />
-    </form>
-  </div>  
-
+	
 			
-				<style type="text/css">
-  .cls_container{height:24px;overflow:hidden;}
-  .cls_container ul{list-style-type:none;margin:0;padding:0;margin-left:0px;}
-  .cls_container ul li{height:24px;line-height:24px;float:left;display:inline;}
-</style>
+  <div id="site_search">
+   <div class="form-group">
+    <input type="text" id="local-search-input" name="q" results="0" placeholder="Search" class="st-search-input st-default-search-input form-control"/>
+   </div>  
+  <div id="local-search-result"></div>
+  </div>
 
-<div class="widget">
-	<h4 style="font-weight: bold; color: #333;font-family: "Helvetica Neue", Helvetica, Arial, sans-serif">本站公告</h4>
 
-	<div id="myscroll" class="cls_container">
-		<ul>
-		  <li><span style="color:red"><i class="fa fa-warning"></i>欢迎访问本站!</span></li></br>
-		  <li><span style="color:red"><i class="fa fa-warning"></i>本站内容已经全部进行迁移</span></li></br>
-		  <li><span style="color:red"><i class="fa fa-warning"></i>谷歌浏览器访问本站效果最佳!</span></li></br>
-		  <li><span style="color:red"><i class="fa fa-warning"></i>若URL失效，请使用本站内部搜索</span></li></br>
-		</ul>
-	</div>
-
-	<div id="showhint"></div>
+		
+			<div class="widget">
+    
+	    <h4 class="dsq-widget-title">Recent Comments</h4>
+		<div id="recent-comments"></div>
+		<script type="text/javascript">
+		    getRecentCommentsList({
+			   type: "github" ? "github" : "github",
+			   user: "wzpan",
+               repo: "hexo-theme-freemind-blog",
+               client_id: "bf7d4ba11877db88543e",
+               client_secret: "bff8a6b06b745c0bfcdccbe225623ea8e2a057bb",
+			   count: "5" ? "5" : 5,
+			   recent_comments_target: "#recent-comments"
+			});
+		</script>
+	
 </div>
 
-<script type="text/javascript">
-	function $(element){
-	 if(arguments.length>1){
-	  for(var i=0,length=arguments.length,elements=[];i<length;i++){
-	   elements.push($(arguments[i]));
-	  }
-	  return elements;
-	 }
-	 if(typeof element=="string"){
-	  return document.getElementById(element);
-	 }else{
-	  return element;
-	 }
-	}
-	var Class={
-	 create:function(){
-	  return function(){
-	   this.initialize.apply(this,arguments);
-	  }
-	 }
-	}
-	Function.prototype.bind=function(object){
-	 var method=this;
-	 return function(){
-	  method.apply(object,arguments);
-	 }
-	}
-	var Scroll=Class.create();
-	Scroll.prototype={
-	 initialize:function(element,height){
-	  this.element=$(element);
-	  this.element.innerHTML+=this.element.innerHTML;
-	  this.height=height;
-	  this.maxHeight=this.element.scrollHeight/2;
-	  this.counter=0;
-	  this.scroll();
-	  this.timer="";
-	  this.element.onmouseover=this.stop.bind(this);
-	  this.element.onmouseout=function(){this.timer=setTimeout(this.scroll.bind(this),1000);}.bind(this);
-	 },
-	 scroll:function(){
-	  if(this.element.scrollTop<this.maxHeight){
-	   this.element.scrollTop++;
-	   this.counter++;
-	  }else{
-	   this.element.scrollTop=0;
-	   this.counter=0;
-	  }
-	  if(this.counter<this.height){
-	   this.timer=setTimeout(this.scroll.bind(this),20);
-	  }else{
-	   this.counter=0;
-	   this.timer=setTimeout(this.scroll.bind(this),3000);
-	  }
-	 },
-	 stop:function(){
-	  clearTimeout(this.timer);
-	 }
-	}
-	var myscroll=new Scroll("myscroll",24);
-</script>
-
+		
 			
-				
+		
 			
-				
 	<div class="widget">
-		<h4 style="font-weight: bold; color: #333 ">标签云</h4>
+		<h4>Tag Cloud</h4>
 		<ul class="tag_box inline list-unstyled">		
-		
-			<li><a href="/tags/搭建博客/">搭建博客<span>1</span></a></li>
-		
-			<li><a href="/tags/C/">C++<span>1</span></a></li>
 		
 			<li><a href="/tags/VTM/">VTM<span>1</span></a></li>
 		
+			<li><a href="/tags/C/">C++<span>1</span></a></li>
+		
 			<li><a href="/tags/linux/">linux<span>1</span></a></li>
+		
+			<li><a href="/tags/搭建博客/">搭建博客<span>1</span></a></li>
 		
 		 
 		</ul>
 	</div>
 
 
+		
 			
-				
 <div class="widget">
-	<h4 style="font-weight: bold; color: #333;font-family: "Helvetica Neue", Helvetica, Arial, sans-serif">友情链接</h4>
+  <h4>Recent Posts</h4>
+  <ul class="entry list-unstyled">
+    
+      <li>
+        <a href="/2019/02/18/VTM中添加SSIM输出/" ><i class="fa fa-file-o"></i>VTM中添加SSIM输出</a>
+      </li>
+    
+      <li>
+        <a href="/2018/04/25/linux下C-编译/" ><i class="fa fa-file-o"></i>linux下C++编译</a>
+      </li>
+    
+      <li>
+        <a href="/2018/04/11/GITHUB+HEXO搭建博客/" ><i class="fa fa-file-o"></i>GITHUB+HEXO搭建博客</a>
+      </li>
+    
+      <li>
+        <a href="/2018/04/11/hello-world/" ><i class="fa fa-file-o"></i>Hello World</a>
+      </li>
+    
+  </ul>
+</div>
+
+		
+			
+<div class="widget">
+	<h4>Links</h4>
 	<ul class="blogroll list-unstyled">
 	
-		<li style="font-size:14px"><i class="fa fa-share"></i><a href="http://hexo.io" title="My Linkin account." target="_blank"]);">Hexo</a></li>
+		<li><i class="fa fa-github"></i><a href="https://github.com/wzpan/freemind/" title="Freemind's Github repository." target="_blank"]);">Freemind</a></li>
 	
-		<li style="font-size:14px"><i class="fa fa-github"></i><a href="http://www.github.com/rudy-yuan" title="My Github account." target="_blank"]);">我的github</a></li>
+		<li><i class="fa fa-github"></i><a href="http://www.github.com/wzpan" title="My Github account." target="_blank"]);">My Github</a></li>
 	
-		<li style="font-size:14px"><i class="fa fa-trash"></i><a href="http://yjiehn.sinaapp.com" title="My Linkin account." target="_blank"]);">我的旧版博客</a></li>
-	
-		<li style="font-size:14px"><i class="fa fa-cloud-upload"></i><a href="http://www.qiniu.com" title="My Weibo account." target="_blank"]);">七牛云存储</a></li>
-	
-		<li style="font-size:14px"><i class="fa fa-chain"></i><a href="http://netlab.pkusz.edu.cn" title="My Weibo account." target="_blank"]);">北大互联网信息工程研发中心</a></li>
-	
-		<li style="font-size:14px"><i class="fa fa-chain"></i><a href="http://cs.whu.edu.cn" title="My Weibo account." target="_blank"]);">武汉大学 计算机学院</a></li>
-	
-		<li style="font-size:14px"><i class="fa fa-chain"></i><a href="http://github.com/wzpan/hexo-theme-freemind" title="My Weibo account." target="_blank"]);">Hexo-Theme-Freemind</a></li>
-	
-		<li style="font-size:14px"><i class="fa fa-chain"></i><a href="http://www.wengweitao.com" title="My Weibo account." target="_blank"]);">WWT的博客</a></li>
+		<li><i class="fa fa-linkedin"></i><a href="http://www.linkedin.com/in/hahack" title="My Linkin account." target="_blank"]);">My LinkedIn</a></li>
 	
 	</ul>
 </div>
 
 
-			
-				<div class="widget">
-	<h4 style="font-weight: bold; color: #333;font-family: "Helvetica Neue", Helvetica, Arial, sans-serif">近期评论</h4>
-	<ul class="ds-recent-comments" data-num-items="5" data-show-avatars="1" data-show-time="0" data-show-admin="1" data-excerpt-length="100" ></ul>
-	
-	<script type="text/javascript">
-	    var duoshuoQuery = { short_name: 'rudy-yuan' };
-	    (function() {
-	    var ds = document.createElement('script');
-		ds.type = 'text/javascript';ds.async = true;
-		ds.src = 'http://static.duoshuo.com/embed.js';
-		ds.charset = 'UTF-8';
-		(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
-		})();
-	</script>
-
-</div>
-
-
-
-			
-				<section id="recent-visitors" class="widget widget_recent_comments">
-	<h4 style="font-weight: bold; color: #333;font-family: "Helvetica Neue", Helvetica, Arial, sans-serif">最近访客</h4>
-  	<div class="panelbody clearfix"><ul class="ds-recent-visitors" data-num-items="30"></ul></div>
-</section>
-			  
+		
 	</div> <!-- sidebar -->
 </div> <!-- col-md-3 -->
 
@@ -312,23 +286,12 @@
   </div>
   <div class="container-narrow">
   <footer> <p>
-  开心做出戏 &copy; 2013-2019.
+  &copy; 2019 Herbert
   
-       Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>, <a href="https://swiftype.com/" target="_blank">Swiftype</a> and <a href="http://www.qiniu.com/" target="_blank">七牛云存储</a>.
-      <i class="fa fa-sitemap "></i> <a href="/sitemap.xml" target="_blank"> 站点地图</a>. <a href="http://www.miitbeian.gov.cn/">粤ICP备15038546号</a>.
-      <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1255163192'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s11.cnzz.com/z_stat.php%3Fid%3D1255163192' type='text/javascript'%3E%3C/script%3E"));</script>   
+      with help from <a href="http://hexo.io/" target="_blank">Hexo</a> and <a href="http://getbootstrap.com/" target="_blank">Twitter Bootstrap</a>. Theme by <a href="http://github.com/wzpan/hexo-theme-freemind/">Freemind</a>.    
 </p> </footer>
 </div> <!-- container-narrow -->
   
-  <script type="text/javascript">
-  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
-    (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
-    e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
-  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
-
-  _st('install', 'YYG5W2xNQTns7U8J3YqW','2.0.0');
-  </script>
-
 
 
   
@@ -351,6 +314,35 @@
 })(jQuery);
 </script>
 
+
+
+   <script type="text/javascript">      
+     var search_path = "search.xml";
+	 if (search_path.length == 0) {
+	 	search_path = "search.xml";
+	 }
+	 var path = "/" + search_path;
+     searchFunc(path, 'local-search-input', 'local-search-result');
+   </script>
+
+
+<!-- syntax highlighting -->
+
+  <script>
+  marked.setOptions({
+    highlight: function (code, lang) {
+        return hljs.highlightAuto(code).value;
+    }
+  });
+  function Highlighting(){
+    var markdowns = document.getElementsByClassName('markdown');
+    for(var i=0;i<markdowns.length;i++){
+        if(markdowns[i].innerHTML) markdowns[i].innerHTML =marked(markdowns[i].innerHTML);
+    }
+  }
+  window.addEventListener('DOMContentLoaded', Highlighting, false);
+  window.addEventListener('load', Highlighting, false);
+  </script>
 
 
 </body>
