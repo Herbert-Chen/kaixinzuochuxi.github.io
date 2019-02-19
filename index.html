@@ -381,7 +381,7 @@
                 
               
 
-              <time title="创建时间：2019-02-19 11:24:20 / 修改时间：12:34:52" itemprop="dateCreated datePublished" datetime="2019-02-19T11:24:20+08:00">2019-02-19</time>
+              <time title="创建时间：2019-02-19 11:24:20 / 修改时间：13:14:10" itemprop="dateCreated datePublished" datetime="2019-02-19T11:24:20+08:00">2019-02-19</time>
             
 
             
@@ -421,7 +421,8 @@
 
       
         
-          <h1 id="主要内容"><a href="#主要内容" class="headerlink" title="主要内容"></a>主要内容</h1><p>本文就主题选择，应用，部分参数配置与碰到的一些问题进行了简单的总结。后续遇到新的问题会继续补充。<br>主要参考博客为<a href="http://saili.science/2017/04/02/github-for-win/" target="_blank" rel="noopener">http://saili.science/2017/04/02/github-for-win/</a></p>
+          
+            <h1 id="主要内容"><a href="#主要内容" class="headerlink" title="主要内容"></a>主要内容</h1><p>本文就主题选择，应用，部分参数配置与碰到的一些问题进行了简单的总结。后续遇到新的问题会继续补充。<br>主要参考博客为<a href="http://saili.science/2017/04/02/github-for-win/" target="_blank" rel="noopener">http://saili.science/2017/04/02/github-for-win/</a></p>
 <h1 id="主题的选择"><a href="#主题的选择" class="headerlink" title="主题的选择"></a>主题的选择</h1><p>在<a href="https://kaixinzuochuxi.github.io/2018/04/11/GITHUB+HEXO%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/" target="_blank" rel="noopener">GITHUB+HEXO搭建博客</a>的第一个<a href="https://github.com/limedroid/HexoLearning" target="_blank" rel="noopener">链接</a>中给出了一些主题网站，里面可选的有很多，经过一些考虑，最终还是选择了<a href="https://github.com/iissnan/hexo-theme-next" target="_blank" rel="noopener">Next主题</a>。</p>
 <p>具体原因如下：</p>
 <ol>
@@ -430,17 +431,10 @@
 </ol>
 <h1 id="主题的应用"><a href="#主题的应用" class="headerlink" title="主题的应用"></a>主题的应用</h1><p>按照<a href="https://github.com/iissnan/hexo-theme-next" target="_blank" rel="noopener">主题网站</a>提示即可。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone --branch v5.1.2 https://github.com/iissnan/hexo-theme-next themes/next</span><br></pre></td></tr></table></figure></p>
 <p>注意以后版本更新可能会导致命令(–branch v5.1.2)有一些差异，具体以<a href="https://github.com/iissnan/hexo-theme-next" target="_blank" rel="noopener">主题网站</a>为主。</p>
-<p>此种方式也可用于配置其他主题，即<br><figure class="highlight plain"><figcaption><span>clone xxx themes/xxx```</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">在themes目录下新建主题目录```xxx```，将主题文件复制到新建目录```xxx```下，然后修改主目录下_config.yml文件中的```theme: xxx```，重新```hexo g```和```hexo d```即可。</span><br><span class="line"></span><br><span class="line"># 部分参数配置</span><br><span class="line">## 单篇文章的缩略显示</span><br><span class="line">主题被应用后，在首页中会默认每篇文章全部显示。当文章比较长时，读者需要下滑页面到文章结束才能看到下一篇文章。所以这里配置了文章的缩略显示，只显示文章的一部分。如果想查看全文可以点击文章标题进入文章，或者点击结尾处进入文章。</span><br><span class="line"></span><br><span class="line">配置部分的代码如下：</span><br></pre></td></tr></table></figure></p>
-<h1 id="Automatically-Excerpt-Not-recommend"><a href="#Automatically-Excerpt-Not-recommend" class="headerlink" title="Automatically Excerpt. Not recommend."></a>Automatically Excerpt. Not recommend.</h1><h1 id="Use-in-the-post-to-control-excerpt-accurately"><a href="#Use-in-the-post-to-control-excerpt-accurately" class="headerlink" title="Use  in the post to control excerpt accurately."></a>Use
-          <!--noindex-->
+<p>此种方式也可用于配置其他主题，即<br><figure class="highlight plain"><figcaption><span>clone xxx themes/xxx```</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">在themes目录下新建主题目录```xxx```，将主题文件复制到新建目录```xxx```下，然后修改主目录下_config.yml文件中的```theme: xxx```，重新```hexo g```和```hexo d```即可。</span><br><span class="line"></span><br><span class="line"># 部分参数配置</span><br><span class="line">## 文章的目录全显示</span><br><span class="line">next主题默认文章标题是逐渐显示的，此处如果需要将文章目录全部展开，可以在```next\source\css\_custom\custom.styl```中添加一句```.post-toc .nav .nav-child &#123; display: block; &#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="运动部分"><a href="#运动部分" class="headerlink" title="运动部分"></a>运动部分</h2><h1 id="遇到的一些问题"><a href="#遇到的一些问题" class="headerlink" title="遇到的一些问题"></a>遇到的一些问题</h1><h2 id="语言错误"><a href="#语言错误" class="headerlink" title="语言错误"></a>语言错误</h2><p>如果一开始把站点配置文件的语言设置为简体中文(zh-Hans), 可以查找<code>theme/next/languages</code>下的文件有没有<code>zh-Hans.yml</code>。如果没有，需要将<code>zh-CN.yml</code>改名为<code>zh-Hans.yml</code>。</p>
+
           
-            <div class="post-button text-center">
-              <a class="btn" href="/2019/02/19/Next的主题配置尝试/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
         
       
     </div>
