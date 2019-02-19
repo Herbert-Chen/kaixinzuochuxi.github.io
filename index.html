@@ -14,7 +14,7 @@
   
 
 
-<html class="theme-next muse use-motion" lang="zh-Hans">
+<html class="theme-next pisces use-motion" lang="zh-Hans">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
@@ -72,7 +72,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Muse',
+    scheme: 'Pisces',
     version: '7.0.0',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: false,
@@ -294,9 +294,6 @@
   
 
   
-    
-
-  
 
   
 </nav>
@@ -316,6 +313,9 @@
     <main id="main" class="main">
       <div class="main-inner">
         <div class="content-wrap">
+          
+            
+
           
           <div id="content" class="content">
             
@@ -381,7 +381,7 @@
                 
               
 
-              <time title="创建时间：2019-02-19 11:24:20 / 修改时间：13:14:10" itemprop="dateCreated datePublished" datetime="2019-02-19T11:24:20+08:00">2019-02-19</time>
+              <time title="创建时间：2019-02-19 11:24:20 / 修改时间：13:24:07" itemprop="dateCreated datePublished" datetime="2019-02-19T11:24:20+08:00">2019-02-19</time>
             
 
             
@@ -431,8 +431,10 @@
 </ol>
 <h1 id="主题的应用"><a href="#主题的应用" class="headerlink" title="主题的应用"></a>主题的应用</h1><p>按照<a href="https://github.com/iissnan/hexo-theme-next" target="_blank" rel="noopener">主题网站</a>提示即可。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone --branch v5.1.2 https://github.com/iissnan/hexo-theme-next themes/next</span><br></pre></td></tr></table></figure></p>
 <p>注意以后版本更新可能会导致命令(–branch v5.1.2)有一些差异，具体以<a href="https://github.com/iissnan/hexo-theme-next" target="_blank" rel="noopener">主题网站</a>为主。</p>
-<p>此种方式也可用于配置其他主题，即<br><figure class="highlight plain"><figcaption><span>clone xxx themes/xxx```</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">在themes目录下新建主题目录```xxx```，将主题文件复制到新建目录```xxx```下，然后修改主目录下_config.yml文件中的```theme: xxx```，重新```hexo g```和```hexo d```即可。</span><br><span class="line"></span><br><span class="line"># 部分参数配置</span><br><span class="line">## 文章的目录全显示</span><br><span class="line">next主题默认文章标题是逐渐显示的，此处如果需要将文章目录全部展开，可以在```next\source\css\_custom\custom.styl```中添加一句```.post-toc .nav .nav-child &#123; display: block; &#125;</span><br></pre></td></tr></table></figure></p>
-<h2 id="运动部分"><a href="#运动部分" class="headerlink" title="运动部分"></a>运动部分</h2><h1 id="遇到的一些问题"><a href="#遇到的一些问题" class="headerlink" title="遇到的一些问题"></a>遇到的一些问题</h1><h2 id="语言错误"><a href="#语言错误" class="headerlink" title="语言错误"></a>语言错误</h2><p>如果一开始把站点配置文件的语言设置为简体中文(zh-Hans), 可以查找<code>theme/next/languages</code>下的文件有没有<code>zh-Hans.yml</code>。如果没有，需要将<code>zh-CN.yml</code>改名为<code>zh-Hans.yml</code>。</p>
+<p>此种方式也可用于配置其他主题，即<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone xxx themes/xxx</span><br></pre></td></tr></table></figure></p>
+<p>在themes目录下新建主题目录<strong>xxx</strong>，将主题文件复制到新建目录<strong>xxx</strong>下，然后修改主目录下_config.yml文件中的<strong>theme: xxx</strong>，重新<strong>hexo g</strong>和<strong>hexo d</strong>即可。</p>
+<h1 id="部分参数配置"><a href="#部分参数配置" class="headerlink" title="部分参数配置"></a>部分参数配置</h1><h2 id="文章的目录全显示"><a href="#文章的目录全显示" class="headerlink" title="文章的目录全显示"></a>文章的目录全显示</h2><p>next主题默认文章标题是逐渐显示的，此处如果需要将文章目录全部展开，可以在<strong>next\source\css_custom\custom.styl</strong>中添加一句<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.post-toc .nav .nav-child &#123; display: block; &#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="运动部分"><a href="#运动部分" class="headerlink" title="运动部分"></a>运动部分</h2><h1 id="遇到的一些问题"><a href="#遇到的一些问题" class="headerlink" title="遇到的一些问题"></a>遇到的一些问题</h1><h2 id="语言错误"><a href="#语言错误" class="headerlink" title="语言错误"></a>语言错误</h2><p>如果一开始把站点配置文件的语言设置为简体中文(zh-Hans), 可以查找<strong>theme/next/languages</strong>下的文件有没有<strong>zh-Hans.yml</strong>。如果没有，需要将<strong>zh-CN.yml</strong>改名为<strong>zh-Hans.yml</strong>。</p>
 
           
         
@@ -1285,7 +1287,7 @@
 
 
 
-  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.0.0</div>
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> v7.0.0</div>
 
 
 
@@ -1373,7 +1375,9 @@
   
 
 
-  <script src="/js/src/schemes/muse.js?v=7.0.0"></script>
+  <script src="/js/src/affix.js?v=7.0.0"></script>
+
+  <script src="/js/src/schemes/pisces.js?v=7.0.0"></script>
 
 
 
