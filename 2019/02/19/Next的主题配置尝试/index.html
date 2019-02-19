@@ -96,25 +96,25 @@
 
 
 
-  <meta name="description" content="linux下C++编译本文来自http://wiki.ubuntu.org.cn/Compiling_Cpp C++编译有不同指令，所有指令都需要源码作为输入，根据输出结果不同可以分为以下几类：  生成可执行文件单个文件1234567891011g++ helloworld.cpp      # 生成a.out的可执行文件g++ helloworld.cpp -o helloworld    #">
-<meta name="keywords" content="C++,linux">
+  <meta name="description" content="主要内容本文就主题选择，应用，部分参数配置与碰到的一些问题进行了简单的总结。后续遇到新的问题会继续补充 主题的选择在GITHUB+HEXO搭建博客的第一个链接中给出了一些主题网站，里面可选的有很多，经过一些考虑，最终还是选择了Next主题。 具体原因如下：  产品免费且受众广 功能上支持中文，支持文章目录生成。  主题的应用按照主题网站提示即可。clone --branch v5.1.2theme">
+<meta name="keywords" content="搭建博客">
 <meta property="og:type" content="article">
-<meta property="og:title" content="linux下C++编译">
-<meta property="og:url" content="http://yoursite.com/2018/04/25/linux下C-编译/index.html">
+<meta property="og:title" content="Next的主题配置尝试">
+<meta property="og:url" content="http://yoursite.com/2019/02/19/Next的主题配置尝试/index.html">
 <meta property="og:site_name" content="开心做出戏">
-<meta property="og:description" content="linux下C++编译本文来自http://wiki.ubuntu.org.cn/Compiling_Cpp C++编译有不同指令，所有指令都需要源码作为输入，根据输出结果不同可以分为以下几类：  生成可执行文件单个文件1234567891011g++ helloworld.cpp      # 生成a.out的可执行文件g++ helloworld.cpp -o helloworld    #">
+<meta property="og:description" content="主要内容本文就主题选择，应用，部分参数配置与碰到的一些问题进行了简单的总结。后续遇到新的问题会继续补充 主题的选择在GITHUB+HEXO搭建博客的第一个链接中给出了一些主题网站，里面可选的有很多，经过一些考虑，最终还是选择了Next主题。 具体原因如下：  产品免费且受众广 功能上支持中文，支持文章目录生成。  主题的应用按照主题网站提示即可。clone --branch v5.1.2theme">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-04-25T06:47:19.329Z">
+<meta property="og:updated_time" content="2019-02-19T04:08:02.182Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="linux下C++编译">
-<meta name="twitter:description" content="linux下C++编译本文来自http://wiki.ubuntu.org.cn/Compiling_Cpp C++编译有不同指令，所有指令都需要源码作为输入，根据输出结果不同可以分为以下几类：  生成可执行文件单个文件1234567891011g++ helloworld.cpp      # 生成a.out的可执行文件g++ helloworld.cpp -o helloworld    #">
+<meta name="twitter:title" content="Next的主题配置尝试">
+<meta name="twitter:description" content="主要内容本文就主题选择，应用，部分参数配置与碰到的一些问题进行了简单的总结。后续遇到新的问题会继续补充 主题的选择在GITHUB+HEXO搭建博客的第一个链接中给出了一些主题网站，里面可选的有很多，经过一些考虑，最终还是选择了Next主题。 具体原因如下：  产品免费且受众广 功能上支持中文，支持文章目录生成。  主题的应用按照主题网站提示即可。clone --branch v5.1.2theme">
 
 
 
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/04/25/linux下C-编译/"/>
+  <link rel="canonical" href="http://yoursite.com/2019/02/19/Next的主题配置尝试/"/>
 
 
 
@@ -124,7 +124,7 @@
   };
 </script>
 
-  <title>linux下C++编译 | 开心做出戏</title>
+  <title>Next的主题配置尝试 | 开心做出戏</title>
   
 
 
@@ -350,7 +350,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/25/linux下C-编译/"/>
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/19/Next的主题配置尝试/"/>
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Herbert"/>
@@ -367,7 +367,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">linux下C++编译
+          <h1 class="post-title" itemprop="name headline">Next的主题配置尝试
 
               
             
@@ -393,7 +393,7 @@
                 
               
 
-              <time title="Post created: 2018-04-25 14:09:02 / Updated at: 14:47:19" itemprop="dateCreated datePublished" datetime="2018-04-25T14:09:02+08:00">2018-04-25</time>
+              <time title="Post created: 2019-02-19 11:24:20 / Updated at: 12:08:02" itemprop="dateCreated datePublished" datetime="2019-02-19T11:24:20+08:00">2019-02-19</time>
             
 
             
@@ -432,20 +432,18 @@
       
 
       
-        <h1 id="linux下C-编译"><a href="#linux下C-编译" class="headerlink" title="linux下C++编译"></a>linux下C++编译</h1><p>本文来自<a href="http://wiki.ubuntu.org.cn/Compiling_Cpp" target="_blank" rel="noopener">http://wiki.ubuntu.org.cn/Compiling_Cpp</a></p>
-<p>C++编译有不同指令，所有指令都需要源码作为输入，根据输出结果不同可以分为以下几类：</p>
-<ul>
-<li>生成可执行文件<br>单个文件<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">g++ helloworld.cpp      # 生成a.out的可执行文件</span><br><span class="line">g++ helloworld.cpp -o helloworld    # 自定义可执行文件名</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># g++是gcc的一个特殊版本，链接是使用C++标准库不使用C标准库，可以指定编译库的名称</span><br><span class="line">gcc helloworld.cpp -lstdc++ -o helloworld</span><br><span class="line"># 某些系统GCC安装也会有c++,可以替代g++</span><br><span class="line">c++ helloworld.cpp -o helloworld</span><br><span class="line"># 执行</span><br><span class="line">./xxx.out</span><br><span class="line">./xxx</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>多个文件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">g++ xxx.cpp xxx.cpp -o xxxx</span><br></pre></td></tr></table></figure></p>
-<p>参数不需要<code>.h</code>文件，只需要<code>.cpp</code></p>
-<ul>
-<li>生成对象文件<br>仅编译，不链接城可执行文件，文件名默认与源文件名相同</li>
-<li>编译预处理</li>
-<li>生成汇编代码</li>
-</ul>
-
+        <h1 id="主要内容"><a href="#主要内容" class="headerlink" title="主要内容"></a>主要内容</h1><p>本文就主题选择，应用，部分参数配置与碰到的一些问题进行了简单的总结。后续遇到新的问题会继续补充</p>
+<h1 id="主题的选择"><a href="#主题的选择" class="headerlink" title="主题的选择"></a>主题的选择</h1><p>在<a href="https://kaixinzuochuxi.github.io/2018/04/11/GITHUB+HEXO%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/" target="_blank" rel="noopener">GITHUB+HEXO搭建博客</a>的第一个<a href="https://github.com/limedroid/HexoLearning" target="_blank" rel="noopener">链接</a>中给出了一些主题网站，里面可选的有很多，经过一些考虑，最终还是选择了<a href="https://github.com/iissnan/hexo-theme-next" target="_blank" rel="noopener">Next主题</a>。</p>
+<p>具体原因如下：</p>
+<ol>
+<li>产品免费且受众广</li>
+<li>功能上支持中文，支持文章目录生成。</li>
+</ol>
+<h1 id="主题的应用"><a href="#主题的应用" class="headerlink" title="主题的应用"></a>主题的应用</h1><p>按照<a href="https://github.com/iissnan/hexo-theme-next" target="_blank" rel="noopener">主题网站</a>提示即可。<br><figure class="highlight plain"><figcaption><span>clone --branch v5.1.2</span><a href="https://github.com/iissnan/hexo-theme-next" target="_blank" rel="noopener">themes/next```</a></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">注意以后版本更新可能会导致命令有一些差异，具体以[主题网站](https://github.com/iissnan/hexo-theme-next)为主。</span><br><span class="line"></span><br><span class="line">此种方式也可用于配置其他主题，即</span><br><span class="line">```git clone xxx themes/xxx</span><br></pre></td></tr></table></figure></p>
+<p>在themes目录下新建主题目录<figure class="highlight plain"><figcaption><span>xxx```，重新```hexo g```和```hexo d```即可。</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"># 部分参数配置</span><br><span class="line">## 单篇文章的缩略显示</span><br><span class="line">主题被应用后，在首页中会默认每篇文章全部显示。当文章比较长时，读者需要下滑页面到文章结束才能看到下一篇文章。所以这里配置了文章的缩略显示，只显示文章的一部分。如果想查看全文可以点击文章标题进入文章，或者点击结尾处进入文章。</span><br><span class="line"></span><br><span class="line">配置部分的代码如下：</span><br></pre></td></tr></table></figure></p>
+<h1 id="Automatically-Excerpt-Not-recommend"><a href="#Automatically-Excerpt-Not-recommend" class="headerlink" title="Automatically Excerpt. Not recommend."></a>Automatically Excerpt. Not recommend.</h1><h1 id="Use-in-the-post-to-control-excerpt-accurately"><a href="#Use-in-the-post-to-control-excerpt-accurately" class="headerlink" title="Use  in the post to control excerpt accurately."></a>Use <a id="more"></a> in the post to control excerpt accurately.</h1><p>auto_excerpt:<br>  enable: true<br>  length: 150</p>
+<h1 id="Read-more-button"><a href="#Read-more-button" class="headerlink" title="Read more button"></a>Read more button</h1><h1 id="If-true-the-read-more-button-would-be-displayed-in-excerpt-section"><a href="#If-true-the-read-more-button-would-be-displayed-in-excerpt-section" class="headerlink" title="If true, the read more button would be displayed in excerpt section."></a>If true, the read more button would be displayed in excerpt section.</h1><p>read_more_btn: true<br><code></code>length<code></code>可以自己设置。</p>
+<h1 id="遇到的一些问题"><a href="#遇到的一些问题" class="headerlink" title="遇到的一些问题"></a>遇到的一些问题</h1>
       
     </div>
 
@@ -468,9 +466,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/C/" rel="tag"># C++</a>
-          
-            <a href="/tags/linux/" rel="tag"># linux</a>
+            <a href="/tags/搭建博客/" rel="tag"># 搭建博客</a>
           
         </div>
       
@@ -483,8 +479,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/04/11/GITHUB+HEXO搭建博客/" rel="next" title="GITHUB+HEXO搭建博客">
-                <i class="fa fa-chevron-left"></i> GITHUB+HEXO搭建博客
+              <a href="/2019/02/18/VTM中添加SSIM输出/" rel="next" title="VTM中添加SSIM输出">
+                <i class="fa fa-chevron-left"></i> VTM中添加SSIM输出
               </a>
             
           </div>
@@ -492,10 +488,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/02/18/VTM中添加SSIM输出/" rel="prev" title="VTM中添加SSIM输出">
-                VTM中添加SSIM输出 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -624,7 +616,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#linux下C-编译"><span class="nav-number">1.</span> <span class="nav-text">linux下C++编译</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#主要内容"><span class="nav-number">1.</span> <span class="nav-text">主要内容</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#主题的选择"><span class="nav-number">2.</span> <span class="nav-text">主题的选择</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#主题的应用"><span class="nav-number">3.</span> <span class="nav-text">主题的应用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Automatically-Excerpt-Not-recommend"><span class="nav-number">4.</span> <span class="nav-text">Automatically Excerpt. Not recommend.</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Use-in-the-post-to-control-excerpt-accurately"><span class="nav-number">5.</span> <span class="nav-text">Use  in the post to control excerpt accurately.</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Read-more-button"><span class="nav-number">6.</span> <span class="nav-text">Read more button</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#If-true-the-read-more-button-would-be-displayed-in-excerpt-section"><span class="nav-number">7.</span> <span class="nav-text">If true, the read more button would be displayed in excerpt section.</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#遇到的一些问题"><span class="nav-number">8.</span> <span class="nav-text">遇到的一些问题</span></a></li></ol></div>
             
 
           </div>
