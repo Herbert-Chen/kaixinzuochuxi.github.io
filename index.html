@@ -215,67 +215,8 @@
     
 
     
-      
-    
 
-    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-Home"></i> <br/>Startseite</a>
-
-  </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-about">
-
-    
-    
-    
-      
-    
-
-    
-      
-    
-
-    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-About"></i> <br/>Über</a>
-
-  </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-tags">
-
-    
-    
-    
-      
-    
-
-    
-      
-    
-
-    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-Tags"></i> <br/>Tags<span class="badge">4</span></a>
-
-  </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-categories">
-
-    
-    
-    
-      
-    
-
-    
-      
-    
-
-    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-Categories"></i> <br/>Kategorien<span class="badge">0</span></a>
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br/>Startseite</a>
 
   </li>
         
@@ -291,10 +232,8 @@
     
 
     
-      
-    
 
-    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-Archive"></i> <br/>Archiv<span class="badge">5</span></a>
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br/>Archiv</a>
 
   </li>
 
@@ -603,21 +542,38 @@
       
         
           
-            <p>
-              步骤Typedef.h 中加入宏#define PrintSSIM 1
-Analyze.h 中成员和函数成员ssim数组Analyze.h 中，在class Analyze的private成员中加入double的ssim数组
-#if PrintSSIM  double    m_MSSSIM[MAX
-              ...
-            </p>
-          <!--noindex-->
+            <h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><h3 id="Typedef-h-中加入宏"><a href="#Typedef-h-中加入宏" class="headerlink" title="Typedef.h 中加入宏"></a>Typedef.h 中加入宏</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#define PrintSSIM 1</span><br></pre></td></tr></table></figure>
+<h3 id="Analyze-h-中成员和函数"><a href="#Analyze-h-中成员和函数" class="headerlink" title="Analyze.h 中成员和函数"></a>Analyze.h 中成员和函数</h3><h4 id="成员"><a href="#成员" class="headerlink" title="成员"></a>成员</h4><h5 id="ssim数组"><a href="#ssim数组" class="headerlink" title="ssim数组"></a>ssim数组</h5><p>Analyze.h 中，在class Analyze的private成员中加入double的ssim数组</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">#if PrintSSIM</span><br><span class="line">  double    m_MSSSIM[MAX_NUM_COMPONENT];</span><br><span class="line">#endif</span><br></pre></td></tr></table></figure>
+<h4 id="函数声明"><a href="#函数声明" class="headerlink" title="函数声明"></a>函数声明</h4><h5 id="Analyze-addResult"><a href="#Analyze-addResult" class="headerlink" title="Analyze::addResult"></a>Analyze::addResult</h5><p>Analyze.h 中，在class Analyze的private成员中加入新的addResult函数,传递SSIM参数。此处用于累加每帧SSIM用来输出最后sequence level的SSIM<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">#if PrintSSIM </span><br><span class="line">  void  addResult(double psnr[MAX_NUM_COMPONENT], double bits, const double MSEyuvframe[MAX_NUM_COMPONENT], const double MSSSIM[MAX_NUM_COMPONENT], bool isEncodeLtRef)</span><br><span class="line">#else</span><br><span class="line">  void  addResult( double psnr[MAX_NUM_COMPONENT], double bits, const double MSEyuvframe[MAX_NUM_COMPONENT]</span><br><span class="line">    , bool isEncodeLtRef</span><br><span class="line">  )</span><br><span class="line">#endif</span><br></pre></td></tr></table></figure></p>
+<h5 id="新增访问ssim函数：getMsssim"><a href="#新增访问ssim函数：getMsssim" class="headerlink" title="新增访问ssim函数：getMsssim"></a>新增访问ssim函数：getMsssim</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">#if PrintSSIM</span><br><span class="line">  double   getMsssim(ComponentID compID) const &#123; return  m_MSSSIM[compID]; &#125;</span><br><span class="line">#endif</span><br><span class="line">  double  getPsnr(ComponentID compID) const &#123; return  m_dPSNRSum[compID];  &#125;</span><br><span class="line">  double  getBits()                   const &#123; return  m_dAddBits;   &#125;</span><br><span class="line">  void    setBits(double numBits)     &#123; m_dAddBits = numBits; &#125;</span><br><span class="line">  uint32_t    getNumPic()                 const &#123; return  m_uiNumPic;   &#125;</span><br></pre></td></tr></table></figure>
+<h4 id="函数定义："><a href="#函数定义：" class="headerlink" title="函数定义："></a>函数定义：</h4><h5 id="Analyze-addResult-1"><a href="#Analyze-addResult-1" class="headerlink" title="Analyze::addResult"></a>Analyze::addResult</h5><p>Analyze.h 中，addResult，SSIM数据的累加更新：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">    for(uint32_t i=0; i&lt;MAX_NUM_COMPONENT; i++)</span><br><span class="line">    &#123;</span><br><span class="line">      m_dPSNRSum[i] += psnr[i];</span><br><span class="line">      m_MSEyuvframe[i] += MSEyuvframe[i];</span><br><span class="line">#if PrintSSIM</span><br><span class="line">      m_MSSSIM[i] += MSSSIM[i];</span><br><span class="line">#endif</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p>
+<h5 id="Analyze-clear"><a href="#Analyze-clear" class="headerlink" title="Analyze::clear"></a>Analyze::clear</h5><p>Analyze.h 中，clear，SSIM数据归零：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">      m_dPSNRSum[i] = 0;</span><br><span class="line">      m_MSEyuvframe[i] = 0;</span><br><span class="line">#if PrintSSIM</span><br><span class="line">      m_MSSSIM[i] = 0;</span><br><span class="line">#endif</span><br></pre></td></tr></table></figure></p>
+<h5 id="Analyze-printout"><a href="#Analyze-printout" class="headerlink" title="Analyze::printout"></a>Analyze::printout</h5><p>Analyze.h 中，printout函数，负责输出最后的summary<br>一共8个地方需要添加：</p>
+<ul>
+<li>Y-MS-SSIM标志位</li>
+<li>具体SSIM的数值，</li>
+<li>依据是否为printMSEBasedSNR</li>
+<li>400和其他的yuv格式</li>
+</ul>
+<p>8个地方的位置可以通过<figure class="highlight plain"><figcaption><span>(printSequenceMSE)```来查找，直接放在```if (printSequenceMSE)```之前：</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">```</span><br><span class="line">400：</span><br><span class="line">#if PrintSSIM          </span><br><span class="line">          msg(e_msg_level, &quot;    Y-MS-SSIM&quot;);</span><br><span class="line">#endif</span><br><span class="line"></span><br><span class="line">#if PrintSSIM</span><br><span class="line">          msg(e_msg_level, &quot;    %8.6lf&quot;, getMsssim(COMPONENT_Y) / (double)getNumPic());</span><br><span class="line">#endif</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">其他</span><br><span class="line">#if PrintSSIM</span><br><span class="line">              //printf(&quot;   Y-MS-SSIM    &quot; &quot;U-MS-SSIM    &quot; &quot;V-MS-SSIM &quot;);</span><br><span class="line">            msg(e_msg_level, &quot;    Y-MS-SSIM     &quot;  &quot;U-MS-SSIM     &quot;  &quot;V-MS-SSIM     &quot;);</span><br><span class="line">#endif</span><br><span class="line"></span><br><span class="line">#if PrintSSIM</span><br><span class="line">            /*</span><br><span class="line">            printf(&quot;    %8.6lf     &quot; &quot;%8.6lf     &quot; &quot;%8.6lf &quot;,</span><br><span class="line">              getMsssim(COMPONENT_Y) / (double)getNumPic(),</span><br><span class="line">              getMsssim(COMPONENT_Cb) / (double)getNumPic(),</span><br><span class="line">              getMsssim(COMPONENT_Cr) / (double)getNumPic());</span><br><span class="line">              */</span><br><span class="line">            msg(e_msg_level, &quot;    %8.6lf     &quot; &quot;%8.6lf     &quot; &quot;%8.6lf &quot;,</span><br><span class="line">              getMsssim(COMPONENT_Y) / (double)getNumPic(),</span><br><span class="line">              getMsssim(COMPONENT_Cb) / (double)getNumPic(),</span><br><span class="line">              getMsssim(COMPONENT_Cr) / (double)getNumPic());</span><br><span class="line">#endif</span><br></pre></td></tr></table></figure>
+<h3 id="EncGOP中的成员和函数"><a href="#EncGOP中的成员和函数" class="headerlink" title="EncGOP中的成员和函数"></a>EncGOP中的成员和函数</h3><h4 id="成员-1"><a href="#成员-1" class="headerlink" title="成员"></a>成员</h4><p>没有需要添加的成员</p>
+<h4 id="函数声明-1"><a href="#函数声明-1" class="headerlink" title="函数声明"></a>函数声明</h4><h5 id="新增EncGOP-xCalculateAddPSNR"><a href="#新增EncGOP-xCalculateAddPSNR" class="headerlink" title="新增EncGOP::xCalculateAddPSNR"></a>新增EncGOP::xCalculateAddPSNR</h5><p>EncGOP.h中新增xCalculateMSSSIM，用来计算图片的SSIM<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">#if PrintSSIM</span><br><span class="line">  double xCalculateMSSSIM(const CPelBuf pcPic, const uint32_t orgStride, const CPelBuf cPicD, const uint32_t recStride, const uint32_t width, const uint32_t height, const uint32_t bitDepth);</span><br><span class="line">#endif</span><br><span class="line">  uint64_t xFindDistortionPlane(const CPelBuf&amp; pic0, const CPelBuf&amp; pic1, const uint32_t rshift</span><br></pre></td></tr></table></figure></p>
+<h4 id="函数定义"><a href="#函数定义" class="headerlink" title="函数定义"></a>函数定义</h4><h5 id="EncGOP-xCalculateAddPSNR"><a href="#EncGOP-xCalculateAddPSNR" class="headerlink" title="EncGOP::xCalculateAddPSNR"></a>EncGOP::xCalculateAddPSNR</h5><p>一共有2个地方</p>
+<ul>
+<li>调用函数计算ssim</li>
+<li>重载analyze模块的addResult函数</li>
+</ul>
+<p>calculate PSNR之后和<figure class="highlight plain"><figcaption><span>EXTENSION_360_VIDEO```之后</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">```</span><br><span class="line">#if PrintSSIM</span><br><span class="line">  double  MSSSIM[MAX_NUM_COMPONENT] = &#123; 0,0,0 &#125;;</span><br><span class="line">  for (int chan = 0; chan&lt;::getNumberValidComponents(formatD); chan++)</span><br><span class="line">  &#123;</span><br><span class="line">    const ComponentID compID = ComponentID(chan);</span><br><span class="line"></span><br><span class="line">    const CPelBuf&amp;    p = picC.get(compID);</span><br><span class="line">    const CPelBuf&amp;    o = org.get(compID);</span><br><span class="line">    const int   orgStride = o.stride;</span><br><span class="line"></span><br><span class="line">    const int   recStride = p.stride;</span><br><span class="line">    const uint32_t   width = p.width - (m_pcEncLib-&gt;getPad(0) &gt;&gt; ::getComponentScaleX(compID, format));</span><br><span class="line">    const uint32_t   height = p.height - (m_pcEncLib-&gt;getPad(1) &gt;&gt; (!!bPicIsField + ::getComponentScaleY(compID, format)));</span><br><span class="line">    const uint32_t    bitDepth = sps.getBitDepth(toChannelType(compID));</span><br><span class="line"></span><br><span class="line">    MSSSIM[compID] = xCalculateMSSSIM(o, orgStride, p, recStride, width, height, bitDepth);</span><br><span class="line">  &#125;</span><br><span class="line">#endif</span><br></pre></td></tr></table></figure></p>
+<p>调用addPSNR时,选择新函数传递ssim成员,<br>all,I,P,B一共4个<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">#if PrintSSIM</span><br><span class="line">  m_gcAnalyzeAll.addResult(dPSNR, (double)uibits, MSEyuvframe, MSSSIM, isEncodeLtRef);</span><br><span class="line">#else</span><br><span class="line">  m_gcAnalyzeAll.addResult(dPSNR, (double)uibits, MSEyuvframe</span><br><span class="line">    , isEncodeLtRef</span><br><span class="line">  );</span><br><span class="line">#endif</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">#if PrintSSIM</span><br><span class="line">    m_gcAnalyzeI.addResult(dPSNR, (double)uibits, MSEyuvframe, MSSSIM, isEncodeLtRef);</span><br><span class="line">#else</span><br><span class="line">    m_gcAnalyzeI.addResult(dPSNR, (double)uibits, MSEyuvframe</span><br><span class="line">      , isEncodeLtRef</span><br><span class="line">    );</span><br><span class="line">#endif</span><br><span class="line"></span><br><span class="line">#if PrintSSIM</span><br><span class="line">    m_gcAnalyzeP.addResult(dPSNR, (double)uibits, MSEyuvframe, MSSSIM, isEncodeLtRef);</span><br><span class="line">#else</span><br><span class="line">    m_gcAnalyzeP.addResult(dPSNR, (double)uibits, MSEyuvframe</span><br><span class="line">      , isEncodeLtRef</span><br><span class="line">    );</span><br><span class="line">#endif</span><br><span class="line"></span><br><span class="line">#if PrintSSIM</span><br><span class="line">    m_gcAnalyzeB.addResult(dPSNR, (double)uibits, MSEyuvframe, MSSSIM, isEncodeLtRef);</span><br><span class="line">#else</span><br><span class="line">    m_gcAnalyzeB.addResult(dPSNR, (double)uibits, MSEyuvframe</span><br><span class="line">      , isEncodeLtRef</span><br><span class="line">    );</span><br><span class="line">#endif</span><br><span class="line"></span><br><span class="line">#if PrintSSIM</span><br><span class="line">    m_gcAnalyzeB.addResult(dPSNRWeighted, (double)uibits, MSEyuvframeWeighted, MSSSIM, isEncodeLtRef);</span><br><span class="line">#else</span><br><span class="line">    m_gcAnalyzeWPSNR.addResult(dPSNRWeighted, (double)uibits, MSEyuvframeWeighted, isEncodeLtRef);</span><br><span class="line">#endif</span><br></pre></td></tr></table></figure></p>
+<p>输出每帧信息，if( printFrameMSE )之前<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">#if PrintSSIM</span><br><span class="line">    printf(&quot; [MS-SSIM Y %1.6lf    U %1.6lf    V %1.6lf]&quot;, MSSSIM[COMPONENT_Y], MSSSIM[COMPONENT_Cb], MSSSIM[COMPONENT_Cr]);</span><br><span class="line">#endif</span><br><span class="line"></span><br><span class="line">    if( printFrameMSE )</span><br><span class="line">    &#123;</span><br><span class="line">      msg( NOTICE, &quot; [Y MSE %6.4lf  U MSE %6.4lf  V MSE %6.4lf]&quot;, MSEyuvframe[COMPONENT_Y], MSEyuvframe[COMPONENT_Cb], MSEyuvframe[COMPONENT_Cr] );</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p>
+<h5 id="EncGOP-xCalculateMSSSIM"><a href="#EncGOP-xCalculateMSSSIM" class="headerlink" title="EncGOP::xCalculateMSSSIM"></a>EncGOP::xCalculateMSSSIM</h5><p>在EncGOP::xCalculateAddPSNR之后，定义xCalculateMSSSIM<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br></pre></td><td class="code"><pre><span class="line">#if PrintSSIM</span><br><span class="line">double EncGOP::xCalculateMSSSIM(const CPelBuf pOrg, const uint32_t orgStride, const CPelBuf pRec, const uint32_t recStride, const uint32_t width, const uint32_t height, const uint32_t bitDepth)</span><br><span class="line">&#123;</span><br><span class="line">  const int MAX_MSSSIM_SCALE = 5;</span><br><span class="line">  const int WEIGHTING_MID_TAP = 5;</span><br><span class="line">  const int WEIGHTING_SIZE = WEIGHTING_MID_TAP * 2 + 1;</span><br><span class="line"></span><br><span class="line">  uint32_t maxScale;</span><br><span class="line"></span><br><span class="line">  // For low resolution videos determine number of scales </span><br><span class="line">  if (width &lt; 22 || height &lt; 22)</span><br><span class="line">  &#123;</span><br><span class="line">    maxScale = 1;</span><br><span class="line">  &#125;</span><br><span class="line">  else if (width &lt; 44 || height &lt; 44)</span><br><span class="line">  &#123;</span><br><span class="line">    maxScale = 2;</span><br><span class="line">  &#125;</span><br><span class="line">  else if (width &lt; 88 || height &lt; 88)</span><br><span class="line">  &#123;</span><br><span class="line">    maxScale = 3;</span><br><span class="line">  &#125;</span><br><span class="line">  else if (width &lt; 176 || height &lt; 176)</span><br><span class="line">  &#123;</span><br><span class="line">    maxScale = 4;</span><br><span class="line">  &#125;</span><br><span class="line">  else</span><br><span class="line">  &#123;</span><br><span class="line">    maxScale = 5;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  assert(maxScale&gt;0 &amp;&amp; maxScale &lt;= MAX_MSSSIM_SCALE);</span><br><span class="line"></span><br><span class="line">  //Normalized Gaussian mask design, 11*11, s.d. 1.5</span><br><span class="line">  double weights[WEIGHTING_SIZE][WEIGHTING_SIZE];</span><br><span class="line">  &#123;</span><br><span class="line">    double coeffSum = 0.0;</span><br><span class="line">    for (int y = 0; y&lt;WEIGHTING_SIZE; y++)</span><br><span class="line">    &#123;</span><br><span class="line">      for (int x = 0; x&lt;WEIGHTING_SIZE; x++)</span><br><span class="line">      &#123;</span><br><span class="line">        weights[y][x] = exp(-((y - WEIGHTING_MID_TAP)*(y - WEIGHTING_MID_TAP) + (x - WEIGHTING_MID_TAP)*(x - WEIGHTING_MID_TAP)) / (WEIGHTING_MID_TAP - 0.5));</span><br><span class="line">        coeffSum += weights[y][x];</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    for (int y = 0; y&lt;WEIGHTING_SIZE; y++)</span><br><span class="line">    &#123;</span><br><span class="line">      for (int x = 0; x&lt;WEIGHTING_SIZE; x++)</span><br><span class="line">      &#123;</span><br><span class="line">        weights[y][x] /= coeffSum;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  //Resolution based weights</span><br><span class="line">  const double exponentWeights[MAX_MSSSIM_SCALE][MAX_MSSSIM_SCALE] = &#123; &#123; 1.0,    0,      0,      0,      0 &#125;,</span><br><span class="line">  &#123; 0.1356, 0.8644, 0,      0,      0 &#125;,</span><br><span class="line">  &#123; 0.0711, 0.4530, 0.4760, 0,      0 &#125;,</span><br><span class="line">  &#123; 0.0517, 0.3295, 0.3462, 0.2726, 0 &#125;,</span><br><span class="line">  &#123; 0.0448, 0.2856, 0.3001, 0.2363, 0.1333 &#125; &#125;;</span><br><span class="line"></span><br><span class="line">  //Downsampling of data:</span><br><span class="line">  std::vector&lt;double&gt; original[MAX_MSSSIM_SCALE];</span><br><span class="line">  std::vector&lt;double&gt; recon[MAX_MSSSIM_SCALE];</span><br><span class="line"></span><br><span class="line">  for (uint32_t scale = 0; scale&lt;maxScale; scale++)</span><br><span class="line">  &#123;</span><br><span class="line">    const int scaledHeight = height &gt;&gt; scale;</span><br><span class="line">    const int scaledWidth = width &gt;&gt; scale;</span><br><span class="line">    original[scale].resize(scaledHeight*scaledWidth, double(0));</span><br><span class="line">    recon[scale].resize(scaledHeight*scaledWidth, double(0));</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  // Initial [0] arrays to be a copy of the source data (but stored in array &quot;Double&quot;, not Pel array).</span><br><span class="line">  for (int y = 0; y&lt;height; y++)</span><br><span class="line">  &#123;</span><br><span class="line">    for (int x = 0; x&lt;width; x++)</span><br><span class="line">    &#123;</span><br><span class="line">      original[0][y*width + x] = pOrg.buf[y*orgStride + x];</span><br><span class="line">      recon[0][y*width + x] = pRec.buf[y*recStride + x];</span><br><span class="line">      </span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  // Set up other arrays to be average value of each 2x2 sample.</span><br><span class="line">  for (uint32_t scale = 1; scale&lt;maxScale; scale++)</span><br><span class="line">  &#123;</span><br><span class="line">    const int scaledHeight = height &gt;&gt; scale;</span><br><span class="line">    const int scaledWidth = width &gt;&gt; scale;</span><br><span class="line">    for (int y = 0; y&lt;scaledHeight; y++)</span><br><span class="line">    &#123;</span><br><span class="line">      for (int x = 0; x&lt;scaledWidth; x++)</span><br><span class="line">      &#123;</span><br><span class="line">        original[scale][y*scaledWidth + x] = (original[scale - 1][2 * y   *(2 * scaledWidth) + 2 * x] +</span><br><span class="line">          original[scale - 1][2 * y   *(2 * scaledWidth) + 2 * x + 1] +</span><br><span class="line">          original[scale - 1][(2 * y + 1)*(2 * scaledWidth) + 2 * x] +</span><br><span class="line">          original[scale - 1][(2 * y + 1)*(2 * scaledWidth) + 2 * x + 1]) / 4.0;</span><br><span class="line">        recon[scale][y*scaledWidth + x] = (recon[scale - 1][2 * y   *(2 * scaledWidth) + 2 * x] +</span><br><span class="line">          recon[scale - 1][2 * y   *(2 * scaledWidth) + 2 * x + 1] +</span><br><span class="line">          recon[scale - 1][(2 * y + 1)*(2 * scaledWidth) + 2 * x] +</span><br><span class="line">          recon[scale - 1][(2 * y + 1)*(2 * scaledWidth) + 2 * x + 1]) / 4.0;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  // Calculate MS-SSIM:</span><br><span class="line">  const uint32_t   maxValue = (1 &lt;&lt; bitDepth) - 1;</span><br><span class="line">  const double c1 = (0.01*maxValue)*(0.01*maxValue);</span><br><span class="line">  const double c2 = (0.03*maxValue)*(0.03*maxValue);</span><br><span class="line"></span><br><span class="line">  double finalMSSSIM = 1.0;</span><br><span class="line"></span><br><span class="line">  for (uint32_t scale = 0; scale&lt;maxScale; scale++)</span><br><span class="line">  &#123;</span><br><span class="line">    const int scaledHeight = height &gt;&gt; scale;</span><br><span class="line">    const int scaledWidth = width &gt;&gt; scale;</span><br><span class="line">    const int blocksPerRow = scaledWidth - WEIGHTING_SIZE + 1;</span><br><span class="line">    const int blocksPerColumn = scaledHeight - WEIGHTING_SIZE + 1;</span><br><span class="line">    const int totalBlocks = blocksPerRow * blocksPerColumn;</span><br><span class="line"></span><br><span class="line">    double meanSSIM = 0.0;</span><br><span class="line"></span><br><span class="line">    for (int blockIndexY = 0; blockIndexY&lt;blocksPerColumn; blockIndexY++)</span><br><span class="line">    &#123;</span><br><span class="line">      for (int blockIndexX = 0; blockIndexX&lt;blocksPerRow; blockIndexX++)</span><br><span class="line">      &#123;</span><br><span class="line">        double muOrg = 0.0;</span><br><span class="line">        double muRec = 0.0;</span><br><span class="line">        double muOrigSqr = 0.0;</span><br><span class="line">        double muRecSqr = 0.0;</span><br><span class="line">        double muOrigMultRec = 0.0;</span><br><span class="line"></span><br><span class="line">        for (int y = 0; y&lt;WEIGHTING_SIZE; y++)</span><br><span class="line">        &#123;</span><br><span class="line">          for (int x = 0; x&lt;WEIGHTING_SIZE; x++)</span><br><span class="line">          &#123;</span><br><span class="line">            const double gaussianWeight = weights[y][x];</span><br><span class="line">            const int    sampleOffset = (blockIndexY + y)*scaledWidth + (blockIndexX + x);</span><br><span class="line">            const double orgPel = original[scale][sampleOffset];</span><br><span class="line">            const double recPel = recon[scale][sampleOffset];</span><br><span class="line"></span><br><span class="line">            muOrg += orgPel * gaussianWeight;</span><br><span class="line">            muRec += recPel * gaussianWeight;</span><br><span class="line">            muOrigSqr += orgPel * orgPel*gaussianWeight;</span><br><span class="line">            muRecSqr += recPel * recPel*gaussianWeight;</span><br><span class="line">            muOrigMultRec += orgPel * recPel*gaussianWeight;</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        const double sigmaSqrOrig = muOrigSqr - (muOrg*muOrg);</span><br><span class="line">        const double sigmaSqrRec = muRecSqr - (muRec*muRec);</span><br><span class="line">        const double sigmaOrigRec = muOrigMultRec - (muOrg*muRec);</span><br><span class="line"></span><br><span class="line">        double blockSSIMVal = ((2.0*sigmaOrigRec + c2) / (sigmaSqrOrig + sigmaSqrRec + c2));</span><br><span class="line">        if (scale == maxScale - 1)</span><br><span class="line">        &#123;</span><br><span class="line">          blockSSIMVal *= (2.0*muOrg*muRec + c1) / (muOrg*muOrg + muRec * muRec + c1);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        meanSSIM += blockSSIMVal;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    meanSSIM /= totalBlocks;</span><br><span class="line"></span><br><span class="line">    finalMSSSIM *= pow(meanSSIM, exponentWeights[maxScale - 1][scale]);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  return finalMSSSIM;</span><br><span class="line">&#125;</span><br><span class="line">#endif</span><br></pre></td></tr></table></figure></p>
+<h5 id="EncGOP-xCalculateInterlacedAddPSNR"><a href="#EncGOP-xCalculateInterlacedAddPSNR" class="headerlink" title="EncGOP::xCalculateInterlacedAddPSNR"></a>EncGOP::xCalculateInterlacedAddPSNR</h5><p>xCalculateInterlacedAddPSNR中暂时不修改，因为现在不需要field coding。但需要增加两项内容避免报错：</p>
+<p>计算ssim,在计算psnr之后和<figure class="highlight plain"><figcaption><span>uibits </span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">```</span><br><span class="line">#if PrintSSIM</span><br><span class="line">  //===== calculate MS-SSIM =====</span><br><span class="line">  double MSSSIM[MAX_NUM_COMPONENT] = &#123; 0,0,0 &#125;;</span><br><span class="line">  /*</span><br><span class="line">  </span><br><span class="line">    for (int chan = 0; chan&lt;numValidComponents; chan++)</span><br><span class="line">    &#123;</span><br><span class="line">      const ComponentID ch = ComponentID(chan);</span><br><span class="line">      assert(acPicRecFields[0]-&gt;getWidth(ch) == acPicRecFields[1]-&gt;getWidth(ch));</span><br><span class="line">      assert(acPicRecFields[0]-&gt;getHeight(ch) == acPicRecFields[1]-&gt;getHeight(ch));</span><br><span class="line"></span><br><span class="line">      double sumOverFieldsMSSSIM = 0.0;</span><br><span class="line">      const uint32_t width = acPicRecFields[0].get(ch).width - (m_pcEncLib-&gt;getPad(0) &gt;&gt; ::getComponentScaleX(ch, format));</span><br><span class="line">      const uint32_t height = acPicRecFields[0].get(ch).height - ((m_pcEncLib-&gt;getPad(1) &gt;&gt; 1) &gt;&gt; ::getComponentScaleY(ch, format));</span><br><span class="line"></span><br><span class="line">      for (uint32_t fieldNum = 0; fieldNum&lt;2; fieldNum++)</span><br><span class="line">      &#123;</span><br><span class="line">        Picture    pcPic = *apcPicOrgFields[fieldNum];</span><br><span class="line">        PelUnitBuf pcPicD = acPicRecFields[fieldNum];</span><br><span class="line">        const CPelBuf&amp;    p = pcPic.get(ch);</span><br><span class="line">        const CPelBuf&amp;    o = pcPicD.get(ch);</span><br><span class="line">        const Pel*  pOrg = (conversion != IPCOLOURSPACE_UNCHANGED) ? pcPic.getPicYuvTrueOrg()-&gt;getAddr(ch) : pcPic-&gt;getPicYuvOrg()-&gt;getAddr(ch);</span><br><span class="line">        const uint32_t   orgStride = (conversion != IPCOLOURSPACE_UNCHANGED) ? pcPic-&gt;getPicYuvTrueOrg()-&gt;getStride(ch) : pcPic-&gt;getPicYuvOrg()-&gt;getStride(ch);</span><br><span class="line">        Pel*        pRec = pcPicD-&gt;getAddr(ch);</span><br><span class="line">        const uint32_t   recStride = pcPicD-&gt;getStride(ch);</span><br><span class="line">        const uint32_t  bitDepth = sps.getBitDepth(toChannelType(ch));</span><br><span class="line"></span><br><span class="line">        sumOverFieldsMSSSIM += xCalculateMSSSIM(pOrg, orgStride, pRec, recStride, width, height, bitDepth);</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      MSSSIM[ch] = sumOverFieldsMSSSIM / 2;</span><br><span class="line">    &#125;</span><br><span class="line">    */</span><br><span class="line">#endif</span><br></pre></td></tr></table></figure></p>
+<p>addResult，和先前非field coding编码一样<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">#if PrintSSIM</span><br><span class="line">  m_gcAnalyzeAll_in.addResult(dPSNR, (double)uibits, MSEyuvframe, MSSSIM, isEncodeLtRef);</span><br><span class="line">#else</span><br><span class="line">  m_gcAnalyzeAll_in.addResult(dPSNR, (double)uibits, MSEyuvframe</span><br><span class="line">    , isEncodeLtRef</span><br><span class="line">  );</span><br><span class="line">#endif</span><br></pre></td></tr></table></figure></p>
+
           
-            <div class="post-button text-center">
-              <a class="btn" href="/2019/02/18/VTM中添加SSIM输出/#more" rel="contents">
-                Weiterlesen &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
         
       
     </div>
@@ -758,22 +714,21 @@ Analyze.h 中成员和函数成员ssim数组Analyze.h 中，在class Analyze的p
       
         
           
-            <p>
-              linux下C++编译本文来自http://wiki.ubuntu.org.cn/Compiling_Cpp
-C++编译有不同指令，所有指令都需要源码作为输入，根据输出结果不同可以分为以下几类：
+            <h1 id="linux下C-编译"><a href="#linux下C-编译" class="headerlink" title="linux下C++编译"></a>linux下C++编译</h1><p>本文来自<a href="http://wiki.ubuntu.org.cn/Compiling_Cpp" target="_blank" rel="noopener">http://wiki.ubuntu.org.cn/Compiling_Cpp</a></p>
+<p>C++编译有不同指令，所有指令都需要源码作为输入，根据输出结果不同可以分为以下几类：</p>
+<ul>
+<li>生成可执行文件<br>单个文件<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">g++ helloworld.cpp      # 生成a.out的可执行文件</span><br><span class="line">g++ helloworld.cpp -o helloworld    # 自定义可执行文件名</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># g++是gcc的一个特殊版本，链接是使用C++标准库不使用C标准库，可以指定编译库的名称</span><br><span class="line">gcc helloworld.cpp -lstdc++ -o helloworld</span><br><span class="line"># 某些系统GCC安装也会有c++,可以替代g++</span><br><span class="line">c++ helloworld.cpp -o helloworld</span><br><span class="line"># 执行</span><br><span class="line">./xxx.out</span><br><span class="line">./xxx</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>多个文件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">g++ xxx.cpp xxx.cpp -o xxxx</span><br></pre></td></tr></table></figure></p>
+<p>参数不需要<code>.h</code>文件，只需要<code>.cpp</code></p>
+<ul>
+<li>生成对象文件<br>仅编译，不链接城可执行文件，文件名默认与源文件名相同</li>
+<li>编译预处理</li>
+<li>生成汇编代码</li>
+</ul>
 
-生成可执行文件单个文件g++ helloworld.cpp      # 生成a.out的可执行文件g
-              ...
-            </p>
-          <!--noindex-->
           
-            <div class="post-button text-center">
-              <a class="btn" href="/2018/04/25/linux下C-编译/#more" rel="contents">
-                Weiterlesen &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
         
       
     </div>
@@ -926,23 +881,38 @@ C++编译有不同指令，所有指令都需要源码作为输入，根据输�
       
         
           
-            <p>
-              本文主要介绍用github与hexo搭建个人博客。
-网上此类文章比较多，在此列举几条，可以按照下面链接的内容一步一步操作。
+            <p>本文主要介绍用github与hexo搭建个人博客。</p>
+<p>网上此类文章比较多，在此列举几条，可以按照下面链接的内容一步一步操作。</p>
+<ul>
+<li>基本框架(安装程序，搭建博客，发表文章，配置信息，更改主题)<br><a href="https://github.com/limedroid/HexoLearning" target="_blank" rel="noopener">https://github.com/limedroid/HexoLearning</a></li>
+<li>域名等其他内容添加<br><a href="https://linghucong.js.org/2016/04/15/2016-04-15-hexo-github-pages-blog/" target="_blank" rel="noopener">https://linghucong.js.org/2016/04/15/2016-04-15-hexo-github-pages-blog/</a></li>
+<li>常见报错<br><a href="https://xuanwo.org/2014/08/14/hexo-usual-problem/#Deploy%E4%B9%8B%E5%90%8E%EF%BC%8C%E9%A1%B5%E9%9D%A2%E9%95%BF%E6%97%B6%E9%97%B4404" target="_blank" rel="noopener">https://xuanwo.org/2014/08/14/hexo-usual-problem/#Deploy%E4%B9%8B%E5%90%8E%EF%BC%8C%E9%A1%B5%E9%9D%A2%E9%95%BF%E6%97%B6%E9%97%B4404</a></li>
+<li><p>常见命令<br>  <a href="https://hexo.io/zh-cn/docs/commands.html" target="_blank" rel="noopener">https://hexo.io/zh-cn/docs/commands.html</a></p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"># 新文章</span><br><span class="line">hexo new [layout] &lt;title&gt;   # layout缺省，使用 _config.yml中default_layout代替</span><br><span class="line"># generate</span><br><span class="line">hexo generate   #简写hexo g</span><br><span class="line">--deploy/-d 文件生成后立即部署网站</span><br><span class="line">--watch/-w  监视文件变动</span><br><span class="line"># 发布草稿</span><br><span class="line">hexo publish [layout] &lt;filename&gt;</span><br><span class="line"># server</span><br><span class="line">hexo server #默认端口4000</span><br><span class="line">-p/--port   指定端口</span><br><span class="line">-s/--static 只使用静态文件</span><br><span class="line">-l/--log    启动日记记录，使用覆盖记录格式</span><br><span class="line"></span><br><span class="line"># deploy</span><br><span class="line">hexo deploy # 简写为hexo d</span><br><span class="line">-g/--generate 部署之前预先生成静态文件</span><br><span class="line"></span><br><span class="line">未完待定</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>写作格式：</p>
+<ul>
+<li>tags<ul>
+<li>[tag1,tag2…]</li>
+<li>YAML格式，类似markdown中的格式</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>几个注意事项：</p>
+<ul>
+<li>本地部署<code>hexo s</code>的时候win10可能无法打开默认的<code>localhost:4000</code>，此时需要使用自定义端口<code>hexo s -p 3600</code></li>
+<li>本地文件与<code>xxx.github.io</code>仓库中文件的关系：<ul>
+<li>将本地目录中<code>public</code>文件夹下内容上传到仓库，本人在此文件夹下使用<code>git init</code>。</li>
+<li>部署时可以直接在本地博客目录下使用<code>hexo g</code>,<code>hexo d</code>部署，如果当前已经部署导致报错，删除<code>.deploy_git</code>即可。</li>
+<li>不要轻易使用<code>hexo clean</code>，此操作会重新生成<code>public</code>文件夹,从而导致<code>public</code>文件夹下<code>.git</code>被删除，需要重新与仓库建立关系。此处可使用<code>git push --force origin master</code>强行覆盖。</li>
+</ul>
+</li>
+<li><code>xxx.github.io</code>网址上内容的更新需要一段时间，可以先本地测试</li>
+</ul>
 
-基本框架(安装程序，搭建博客，发表文章，配置信息，更改主题)https://github.com/limedroid/HexoLearning
-域名等其他内容添加https:
-              ...
-            </p>
-          <!--noindex-->
           
-            <div class="post-button text-center">
-              <a class="btn" href="/2018/04/11/GITHUB+HEXO搭建博客/#more" rel="contents">
-                Weiterlesen &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
         
       
     </div>
@@ -1095,19 +1065,17 @@ C++编译有不同指令，所有指令都需要源码作为输入，根据输�
       
         
           
-            <p>
-              Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in 
-              ...
-            </p>
-          <!--noindex-->
+            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+
           
-            <div class="post-button text-center">
-              <a class="btn" href="/2018/04/11/hello-world/#more" rel="contents">
-                Weiterlesen &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
         
       
     </div>
@@ -1387,25 +1355,6 @@ C++编译有不同指令，所有指令都需要源码作为输入，根据输�
   
 
   
-  
-
-  
-  
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-  
-
-  
-
 
   
 
