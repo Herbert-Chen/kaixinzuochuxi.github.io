@@ -96,25 +96,25 @@
 
 
 
-  <meta name="description" content="主要内容本文就主题选择，应用，部分参数配置与碰到的一些问题进行了简单的总结。后续遇到新的问题会继续补充。主要参考博客为http://saili.science/2017/04/02/github-for-win/ 主题的选择在GITHUB+HEXO搭建博客的第一个链接中给出了一些主题网站，里面可选的有很多，经过一些考虑，最终还是选择了Next主题。 具体原因如下：  产品免费且受众广 功能上支持中">
-<meta name="keywords" content="搭建博客">
+  <meta name="description" content="本文主要介绍如何通过python调用matlab的.m文件，以及在调用中遇到的一些问题。参考网址：两步解决python调用Matlab的脚本和函数文件如何在CMD下运用管理员权限在CMD命令行中切换到管理员权限模式 步骤安装python的matlab engine包此处和官网完全一致 获取matlab文件夹路径打开matlab，在命令行输入matlabroot，然后用返回值替代下面命令中的matl">
+<meta name="keywords" content="python,matlab">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Next的主题配置尝试">
-<meta property="og:url" content="http://yoursite.com/2019/02/19/Next的主题配置尝试/index.html">
+<meta property="og:title" content="python调用matlab程序">
+<meta property="og:url" content="http://yoursite.com/2019/02/21/python调用matlab程序/index.html">
 <meta property="og:site_name" content="开心做出戏">
-<meta property="og:description" content="主要内容本文就主题选择，应用，部分参数配置与碰到的一些问题进行了简单的总结。后续遇到新的问题会继续补充。主要参考博客为http://saili.science/2017/04/02/github-for-win/ 主题的选择在GITHUB+HEXO搭建博客的第一个链接中给出了一些主题网站，里面可选的有很多，经过一些考虑，最终还是选择了Next主题。 具体原因如下：  产品免费且受众广 功能上支持中">
+<meta property="og:description" content="本文主要介绍如何通过python调用matlab的.m文件，以及在调用中遇到的一些问题。参考网址：两步解决python调用Matlab的脚本和函数文件如何在CMD下运用管理员权限在CMD命令行中切换到管理员权限模式 步骤安装python的matlab engine包此处和官网完全一致 获取matlab文件夹路径打开matlab，在命令行输入matlabroot，然后用返回值替代下面命令中的matl">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-02-19T05:28:07.955Z">
+<meta property="og:updated_time" content="2019-02-21T05:36:17.983Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Next的主题配置尝试">
-<meta name="twitter:description" content="主要内容本文就主题选择，应用，部分参数配置与碰到的一些问题进行了简单的总结。后续遇到新的问题会继续补充。主要参考博客为http://saili.science/2017/04/02/github-for-win/ 主题的选择在GITHUB+HEXO搭建博客的第一个链接中给出了一些主题网站，里面可选的有很多，经过一些考虑，最终还是选择了Next主题。 具体原因如下：  产品免费且受众广 功能上支持中">
+<meta name="twitter:title" content="python调用matlab程序">
+<meta name="twitter:description" content="本文主要介绍如何通过python调用matlab的.m文件，以及在调用中遇到的一些问题。参考网址：两步解决python调用Matlab的脚本和函数文件如何在CMD下运用管理员权限在CMD命令行中切换到管理员权限模式 步骤安装python的matlab engine包此处和官网完全一致 获取matlab文件夹路径打开matlab，在命令行输入matlabroot，然后用返回值替代下面命令中的matl">
 
 
 
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/02/19/Next的主题配置尝试/"/>
+  <link rel="canonical" href="http://yoursite.com/2019/02/21/python调用matlab程序/"/>
 
 
 
@@ -124,7 +124,7 @@
   };
 </script>
 
-  <title>Next的主题配置尝试 | 开心做出戏</title>
+  <title>python调用matlab程序 | 开心做出戏</title>
   
 
 
@@ -340,7 +340,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/19/Next的主题配置尝试/"/>
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/21/python调用matlab程序/"/>
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Herbert"/>
@@ -357,7 +357,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Next的主题配置尝试
+          <h1 class="post-title" itemprop="name headline">python调用matlab程序
 
               
             
@@ -383,7 +383,7 @@
                 
               
 
-              <time title="创建时间：2019-02-19 11:24:20 / 修改时间：13:28:07" itemprop="dateCreated datePublished" datetime="2019-02-19T11:24:20+08:00">2019-02-19</time>
+              <time title="创建时间：2019-02-21 12:58:43 / 修改时间：13:36:17" itemprop="dateCreated datePublished" datetime="2019-02-21T12:58:43+08:00">2019-02-21</time>
             
 
             
@@ -422,19 +422,24 @@
       
 
       
-        <h1 id="主要内容"><a href="#主要内容" class="headerlink" title="主要内容"></a>主要内容</h1><p>本文就主题选择，应用，部分参数配置与碰到的一些问题进行了简单的总结。后续遇到新的问题会继续补充。<br>主要参考博客为<a href="http://saili.science/2017/04/02/github-for-win/" target="_blank" rel="noopener">http://saili.science/2017/04/02/github-for-win/</a></p>
-<h1 id="主题的选择"><a href="#主题的选择" class="headerlink" title="主题的选择"></a>主题的选择</h1><p>在<a href="https://kaixinzuochuxi.github.io/2018/04/11/GITHUB+HEXO%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/" target="_blank" rel="noopener">GITHUB+HEXO搭建博客</a>的第一个<a href="https://github.com/limedroid/HexoLearning" target="_blank" rel="noopener">链接</a>中给出了一些主题网站，里面可选的有很多，经过一些考虑，最终还是选择了<a href="https://github.com/iissnan/hexo-theme-next" target="_blank" rel="noopener">Next主题</a>。</p>
-<p>具体原因如下：</p>
-<ol>
-<li>产品免费且受众广</li>
-<li>功能上支持中文，支持文章目录生成。</li>
-</ol>
-<h1 id="主题的应用"><a href="#主题的应用" class="headerlink" title="主题的应用"></a>主题的应用</h1><p>按照<a href="https://github.com/iissnan/hexo-theme-next" target="_blank" rel="noopener">主题网站</a>提示即可。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone --branch v5.1.2 https://github.com/iissnan/hexo-theme-next themes/next</span><br></pre></td></tr></table></figure></p>
-<p>注意以后版本更新可能会导致命令(–branch v5.1.2)有一些差异，具体以<a href="https://github.com/iissnan/hexo-theme-next" target="_blank" rel="noopener">主题网站</a>为主。</p>
-<p>此种方式也可用于配置其他主题，即<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone xxx themes/xxx</span><br></pre></td></tr></table></figure></p>
-<p>在themes目录下新建主题目录<code>xxx</code>，将主题文件复制到新建目录<code>xxx</code>下，然后修改主目录下_config.yml文件中的<code>theme: xxx</code>，重新<code>hexo g</code>和<code>hexo d</code>即可。</p>
-<h1 id="部分参数配置"><a href="#部分参数配置" class="headerlink" title="部分参数配置"></a>部分参数配置</h1><h2 id="文章的目录全显示"><a href="#文章的目录全显示" class="headerlink" title="文章的目录全显示"></a>文章的目录全显示</h2><p>next主题默认文章标题是逐渐显示的，此处如果需要将文章目录全部展开，可以在<code>next\source\css\_custom\custom.styl</code>中添加一句<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.post-toc .nav .nav-child &#123; display: block; &#125;</span><br></pre></td></tr></table></figure></p>
-<h2 id="运动部分"><a href="#运动部分" class="headerlink" title="运动部分"></a>运动部分</h2><h1 id="遇到的一些问题"><a href="#遇到的一些问题" class="headerlink" title="遇到的一些问题"></a>遇到的一些问题</h1><h2 id="语言错误"><a href="#语言错误" class="headerlink" title="语言错误"></a>语言错误</h2><p>如果一开始把站点配置文件的语言设置为简体中文(zh-Hans), 可以查找<code>theme/next/languages</code>下的文件有没有<code>zh-Hans.yml</code>。如果没有，需要将<code>zh-CN.yml</code>改名为<code>zh-Hans.yml</code>。</p>
+        <p>本文主要介绍如何通过python调用matlab的<code>.m</code>文件，以及在调用中遇到的一些问题。<br>参考网址：<br><a href="https://blog.csdn.net/sunny_xsc1994/article/details/79254196" target="_blank" rel="noopener">两步解决python调用Matlab的脚本和函数文件</a><br><a href="https://blog.csdn.net/zyw_anquan/article/details/7756499" target="_blank" rel="noopener">如何在CMD下运用管理员权限</a><br><a href="https://blog.csdn.net/windymsth/article/details/78911310" target="_blank" rel="noopener">在CMD命令行中切换到管理员权限模式</a></p>
+<h1 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h1><h2 id="安装python的matlab-engine包"><a href="#安装python的matlab-engine包" class="headerlink" title="安装python的matlab engine包"></a>安装python的matlab engine包</h2><p>此处和<a href="https://ww2.mathworks.cn/help/matlab/matlab_external/install-the-matlab-engine-for-python.html?ue" target="_blank" rel="noopener">官网</a>完全一致</p>
+<h3 id="获取matlab文件夹路径"><a href="#获取matlab文件夹路径" class="headerlink" title="获取matlab文件夹路径"></a>获取matlab文件夹路径</h3><p>打开matlab，在命令行输入matlabroot，然后用返回值替代下面命令中的matlabroot</p>
+<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><p>对于windows用户：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd &quot;matlabroot\extern\engines\python&quot;</span><br><span class="line">python setup.py install</span><br></pre></td></tr></table></figure></p>
+<p>mac或者linux：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd &quot;matlabroot/extern/engines/python&quot;</span><br><span class="line">python setup.py install</span><br></pre></td></tr></table></figure></p>
+<h2 id="调用-m文件"><a href="#调用-m文件" class="headerlink" title="调用.m文件"></a>调用<code>.m</code>文件</h2><p>假设当前目录下存在<code>xxx.m</code>文件</p>
+<h3 id="打开matlab"><a href="#打开matlab" class="headerlink" title="打开matlab"></a>打开matlab</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">import matlab.engine</span><br><span class="line">eng = matlab.engine.start_matlab()</span><br></pre></td></tr></table></figure>
+<h3 id="执行"><a href="#执行" class="headerlink" title="执行"></a>执行</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">eng.xxx(nargout=0)</span><br></pre></td></tr></table></figure>
+<p>或<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">eng.xxx(para1,para2...)</span><br></pre></td></tr></table></figure></p>
+<p>第一个是当做脚本执行，第二个是当做函数执行，括号里面为参数。按照需要执行文件的类型进行选择。</p>
+<h3 id="路径问题"><a href="#路径问题" class="headerlink" title="路径问题"></a>路径问题</h3><p>如果python文件与matlab文件在同一个目录下，不需要考虑目录问题。</p>
+<p>如果python文件与matlab文件不在一个目录下，则需要用os模块修改目录。</p>
+<h4 id="具体步骤"><a href="#具体步骤" class="headerlink" title="具体步骤"></a>具体步骤</h4><p>导入包<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">import os</span><br><span class="line">import matlab.engine</span><br></pre></td></tr></table></figure></p>
+<p>修改当前目录到<code>.m</code>文件目录：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">os.chdir(&apos;xxxxxxx&apos;)</span><br></pre></td></tr></table></figure></p>
+<p>启动matlab.engine,执行文件，和先前相同。</p>
+<p>总结起来，必须要在<code>.m</code>文件目录启动matlab.engine。如果一开始在正确目录启动，后续使用<code>os.chdir</code>修改到其他目录仍然可以执行。如果一开始不在正确目录启动，即使后面使用<code>os.chdir</code>修改到正确目录也不行。</p>
+<h1 id="遇到的问题"><a href="#遇到的问题" class="headerlink" title="遇到的问题"></a>遇到的问题</h1><h2 id="安装matlab-engine时python没有管理员权限"><a href="#安装matlab-engine时python没有管理员权限" class="headerlink" title="安装matlab.engine时python没有管理员权限"></a>安装matlab.engine时python没有管理员权限</h2><p>这个问题是由于管理员限制matlab文件夹的权限造成的。问题会不会出现取决于当前是否为管理员用户。如果是，则不存在这个问题，如果不是，需要给定管理员权限。</p>
+<p>最简单的方法，开始菜单中搜索cmd，右键选择管理员运行，然后cd到目标目录下，再用python安装即可。</p>
 
       
     </div>
@@ -458,7 +463,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/搭建博客/" rel="tag"># 搭建博客</a>
+            <a href="/tags/python/" rel="tag"># python</a>
+          
+            <a href="/tags/matlab/" rel="tag"># matlab</a>
           
         </div>
       
@@ -471,8 +478,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/02/18/VTM中添加SSIM输出/" rel="next" title="VTM中添加SSIM输出">
-                <i class="fa fa-chevron-left"></i> VTM中添加SSIM输出
+              <a href="/2019/02/19/Next的主题配置尝试/" rel="next" title="Next的主题配置尝试">
+                <i class="fa fa-chevron-left"></i> Next的主题配置尝试
               </a>
             
           </div>
@@ -480,10 +487,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/02/21/python调用matlab程序/" rel="prev" title="python调用matlab程序">
-                python调用matlab程序 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -616,7 +619,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#主要内容"><span class="nav-number">1.</span> <span class="nav-text">主要内容</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#主题的选择"><span class="nav-number">2.</span> <span class="nav-text">主题的选择</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#主题的应用"><span class="nav-number">3.</span> <span class="nav-text">主题的应用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#部分参数配置"><span class="nav-number">4.</span> <span class="nav-text">部分参数配置</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#文章的目录全显示"><span class="nav-number">4.1.</span> <span class="nav-text">文章的目录全显示</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#运动部分"><span class="nav-number">4.2.</span> <span class="nav-text">运动部分</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#遇到的一些问题"><span class="nav-number">5.</span> <span class="nav-text">遇到的一些问题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#语言错误"><span class="nav-number">5.1.</span> <span class="nav-text">语言错误</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#步骤"><span class="nav-number">1.</span> <span class="nav-text">步骤</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装python的matlab-engine包"><span class="nav-number">1.1.</span> <span class="nav-text">安装python的matlab engine包</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#获取matlab文件夹路径"><span class="nav-number">1.1.1.</span> <span class="nav-text">获取matlab文件夹路径</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装"><span class="nav-number">1.1.2.</span> <span class="nav-text">安装</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#调用-m文件"><span class="nav-number">1.2.</span> <span class="nav-text">调用.m文件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#打开matlab"><span class="nav-number">1.2.1.</span> <span class="nav-text">打开matlab</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#执行"><span class="nav-number">1.2.2.</span> <span class="nav-text">执行</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#路径问题"><span class="nav-number">1.2.3.</span> <span class="nav-text">路径问题</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#具体步骤"><span class="nav-number">1.2.3.1.</span> <span class="nav-text">具体步骤</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#遇到的问题"><span class="nav-number">2.</span> <span class="nav-text">遇到的问题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装matlab-engine时python没有管理员权限"><span class="nav-number">2.1.</span> <span class="nav-text">安装matlab.engine时python没有管理员权限</span></a></li></ol></li></ol></div>
             
 
           </div>

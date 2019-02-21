@@ -4,6 +4,27 @@
   
     
     <entry>
+      <title>python调用matlab程序</title>
+      <link href="/2019/02/21/python%E8%B0%83%E7%94%A8matlab%E7%A8%8B%E5%BA%8F/"/>
+      <url>/2019/02/21/python%E8%B0%83%E7%94%A8matlab%E7%A8%8B%E5%BA%8F/</url>
+      
+        <content type="html"><![CDATA[<p>本文主要介绍如何通过python调用matlab的<code>.m</code>文件，以及在调用中遇到的一些问题。<br>参考网址：<br><a href="https://blog.csdn.net/sunny_xsc1994/article/details/79254196" target="_blank" rel="noopener">两步解决python调用Matlab的脚本和函数文件</a><br><a href="https://blog.csdn.net/zyw_anquan/article/details/7756499" target="_blank" rel="noopener">如何在CMD下运用管理员权限</a><br><a href="https://blog.csdn.net/windymsth/article/details/78911310" target="_blank" rel="noopener">在CMD命令行中切换到管理员权限模式</a></p><h1 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h1><h2 id="安装python的matlab-engine包"><a href="#安装python的matlab-engine包" class="headerlink" title="安装python的matlab engine包"></a>安装python的matlab engine包</h2><p>此处和<a href="https://ww2.mathworks.cn/help/matlab/matlab_external/install-the-matlab-engine-for-python.html?ue" target="_blank" rel="noopener">官网</a>完全一致</p><h3 id="获取matlab文件夹路径"><a href="#获取matlab文件夹路径" class="headerlink" title="获取matlab文件夹路径"></a>获取matlab文件夹路径</h3><p>打开matlab，在命令行输入matlabroot，然后用返回值替代下面命令中的matlabroot</p><h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><p>对于windows用户：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd &quot;matlabroot\extern\engines\python&quot;</span><br><span class="line">python setup.py install</span><br></pre></td></tr></table></figure></p><p>mac或者linux：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd &quot;matlabroot/extern/engines/python&quot;</span><br><span class="line">python setup.py install</span><br></pre></td></tr></table></figure></p><h2 id="调用-m文件"><a href="#调用-m文件" class="headerlink" title="调用.m文件"></a>调用<code>.m</code>文件</h2><p>假设当前目录下存在<code>xxx.m</code>文件</p><h3 id="打开matlab"><a href="#打开matlab" class="headerlink" title="打开matlab"></a>打开matlab</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">import matlab.engine</span><br><span class="line">eng = matlab.engine.start_matlab()</span><br></pre></td></tr></table></figure><h3 id="执行"><a href="#执行" class="headerlink" title="执行"></a>执行</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">eng.xxx(nargout=0)</span><br></pre></td></tr></table></figure><p>或<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">eng.xxx(para1,para2...)</span><br></pre></td></tr></table></figure></p><p>第一个是当做脚本执行，第二个是当做函数执行，括号里面为参数。按照需要执行文件的类型进行选择。</p><h3 id="路径问题"><a href="#路径问题" class="headerlink" title="路径问题"></a>路径问题</h3><p>如果python文件与matlab文件在同一个目录下，不需要考虑目录问题。</p><p>如果python文件与matlab文件不在一个目录下，则需要用os模块修改目录。</p><h4 id="具体步骤"><a href="#具体步骤" class="headerlink" title="具体步骤"></a>具体步骤</h4><p>导入包<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">import os</span><br><span class="line">import matlab.engine</span><br></pre></td></tr></table></figure></p><p>修改当前目录到<code>.m</code>文件目录：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">os.chdir(&apos;xxxxxxx&apos;)</span><br></pre></td></tr></table></figure></p><p>启动matlab.engine,执行文件，和先前相同。</p><p>总结起来，必须要在<code>.m</code>文件目录启动matlab.engine。如果一开始在正确目录启动，后续使用<code>os.chdir</code>修改到其他目录仍然可以执行。如果一开始不在正确目录启动，即使后面使用<code>os.chdir</code>修改到正确目录也不行。</p><h1 id="遇到的问题"><a href="#遇到的问题" class="headerlink" title="遇到的问题"></a>遇到的问题</h1><h2 id="安装matlab-engine时python没有管理员权限"><a href="#安装matlab-engine时python没有管理员权限" class="headerlink" title="安装matlab.engine时python没有管理员权限"></a>安装matlab.engine时python没有管理员权限</h2><p>这个问题是由于管理员限制matlab文件夹的权限造成的。问题会不会出现取决于当前是否为管理员用户。如果是，则不存在这个问题，如果不是，需要给定管理员权限。</p><p>最简单的方法，开始菜单中搜索cmd，右键选择管理员运行，然后cd到目标目录下，再用python安装即可。</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> python </tag>
+            
+            <tag> matlab </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Next的主题配置尝试</title>
       <link href="/2019/02/19/Next%E7%9A%84%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE%E5%B0%9D%E8%AF%95/"/>
       <url>/2019/02/19/Next%E7%9A%84%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE%E5%B0%9D%E8%AF%95/</url>
