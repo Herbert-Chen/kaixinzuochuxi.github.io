@@ -8,7 +8,7 @@
       <link href="/2019/02/22/markdown%E6%8F%92%E5%85%A5%E5%8F%82%E8%80%83%E6%96%87%E7%8C%AE/"/>
       <url>/2019/02/22/markdown%E6%8F%92%E5%85%A5%E5%8F%82%E8%80%83%E6%96%87%E7%8C%AE/</url>
       
-        <content type="html"><![CDATA[]]></content>
+        <content type="html"><![CDATA[<p>1<a href="asdfg">^1</a></p><h1 id="主要内容"><a href="#主要内容" class="headerlink" title="主要内容"></a>主要内容</h1><p>本文主要针对如何在博客的markdown写作中插入参考文献进行了分析和讨论</p><h1 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h1><p>预期目标是：</p><ul><li>在markdown写作中运用一种插入文献的方法，使得生成的博客能够显示出参考文献<ul><li>写作基于markdown，部署使用hexo，最终生成的是html</li></ul></li><li>参考文献应像latex的参考文献一样，具有动态更新的特性，即<ul><li>参考文献在文章中的插入地方 应与 最后的参考文献列表 具有关键词的对应关系</li></ul></li></ul><h1 id="现有的几种方法"><a href="#现有的几种方法" class="headerlink" title="现有的几种方法"></a>现有的几种方法</h1><h1 id="最终选择的方法"><a href="#最终选择的方法" class="headerlink" title="最终选择的方法"></a>最终选择的方法</h1>]]></content>
       
       
       <categories>
