@@ -1,0 +1,31 @@
+@article{sullivan2012overview,
+  title={Overview of the high efficiency video coding(HEVC) standard},
+  author={Sullivan, Gary J and Ohm, Jens-Rainer and Han, Woo-Jin and Wiegand, Thomas and others},
+  journal={IEEE Transactions on circuits and systems for video technology},
+  volume={22},
+  number={12},
+  pages={1649--1668},
+  year={2012},
+  publisher={Institute of Electrical and Electronics Engineers, Inc., 3 Park Avenue, 17 th Fl New York NY 10016-5997 United States}
+}
+@article{wiegand2003overview,
+  title={Overview of the H. 264/AVC video coding standard},
+  author={Wiegand, Thomas and Sullivan, Gary J and Bjontegaard, Gisle and Luthra, Ajay},
+  journal={IEEE Transactions on circuits and systems for video technology},
+  volume={13},
+  number={7},
+  pages={560--576},
+  year={2003},
+  publisher={IEEE}
+}
+
+@article{ohm2012comparison,
+  title={Comparison of the coding efficiency of video coding standards¡ªincluding high efficiency video coding (HEVC)},
+  author={Ohm, J-R and Sullivan, Gary J and Schwarz, Heiko and Tan, Thiow Keng and Wiegand, Thomas},
+  journal={IEEE Transactions on circuits and systems for video technology},
+  volume={22},
+  number={12},
+  pages={1669--1684},
+  year={2012},
+  publisher={IEEE}
+}

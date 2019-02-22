@@ -1,0 +1,120 @@
+@incollection{Niebur_Koch98a,
+   author = {E. Niebur and C. Koch},
+   editor = {R. Parasuraman},
+   title = {Computational architectures for attention},
+   booktitle = {The Attentive Brain},
+   chapter = {9},
+   pages = {163-186},
+   publisher = {MIT Press},
+   address = {Cambridge, MA},
+   year = {1998}
+}
+@inproceedings{achanta2009frequency,
+  title={Frequency-tuned salient region detection},
+  author={Achanta, Radhakrishna and Hemami, Sheila and Estrada, Francisco and Susstrunk, Sabine},
+  booktitle={Computer vision and pattern recognition, 2009. cvpr 2009. ieee conference on},
+  pages={1597--1604},
+  year={2009},
+  organization={IEEE}
+}
+@article{itti1998model,
+  title={A model of saliency-based visual attention for rapid scene analysis},
+  author={Itti, Laurent and Koch, Christof and Niebur, Ernst},
+  journal={IEEE Transactions on pattern analysis and machine intelligence},
+  volume={20},
+  number={11},
+  pages={1254--1259},
+  year={1998},
+  publisher={IEEE}
+}
+@article{hadizadeh2014saliency,
+  title={Saliency-aware video compression},
+  author={Hadizadeh, Hadi and Bajic, Ivan V},
+  journal={IEEE Transactions on Image Processing},
+  volume={23},
+  number={1},
+  pages={19--33},
+  year={2014},
+  publisher={IEEE}
+}
+@inproceedings{hadizadeh2011saliency,
+  title={Saliency-preserving video compression},
+  author={Hadizadeh, Hadi and Baji{\'c}, Ivan V},
+  booktitle={Multimedia and Expo (ICME), 2011 IEEE International Conference on},
+  pages={1--6},
+  year={2011},
+  organization={IEEE}
+}
+@inproceedings{bai2016saliency,
+  title={Saliency based rate control scheme for high efficiency video coding},
+  author={Bai, Lixun and Song, Li and Xie, Rong and Xie, Jianfeng and Chen, M},
+  booktitle={Signal and Information Processing Association Annual Summit and Conference (APSIPA), 2016 Asia-Pacific},
+  pages={1--6},
+  year={2016},
+  organization={IEEE}
+}
+
+@article{fang2012saliency,
+  title={Saliency detection in the compressed domain for adaptive image retargeting},
+  author={Fang, Yuming and Chen, Zhenzhong and Lin, Weisi and Lin, Chia-Wen},
+  journal={IEEE Transactions on Image Processing},
+  volume={21},
+  number={9},
+  pages={3888--3901},
+  year={2012},
+  publisher={IEEE}
+}
+@inproceedings{chamaret2010spatio,
+  title={Spatio-temporal combination of saliency maps and eye-tracking assessment of different strategies},
+  author={Chamaret, Christel and Chevet, Jean-Claude and Le Meur, Olivier},
+  booktitle={Image Processing (ICIP), 2010 17th IEEE International Conference on},
+  pages={1077--1080},
+  year={2010},
+  organization={IEEE}
+}
+@article{itti2005quantifying,
+  title={Quantifying the contribution of low-level saliency to human eye movements in dynamic scenes},
+  author={Itti, Laurent},
+  journal={Visual Cognition},
+  volume={12},
+  number={6},
+  pages={1093--1123},
+  year={2005},
+  publisher={Taylor \& Francis}
+}
+@article{bylinskii2016different,
+  title={What do different evaluation metrics tell us about saliency models?},
+  author={Bylinskii, Zoya and Judd, Tilke and Oliva, Aude and Torralba, Antonio and Durand, Fr{\'e}do},
+  journal={arXiv preprint arXiv:1604.03605},
+  year={2016}
+}
+@article{cheng2015global,
+  title={Global contrast based salient region detection},
+  author={Cheng, Ming-Ming and Mitra, Niloy J and Huang, Xiaolei and Torr, Philip HS and Hu, Shi-Min},
+  journal={IEEE Transactions on Pattern Analysis and Machine Intelligence},
+  volume={37},
+  number={3},
+  pages={569--582},
+  year={2015},
+  publisher={IEEE}
+}
+
+@article{liu2017saliency,
+  title={Saliency detection for unconstrained videos using superpixel-level graph and spatiotemporal propagation},
+  author={Liu, Zhi and Li, Junhao and Ye, Linwei and Sun, Guangling and Shen, Liquan},
+  journal={IEEE transactions on circuits and systems for video technology},
+  volume={27},
+  number={12},
+  pages={2527--2542},
+  year={2017},
+  publisher={IEEE}
+}
+@article{wang2018saliency,
+  title={Saliency-aware video object segmentation},
+  author={Wang, Wenguan and Shen, Jianbing and Yang, Ruigang and Porikli, Fatih},
+  journal={IEEE Transactions on Pattern Analysis \& Machine Intelligence},
+  number={1},
+  pages={20--33},
+  year={2018},
+  publisher={IEEE}
+}

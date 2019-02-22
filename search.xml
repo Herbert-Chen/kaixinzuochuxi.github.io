@@ -4,6 +4,37 @@
   
     
     <entry>
+      <title>markdown插入参考文献</title>
+      <link href="/2019/02/22/markdown%E6%8F%92%E5%85%A5%E5%8F%82%E8%80%83%E6%96%87%E7%8C%AE/"/>
+      <url>/2019/02/22/markdown%E6%8F%92%E5%85%A5%E5%8F%82%E8%80%83%E6%96%87%E7%8C%AE/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      <categories>
+          
+          <category> 工具 </category>
+          
+          <category> markdown </category>
+          
+          <category> 写作 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> markdown </tag>
+            
+            <tag> 写作 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>python调用matlab程序</title>
       <link href="/2019/02/21/python%E8%B0%83%E7%94%A8matlab%E7%A8%8B%E5%BA%8F/"/>
       <url>/2019/02/21/python%E8%B0%83%E7%94%A8matlab%E7%A8%8B%E5%BA%8F/</url>
@@ -16,6 +47,10 @@
           <category> 学习 </category>
           
           <category> 编程语言 </category>
+          
+          <category> python </category>
+          
+          <category> matlab </category>
           
       </categories>
       
@@ -93,6 +128,8 @@
           <category> 学习 </category>
           
           <category> 编程语言 </category>
+          
+          <category> C/C++ </category>
           
           <category> 操作系统 </category>
           
