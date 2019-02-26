@@ -96,25 +96,25 @@
 
 
 
-  <meta name="description" content="主要内容本文就主题选择，应用，部分参数配置与碰到的一些问题进行了简单的总结。后续遇到新的问题会继续补充。主要参考博客为http://saili.science/2017/04/02/github-for-win/ 主题的选择在GITHUB+HEXO搭建博客的第一个链接中给出了一些主题网站，里面可选的有很多，经过一些考虑，最终还是选择了Next主题。 具体原因如下：  产品免费且受众广 功能上支持中">
-<meta name="keywords" content="搭建博客">
+  <meta name="description" content="简介本文主要描述了在VTM中打印码率控制中间变量的方法，这些中间变量可以用来辅助分析RD模型 中间变量的种类及加入位置将按照下面四个部分来具体展开本节  文件 位置 具体语句 宏开关 PrintTemporalResult 作用  控制所有的中间变量是否输出，是为输出，否为不输出  文件  TypeDef.h  位置  任意 具体语句  1#define PrintTemporalResult">
+<meta name="keywords" content="VTM,video coding">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Next的主题配置尝试">
-<meta property="og:url" content="http://yoursite.com/2019/02/19/Next的主题配置尝试/index.html">
+<meta property="og:title" content="VTM中打印码率控制中间变量">
+<meta property="og:url" content="http://yoursite.com/2019/02/26/VTM中打印码率控制中间变量/index.html">
 <meta property="og:site_name" content="开心做出戏">
-<meta property="og:description" content="主要内容本文就主题选择，应用，部分参数配置与碰到的一些问题进行了简单的总结。后续遇到新的问题会继续补充。主要参考博客为http://saili.science/2017/04/02/github-for-win/ 主题的选择在GITHUB+HEXO搭建博客的第一个链接中给出了一些主题网站，里面可选的有很多，经过一些考虑，最终还是选择了Next主题。 具体原因如下：  产品免费且受众广 功能上支持中">
+<meta property="og:description" content="简介本文主要描述了在VTM中打印码率控制中间变量的方法，这些中间变量可以用来辅助分析RD模型 中间变量的种类及加入位置将按照下面四个部分来具体展开本节  文件 位置 具体语句 宏开关 PrintTemporalResult 作用  控制所有的中间变量是否输出，是为输出，否为不输出  文件  TypeDef.h  位置  任意 具体语句  1#define PrintTemporalResult">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-02-21T11:08:45.395Z">
+<meta property="og:updated_time" content="2019-02-26T06:49:59.959Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Next的主题配置尝试">
-<meta name="twitter:description" content="主要内容本文就主题选择，应用，部分参数配置与碰到的一些问题进行了简单的总结。后续遇到新的问题会继续补充。主要参考博客为http://saili.science/2017/04/02/github-for-win/ 主题的选择在GITHUB+HEXO搭建博客的第一个链接中给出了一些主题网站，里面可选的有很多，经过一些考虑，最终还是选择了Next主题。 具体原因如下：  产品免费且受众广 功能上支持中">
+<meta name="twitter:title" content="VTM中打印码率控制中间变量">
+<meta name="twitter:description" content="简介本文主要描述了在VTM中打印码率控制中间变量的方法，这些中间变量可以用来辅助分析RD模型 中间变量的种类及加入位置将按照下面四个部分来具体展开本节  文件 位置 具体语句 宏开关 PrintTemporalResult 作用  控制所有的中间变量是否输出，是为输出，否为不输出  文件  TypeDef.h  位置  任意 具体语句  1#define PrintTemporalResult">
 
 
 
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/02/19/Next的主题配置尝试/"/>
+  <link rel="canonical" href="http://yoursite.com/2019/02/26/VTM中打印码率控制中间变量/"/>
 
 
 
@@ -124,7 +124,7 @@
   };
 </script>
 
-  <title>Next的主题配置尝试 | 开心做出戏</title>
+  <title>VTM中打印码率控制中间变量 | 开心做出戏</title>
   
 
 
@@ -340,7 +340,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/19/Next的主题配置尝试/"/>
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/26/VTM中打印码率控制中间变量/"/>
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Herbert"/>
@@ -357,7 +357,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Next的主题配置尝试
+          <h1 class="post-title" itemprop="name headline">VTM中打印码率控制中间变量
 
               
             
@@ -383,28 +383,48 @@
                 
               
 
-              <time title="创建时间：2019-02-19 11:24:20" itemprop="dateCreated datePublished" datetime="2019-02-19T11:24:20+08:00">2019-02-19</time>
+              <time title="创建时间：2019-02-26 14:23:33 / 修改时间：14:49:59" itemprop="dateCreated datePublished" datetime="2019-02-26T14:23:33+08:00">2019-02-26</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-02-21 19:08:45" itemprop="dateModified" datetime="2019-02-21T19:08:45+08:00">2019-02-21</time>
               
             
           </span>
 
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/学习/" itemprop="url" rel="index"><span itemprop="name">学习</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/学习/视频编码/" itemprop="url" rel="index"><span itemprop="name">视频编码</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/学习/视频编码/VVC/" itemprop="url" rel="index"><span itemprop="name">VVC</span></a></span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -434,19 +454,61 @@
       
 
       
-        <h1 id="主要内容"><a href="#主要内容" class="headerlink" title="主要内容"></a>主要内容</h1><p>本文就主题选择，应用，部分参数配置与碰到的一些问题进行了简单的总结。后续遇到新的问题会继续补充。<br>主要参考博客为<a href="http://saili.science/2017/04/02/github-for-win/" target="_blank" rel="noopener">http://saili.science/2017/04/02/github-for-win/</a></p>
-<h1 id="主题的选择"><a href="#主题的选择" class="headerlink" title="主题的选择"></a>主题的选择</h1><p>在<a href="https://kaixinzuochuxi.github.io/2018/04/11/GITHUB+HEXO%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/" target="_blank" rel="noopener">GITHUB+HEXO搭建博客</a>的第一个<a href="https://github.com/limedroid/HexoLearning" target="_blank" rel="noopener">链接</a>中给出了一些主题网站，里面可选的有很多，经过一些考虑，最终还是选择了<a href="https://github.com/iissnan/hexo-theme-next" target="_blank" rel="noopener">Next主题</a>。</p>
-<p>具体原因如下：</p>
-<ol>
-<li>产品免费且受众广</li>
-<li>功能上支持中文，支持文章目录生成。</li>
-</ol>
-<h1 id="主题的应用"><a href="#主题的应用" class="headerlink" title="主题的应用"></a>主题的应用</h1><p>按照<a href="https://github.com/iissnan/hexo-theme-next" target="_blank" rel="noopener">主题网站</a>提示即可。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone --branch v5.1.2 https://github.com/iissnan/hexo-theme-next themes/next</span><br></pre></td></tr></table></figure></p>
-<p>注意以后版本更新可能会导致命令(–branch v5.1.2)有一些差异，具体以<a href="https://github.com/iissnan/hexo-theme-next" target="_blank" rel="noopener">主题网站</a>为主。</p>
-<p>此种方式也可用于配置其他主题，即<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone xxx themes/xxx</span><br></pre></td></tr></table></figure></p>
-<p>在themes目录下新建主题目录<code>xxx</code>，将主题文件复制到新建目录<code>xxx</code>下，然后修改主目录下_config.yml文件中的<code>theme: xxx</code>，重新<code>hexo g</code>和<code>hexo d</code>即可。</p>
-<h1 id="部分参数配置"><a href="#部分参数配置" class="headerlink" title="部分参数配置"></a>部分参数配置</h1><h2 id="文章的目录全显示"><a href="#文章的目录全显示" class="headerlink" title="文章的目录全显示"></a>文章的目录全显示</h2><p>next主题默认文章标题是逐渐显示的，此处如果需要将文章目录全部展开，可以在<code>next\source\css\_custom\custom.styl</code>中添加一句<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.post-toc .nav .nav-child &#123; display: block; &#125;</span><br></pre></td></tr></table></figure></p>
-<h2 id="运动部分"><a href="#运动部分" class="headerlink" title="运动部分"></a>运动部分</h2><h1 id="遇到的一些问题"><a href="#遇到的一些问题" class="headerlink" title="遇到的一些问题"></a>遇到的一些问题</h1><h2 id="语言错误"><a href="#语言错误" class="headerlink" title="语言错误"></a>语言错误</h2><p>如果一开始把站点配置文件的语言设置为简体中文(zh-Hans), 可以查找<code>theme/next/languages</code>下的文件有没有<code>zh-Hans.yml</code>。如果没有，需要将<code>zh-CN.yml</code>改名为<code>zh-Hans.yml</code>。</p>
+        <h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>本文主要描述了在VTM中打印码率控制中间变量的方法，这些中间变量可以用来辅助分析RD模型</p>
+<h1 id="中间变量的种类及加入位置"><a href="#中间变量的种类及加入位置" class="headerlink" title="中间变量的种类及加入位置"></a>中间变量的种类及加入位置</h1><p>将按照下面四个部分来具体展开本节</p>
+<ul>
+<li>文件</li>
+<li>位置</li>
+<li><p>具体语句</p>
+<h2 id="宏开关-PrintTemporalResult"><a href="#宏开关-PrintTemporalResult" class="headerlink" title="宏开关 PrintTemporalResult"></a>宏开关 PrintTemporalResult</h2></li>
+<li><p>作用<br>  控制所有的中间变量是否输出，是为输出，否为不输出</p>
+</li>
+<li>文件<br>  TypeDef.h </li>
+<li>位置<br>  任意</li>
+<li>具体语句</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#define PrintTemporalResult                               1</span><br></pre></td></tr></table></figure>
+<h2 id="每个编码单位的目标比特"><a href="#每个编码单位的目标比特" class="headerlink" title="每个编码单位的目标比特"></a>每个编码单位的目标比特</h2><ul>
+<li>文件<br>  EncGOP.cpp </li>
+<li>位置<br>  compressGOP，分配完目标码率<code>estimatedBits = m_pcRateCtrl-&gt;getRCPic()-&gt;getTargetBits();</code>之后</li>
+<li>具体语句</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">#if PrintTemporalResult  </span><br><span class="line">      printf(&quot;RC BEFORE: %d\t&quot;, estimatedBits);</span><br><span class="line">#endif                             1</span><br></pre></td></tr></table></figure>
+<h2 id="编码单位为intra的部分参数"><a href="#编码单位为intra的部分参数" class="headerlink" title="编码单位为intra的部分参数"></a>编码单位为intra的部分参数</h2><p>这些参数包括：</p>
+<ul>
+<li>MADPerPixel，16*16的块减去均值之后的MAD,除以像素的个数</li>
+<li>bitsPerPixel，平均每个像素的比特</li>
+<li>更正过的bpp(依据mad和bitsPerPixel计算得出，在R-$\lambda$中为<code>MADPerPixel / bitsPerPixel</code>)</li>
+</ul>
+<p>具体来说</p>
+<ul>
+<li>文件<br>  RateCtrl.cpp </li>
+<li>位置<br>  calculateLambdaIntra,<code>return</code>之前</li>
+<li>具体语句<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">#if PrintTemporalResult </span><br><span class="line">  printf(&quot;%f\t%f\t%f\t&quot;, MADPerPixel, bitsPerPixel,bpp);</span><br><span class="line">#endif</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="每个编码单位的-lambda"><a href="#每个编码单位的-lambda" class="headerlink" title="每个编码单位的$\lambda$"></a>每个编码单位的$\lambda$</h2><ul>
+<li>文件<br>  EncGOP.cpp </li>
+<li>位置<br>  compressGOP，求解完$\lambda$和QP<br>  <code>lambda  = m_pcRateCtrl-&gt;getRCPic()-&gt;estimatePicLambda( listPreviousPicture, pcSlice-&gt;isIRAP());</code><br>  之后</li>
+<li>具体语句</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">#if PrintTemporalResult  </span><br><span class="line">        printf(&quot;%f\t&quot;, lambda);</span><br><span class="line">#endif                           1</span><br></pre></td></tr></table></figure>
+<h2 id="编码完成后目标比特，实际比特，目标-lambda-与实际-lambda"><a href="#编码完成后目标比特，实际比特，目标-lambda-与实际-lambda" class="headerlink" title="编码完成后目标比特，实际比特，目标$\lambda$与实际$\lambda$"></a>编码完成后目标比特，实际比特，目标$\lambda$与实际$\lambda$</h2><ul>
+<li>文件<br>  RateCtrl.cpp </li>
+<li><p>位置<br>  updateAlphaBetaIntra,参数更新之前</p>
+</li>
+<li><p>具体语句</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">  double bpp_real = (double)m_picActualBits / (double)m_numberOfPixel;</span><br><span class="line">  double bpp_comp = (double)m_targetBits / (double)m_numberOfPixel;</span><br><span class="line">#if PrintTemporalResult  </span><br><span class="line">  printf(&quot;\t%f\t%f\t&quot;, bpp_comp, bpp_real);</span><br><span class="line">  printf(&quot;\t%f\t%f\t&quot;, (-2 * (*a)* log(bpp_comp/3) - (*b)) / (bpp_comp), (-2 * (*a)* log(bpp_real/3)- (*b)) / (bpp_real));</span><br><span class="line">#endif</span><br></pre></td></tr></table></figure>
+<h2 id="输出更新后的模型参数"><a href="#输出更新后的模型参数" class="headerlink" title="输出更新后的模型参数"></a>输出更新后的模型参数</h2><ul>
+<li>文件<br>  RateCtrl.cpp </li>
+<li><p>位置<br>  updateAfterPicture，参数更新完且clip之后</p>
+</li>
+<li><p>具体语句</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">#if PrintTemporalResult  </span><br><span class="line">  printf(&quot;\t %f\t %f\t %f\n&quot;, a, b, c);</span><br><span class="line">#endif</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -470,7 +532,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/搭建博客/" rel="tag"># 搭建博客</a>
+            <a href="/tags/VTM/" rel="tag"># VTM</a>
+          
+            <a href="/tags/video-coding/" rel="tag"># video coding</a>
           
         </div>
       
@@ -483,8 +547,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/02/18/VTM中添加SSIM输出/" rel="next" title="VTM中添加SSIM输出">
-                <i class="fa fa-chevron-left"></i> VTM中添加SSIM输出
+              <a href="/2019/02/25/视频编码python包框架/" rel="next" title="视频编码python包框架">
+                <i class="fa fa-chevron-left"></i> 视频编码python包框架
               </a>
             
           </div>
@@ -492,10 +556,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/02/21/python调用matlab程序/" rel="prev" title="python调用matlab程序">
-                python调用matlab程序 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -697,7 +757,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#主要内容"><span class="nav-number">1.</span> <span class="nav-text">主要内容</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#主题的选择"><span class="nav-number">2.</span> <span class="nav-text">主题的选择</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#主题的应用"><span class="nav-number">3.</span> <span class="nav-text">主题的应用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#部分参数配置"><span class="nav-number">4.</span> <span class="nav-text">部分参数配置</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#文章的目录全显示"><span class="nav-number">4.1.</span> <span class="nav-text">文章的目录全显示</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#运动部分"><span class="nav-number">4.2.</span> <span class="nav-text">运动部分</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#遇到的一些问题"><span class="nav-number">5.</span> <span class="nav-text">遇到的一些问题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#语言错误"><span class="nav-number">5.1.</span> <span class="nav-text">语言错误</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#简介"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#中间变量的种类及加入位置"><span class="nav-number">2.</span> <span class="nav-text">中间变量的种类及加入位置</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#宏开关-PrintTemporalResult"><span class="nav-number">2.1.</span> <span class="nav-text">宏开关 PrintTemporalResult</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#每个编码单位的目标比特"><span class="nav-number">2.2.</span> <span class="nav-text">每个编码单位的目标比特</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#编码单位为intra的部分参数"><span class="nav-number">2.3.</span> <span class="nav-text">编码单位为intra的部分参数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#每个编码单位的-lambda"><span class="nav-number">2.4.</span> <span class="nav-text">每个编码单位的$\lambda$</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#编码完成后目标比特，实际比特，目标-lambda-与实际-lambda"><span class="nav-number">2.5.</span> <span class="nav-text">编码完成后目标比特，实际比特，目标$\lambda$与实际$\lambda$</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#输出更新后的模型参数"><span class="nav-number">2.6.</span> <span class="nav-text">输出更新后的模型参数</span></a></li></ol></li></ol></div>
             
 
           </div>
