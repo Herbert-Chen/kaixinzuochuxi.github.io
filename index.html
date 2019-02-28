@@ -336,6 +336,166 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/27/隐形守护者/"/>
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Herbert"/>
+      <meta itemprop="description" content=""/>
+      <meta itemprop="image" content="/images/avatar.gif"/>
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="开心做出戏"/>
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/02/27/隐形守护者/" class="post-title-link" itemprop="url">隐形守护者</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-02-27 08:39:37 / 修改时间：11:29:33" itemprop="dateCreated datePublished" datetime="2019-02-27T08:39:37+08:00">2019-02-27</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/游戏/" itemprop="url" rel="index"><span itemprop="name">游戏</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/26/VTM中打印码率控制中间变量/"/>
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -381,12 +541,24 @@
                 
               
 
-              <time title="创建时间：2019-02-26 14:23:33 / 修改时间：21:14:34" itemprop="dateCreated datePublished" datetime="2019-02-26T14:23:33+08:00">2019-02-26</time>
+              <time title="创建时间：2019-02-26 14:23:33" itemprop="dateCreated datePublished" datetime="2019-02-26T14:23:33+08:00">2019-02-26</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-02-28 21:05:31" itemprop="dateModified" datetime="2019-02-28T21:05:31+08:00">2019-02-28</time>
               
             
           </span>
@@ -455,6 +627,16 @@
         
           
             <h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>本文主要描述了在VTM中打印码率控制中间变量的方法，这些中间变量可以用来辅助分析RD模型</p>
+<h2 id="基本格式"><a href="#基本格式" class="headerlink" title="基本格式"></a>基本格式</h2><p>预期输出的格式如下，首先是格式，然后解释每一项具体内容</p>
+<h3 id="IRAP帧"><a href="#IRAP帧" class="headerlink" title="IRAP帧"></a>IRAP帧</h3><p>对于IRAP，格式如下。注意，这些输出在编码得到的txt中为一行，在这里为了显示的方便，人为地进行分行，只要记住实际为1行就可以了。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">RC |Pic_comp_bits: 14655        </span><br><span class="line">|frame_level: </span><br><span class="line">|[IRAP madpp:23.078666    bpp:1.129687    bpp_1:20.429248 pic_lambda:92.377179    pic_QP:21]      |</span><br><span class="line">ctu_level: </span><br><span class="line">|[IRAP madpp:27.015124 bpp:1.281189    bpp_1:21.085979 ctu_lambda:97.747760    ctu_QP:21       no-update]      |</span><br><span class="line">|[IRAP madpp:14.089777 bpp:0.867920    bpp_1:16.233959 ctu_lambda:63.615234    ctu_QP:20       no-update]      |</span><br><span class="line">|[IRAP madpp:33.306836 bpp:1.789673    bpp_1:18.610572 ctu_lambda:78.206851    ctu_QP:20       no-update]      |</span><br><span class="line">|[IRAP madpp:23.004567 bpp:1.619629    bpp_1:14.203603 ctu_lambda:50.138345    ctu_QP:19       no-update]      |</span><br><span class="line">|[IRAP madpp:28.990221 bpp:1.972796    bpp_1:14.694994 ctu_lambda:51.288322    ctu_QP:19       no-update]      |</span><br><span class="line">|[IRAP madpp:10.071074 bpp:0.986747    bpp_1:10.206343 ctu_lambda:50.138345    ctu_QP:19       no-update]      |</span><br><span class="line">|[IRAP madpp:27.242691 bpp:2.680664    bpp_1:10.162665 ctu_lambda:50.138345    ctu_QP:19       no-update]      |</span><br><span class="line">|[IRAP madpp:20.061599 bpp:7.831473    bpp_1:2.561664  ctu_lambda:50.138345    ctu_QP:19       no-update]      |</span><br><span class="line">POC    0 TId: 0 ( I-SLICE, QP 21 )     102184 bits [Y 41.8476 dB    U 44.8285 dB    V 44.9024 dB] [MS-SSIM Y 0.995731    U 0.995461    V 0.996197] [Y MSE 67.9896  U MSE 34.2256  V MSE 33.6483] [ET    31 ] [L0 ] [L1 ]       |[pic_update:1.129687   1.022596 134.362311      112.467106]     |</span><br><span class="line">|[frame-level-para 103.366762  1.771833]</span><br></pre></td></tr></table></figure></p>
+<h3 id="输出内容的解释"><a href="#输出内容的解释" class="headerlink" title="输出内容的解释"></a>输出内容的解释</h3><h4 id="字符解释"><a href="#字符解释" class="headerlink" title="字符解释"></a>字符解释</h4><p>竖线|：用作python读取时的分割，没有具体。经过分割，可以分别得到整张图片的数据，CTU的数据和原始RC输出的数据。<br>冒号:：用作连接变量名称与具体数值成为键值对。</p>
+<h4 id="变量解释"><a href="#变量解释" class="headerlink" title="变量解释"></a>变量解释</h4><p>第一行，RC表示码率控制标志位，Pic_comp_bits表示当前帧的目标码率<br>第二行，指出接下来是帧级的数据<br>第三行，IRAP表示当前帧为IRAP帧，madpp表示每个像素平均的CostIntra的指数值（具体可以查看RC代码）, bpp表示当前平均每像素的比特，bpp_1表示madpp/bpp的值，后续lambda和QP较好理解。<br>第四行，表示接下来数据为每个CTU的数据。<br>第五行到第12行，表示每个ctu的对应数据。格式与帧级相同，值得注意的是，no-update表示当前没有参数更新。没有更新是由于RC代码的逻辑造成的，可以查看TODO:xxxxx。如果没有打开LCURateCtrl也会没有输出<br>第13行，原始的RC输出，自行添加了SSIM的值，具体方法可以查看<a href="https://kaixinzuochuxi.github.io/2019/02/18/VTM%E4%B8%AD%E6%B7%BB%E5%8A%A0SSIM%E8%BE%93%E5%87%BA/" target="_blank" rel="noopener">VTM中添加SSIM输出</a><br>第14行，表示当前帧更新的结果，四个数值分别代表：目标bpp，实际bpp，用未更新的帧级模型参数和目标bpp算出来的lambda，用未更新的帧级模型参数和实际bpp算出来的lambda<br>第15行，最后的帧级参数</p>
+<h3 id="其他帧"><a href="#其他帧" class="headerlink" title="其他帧"></a>其他帧</h3><p>此处格式针对其他B/P帧。或者非IRAP类型的I帧<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">RC |Pic_comp_bits: 5477 |</span><br><span class="line">frame_level: </span><br><span class="line">|[inter bpp:0.054858      pic_lambda:599.993553    pic_QP:29]     |</span><br><span class="line">ctu_level: </span><br><span class="line">|[inter ctu_bpp:0.054871    ctu_lambda:952.430397    ctu_QP:31    ctu_update:0.054858       0.000000        2708.769793 inf]    |</span><br><span class="line">|[inter ctu_bpp:0.063477    ctu_lambda:952.430397    ctu_QP:30    ctu_update:0.054858  0.000000        2708.769793     inf]    |</span><br><span class="line">|[inter ctu_bpp:0.076355    ctu_lambda:952.430397    ctu_QP:31    ctu_update:0.054858  0.000000 2708.769793     inf]    |</span><br><span class="line">|[inter ctu_bpp:0.183838    ctu_lambda:755.944507    ctu_QP:30    ctu_update:0.054858  0.000000        2708.769793     inf]    |</span><br><span class="line">|[inter ctu_bpp:0.093959    ctu_lambda:952.430397    ctu_QP:31    ctu_update:0.054858 0.000000        2708.769793     inf]    |</span><br><span class="line">|[inter ctu_bpp:0.117188    ctu_lambda:952.430397    ctu_QP:31    ctu_update:0.054858  0.000000        2708.769793     inf]    |</span><br><span class="line">|[inter ctu_bpp:0.174107    ctu_lambda:755.944507    ctu_QP:30    ctu_update:0.054858  0.000000        2708.769793     inf]    |</span><br><span class="line">|[inter ctu_bpp:1.200056    ctu_lambda:599.993553    ctu_QP:30    ctu_update:0.054858  0.000000        2708.769793     inf]    |</span><br><span class="line">POC    1 TId: 0 ( B-SLICE, QP 29 )       1968 bits [Y 37.4837 dB    U 43.8983 dB    V 42.7874 dB] [MS-SSIM Y 0.992570    U 0.994312    V 0.995101] [Y MSE 185.7087  U MSE 42.4000  V MSE 54.7597] [ET     4 ] [L0 0 ] [L1 0 ]</span><br><span class="line">  |[pic_update:0.054858   0.019391        2708.769793     11224.329493]|</span><br><span class="line">|[frame-level-para 41.068369   -1.015352]</span><br></pre></td></tr></table></figure></p>
+<h4 id="变量解释-1"><a href="#变量解释-1" class="headerlink" title="变量解释"></a>变量解释</h4><ul>
+<li>此处用inter表示非IRAP帧，某些情况下不够严谨，日后遇到例外进行修改</li>
+<li>inter是对每个CTU会有参数更新，四个变量的意义与帧级相同：目标bpp，实际bpp，用未更新的帧级模型参数和目标bpp算出来的lambda，用未更新的帧级模型参数和实际bpp算出来的lambda</li>
+<li>其余部分与IRAP时相同</li>
+</ul>
 <h1 id="中间变量的种类及加入位置"><a href="#中间变量的种类及加入位置" class="headerlink" title="中间变量的种类及加入位置"></a>中间变量的种类及加入位置</h1><p>将按照下面四个部分来具体展开本节</p>
 <ul>
 <li>文件</li>
@@ -468,48 +650,55 @@
 <li>具体语句</li>
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#define PrintTemporalResult                               1</span><br></pre></td></tr></table></figure>
-<h2 id="每个编码单位的目标比特"><a href="#每个编码单位的目标比特" class="headerlink" title="每个编码单位的目标比特"></a>每个编码单位的目标比特</h2><ul>
+<h2 id="帧级"><a href="#帧级" class="headerlink" title="帧级"></a>帧级</h2><h3 id="每帧的目标比特"><a href="#每帧的目标比特" class="headerlink" title="每帧的目标比特"></a>每帧的目标比特</h3><ul>
 <li>文件<br>  EncGOP.cpp </li>
 <li>位置<br>  compressGOP，分配完目标码率<code>estimatedBits = m_pcRateCtrl-&gt;getRCPic()-&gt;getTargetBits();</code>之后</li>
 <li>具体语句</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">#if PrintTemporalResult  </span><br><span class="line">      printf(&quot;RC BEFORE: %d\t&quot;, estimatedBits);</span><br><span class="line">#endif</span><br></pre></td></tr></table></figure>
-<h2 id="编码单位为intra的部分参数"><a href="#编码单位为intra的部分参数" class="headerlink" title="编码单位为intra的部分参数"></a>编码单位为intra的部分参数</h2><p>这些参数包括：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">#if PrintTemporalResult  </span><br><span class="line">      printf(&quot;RC  |Pic_comp_bits: %d  |frame_level: &quot;, estimatedBits);</span><br><span class="line">#endif</span><br></pre></td></tr></table></figure>
+<h3 id="IRAP帧的参数"><a href="#IRAP帧的参数" class="headerlink" title="IRAP帧的参数"></a>IRAP帧的参数</h3><p>这些参数包括：</p>
 <ul>
 <li>MADPerPixel，16*16的块减去均值之后的MAD,除以像素的个数</li>
 <li>bitsPerPixel，平均每个像素的比特</li>
 <li>更正过的bpp(依据mad和bitsPerPixel计算得出，在R-$\lambda$中为<code>MADPerPixel / bitsPerPixel</code>)</li>
 </ul>
-<p>具体来说</p>
+<p>在此函数中，IRAP帧和他的CTU共享这个输出。<br>具体来说</p>
 <ul>
 <li>文件<br>  RateCtrl.cpp </li>
 <li>位置<br>  calculateLambdaIntra,<code>return</code>之前</li>
-<li>具体语句<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">#if PrintTemporalResult </span><br><span class="line">  printf(&quot;%f\t%f\t%f\t&quot;, MADPerPixel, bitsPerPixel,bpp);</span><br><span class="line">#endif</span><br></pre></td></tr></table></figure>
+<li>具体语句<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">#if PrintTemporalResult </span><br><span class="line">  printf(&quot;|[IRAP madpp  %f  bpp  %f  bpp_1  %f  &quot;, MADPerPixel, bitsPerPixel, MADPerPixel / bitsPerPixel);</span><br><span class="line">#endif</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-<h2 id="每个编码单位的-lambda"><a href="#每个编码单位的-lambda" class="headerlink" title="每个编码单位的$\lambda$"></a>每个编码单位的$\lambda$</h2><ul>
+<h3 id="inter帧的参数"><a href="#inter帧的参数" class="headerlink" title="inter帧的参数"></a>inter帧的参数</h3><ul>
+<li>文件<br>  RateCtrl.cpp </li>
+<li>位置<br>  estimatePicLambda,<code>estLambda = alpha * pow( bpp, beta );</code>之后</li>
+<li>具体语句<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">    estLambda = alpha * pow( bpp, beta );</span><br><span class="line">#if PrintTemporalResult </span><br><span class="line">    printf(&quot;|[inter bpp  %f  &quot;, bpp);</span><br><span class="line">#endif</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="每帧的-lambda-和QP"><a href="#每帧的-lambda-和QP" class="headerlink" title="每帧的$\lambda$和QP"></a>每帧的$\lambda$和QP</h3><ul>
 <li>文件<br>  EncGOP.cpp </li>
 <li>位置<br>  compressGOP，求解完$\lambda$和QP<br>  <code>lambda  = m_pcRateCtrl-&gt;getRCPic()-&gt;estimatePicLambda( listPreviousPicture, pcSlice-&gt;isIRAP());</code><br>  之后</li>
 <li>具体语句</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">#if PrintTemporalResult  </span><br><span class="line">        printf(&quot;%f\t&quot;, lambda);</span><br><span class="line">#endif</span><br></pre></td></tr></table></figure>
-<h2 id="编码完成后目标比特，实际比特，目标-lambda-与实际-lambda"><a href="#编码完成后目标比特，实际比特，目标-lambda-与实际-lambda" class="headerlink" title="编码完成后目标比特，实际比特，目标$\lambda$与实际$\lambda$"></a>编码完成后目标比特，实际比特，目标$\lambda$与实际$\lambda$</h2><ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">#if PrintTemporalResult  </span><br><span class="line">        printf(&quot;pic_lambda:%f  pic_QP:%d]  |ctu_level: &quot;, lambda, sliceQP);</span><br><span class="line">#endif</span><br></pre></td></tr></table></figure>
+<h3 id="编码完成后目标比特，实际比特，目标-lambda-与实际-lambda"><a href="#编码完成后目标比特，实际比特，目标-lambda-与实际-lambda" class="headerlink" title="编码完成后目标比特，实际比特，目标$\lambda$与实际$\lambda$"></a>编码完成后目标比特，实际比特，目标$\lambda$与实际$\lambda$</h3><ul>
 <li>文件<br>  RateCtrl.cpp </li>
-<li><p>位置<br>  updateAlphaBetaIntra,参数更新之前</p>
+<li><p>位置<br>  updateAlphaBetaIntra,判断帧的类型是否为IRAP之前</p>
 </li>
 <li><p>具体语句</p>
 </li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">  double bpp_real = (double)m_picActualBits / (double)m_numberOfPixel;</span><br><span class="line">  double bpp_comp = (double)m_targetBits / (double)m_numberOfPixel;</span><br><span class="line">#if PrintTemporalResult  </span><br><span class="line">  printf(&quot;\t%f\t%f\t&quot;, bpp_comp, bpp_real);</span><br><span class="line">  printf(&quot;\t%f\t%f\t&quot;, (-2 * (*a)* log(bpp_comp/3) - (*b)) / (bpp_comp), (-2 * (*a)* log(bpp_real/3)- (*b)) / (bpp_real));</span><br><span class="line">#endif</span><br></pre></td></tr></table></figure>
-<h2 id="输出更新后的模型参数"><a href="#输出更新后的模型参数" class="headerlink" title="输出更新后的模型参数"></a>输出更新后的模型参数</h2><ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">#if PrintTemporalResult  </span><br><span class="line">  double bpp_real = (double)m_picActualBits / (double)m_numberOfPixel;</span><br><span class="line">  double bpp_comp = (double)m_targetBits / (double)m_numberOfPixel;</span><br><span class="line"></span><br><span class="line">  printf(&quot;  |[pic_update:  %f  %f&quot;, bpp_comp, bpp_real);</span><br><span class="line">  printf(&quot;  %f  %f]  |&quot;, (alpha)*pow(bpp_comp, (beta)), (alpha)*pow(bpp_real, (beta)));</span><br><span class="line">#endif</span><br></pre></td></tr></table></figure>
+<h3 id="输出帧级参数"><a href="#输出帧级参数" class="headerlink" title="输出帧级参数"></a>输出帧级参数</h3><ul>
 <li>文件<br>  RateCtrl.cpp </li>
-<li><p>位置<br>  updateAfterPicture，参数更新完之后（判断是否irap的条件之后）</p>
+<li><p>位置<br>  updateAlphaBetaIntra,更新完参数之后，<code>TRCParameter rcPara;</code>之前</p>
 </li>
 <li><p>具体语句</p>
 </li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">#if PrintTemporalResult  </span><br><span class="line">  printf(&quot;\t %f\t %f\t %f\n&quot;, a, b, c);</span><br><span class="line">#endif</span><br></pre></td></tr></table></figure>
-
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">#if PrintTemporalResult  </span><br><span class="line">  printf(&quot;|[frame-level-para  %f  %f]  \n&quot;, alpha, beta);</span><br><span class="line">#endif</span><br></pre></td></tr></table></figure>
+<h2 id="CTU级"><a href="#CTU级" class="headerlink" title="CTU级"></a>CTU级</h2><h2 id="IRAP帧的CTU"><a href="#IRAP帧的CTU" class="headerlink" title="IRAP帧的CTU"></a>IRAP帧的CTU</h2><p>和IRAP帧的修改相同，不需要额外修改</p>
+<h2 id="B-P帧的CTU"><a href="#B-P帧的CTU" class="headerlink" title="B/P帧的CTU"></a>B/P帧的CTU</h2>
           
         
       
@@ -2148,7 +2337,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">9</span>
+                    <span class="site-state-item-count">10</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -2185,7 +2374,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">12</span>
+                      
+                    
+                    <span class="site-state-item-count">13</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -2218,7 +2409,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">10</span>
+                      
+                    
+                    <span class="site-state-item-count">11</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
