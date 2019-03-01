@@ -558,7 +558,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-02-28 21:05:31" itemprop="dateModified" datetime="2019-02-28T21:05:31+08:00">2019-02-28</time>
+                <time title="修改时间：2019-03-01 14:33:50" itemprop="dateModified" datetime="2019-03-01T14:33:50+08:00">2019-03-01</time>
               
             
           </span>
@@ -697,8 +697,32 @@
 </li>
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">#if PrintTemporalResult  </span><br><span class="line">  printf(&quot;|[frame-level-para  %f  %f]  \n&quot;, alpha, beta);</span><br><span class="line">#endif</span><br></pre></td></tr></table></figure>
-<h2 id="CTU级"><a href="#CTU级" class="headerlink" title="CTU级"></a>CTU级</h2><h2 id="IRAP帧的CTU"><a href="#IRAP帧的CTU" class="headerlink" title="IRAP帧的CTU"></a>IRAP帧的CTU</h2><p>和IRAP帧的修改相同，不需要额外修改</p>
-<h2 id="B-P帧的CTU"><a href="#B-P帧的CTU" class="headerlink" title="B/P帧的CTU"></a>B/P帧的CTU</h2>
+<h2 id="CTU级"><a href="#CTU级" class="headerlink" title="CTU级"></a>CTU级</h2><h3 id="IRAP帧的CTU"><a href="#IRAP帧的CTU" class="headerlink" title="IRAP帧的CTU"></a>IRAP帧的CTU</h3><p>和IRAP帧的修改相同，不需要额外修改</p>
+<h3 id="B-P帧的CTU"><a href="#B-P帧的CTU" class="headerlink" title="B/P帧的CTU"></a>B/P帧的CTU</h3><ul>
+<li>文件<br>  RateCtrl.cpp </li>
+<li><p>位置<br>  getLCUEstLambda,<code>return</code>之前</p>
+</li>
+<li><p>具体语句</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">#if PrintTemporalResult  </span><br><span class="line">  printf(&quot;|[inter ctu_bpp  %f    ctu_lambda  %f  &quot;,bpp, estLambda);</span><br><span class="line">#endif</span><br></pre></td></tr></table></figure>
+<h3 id="CTU的更新"><a href="#CTU的更新" class="headerlink" title="CTU的更新"></a>CTU的更新</h3><h4 id="IRAP"><a href="#IRAP" class="headerlink" title="IRAP"></a>IRAP</h4><p>无更新，但是需要对每个CTU加上结束符。同时在加上结束符之前判断是否打开CTU级码率控制，如果打开则按照前面的格式输出，如果未打开，则每个CTU的格式都是<code>|[no-ctu_rc]  |</code></p>
+<ul>
+<li>文件<br>  EncSlice.cpp</li>
+<li>位置<br>  在<code>EncSlice::encodeCtus</code>中，<code>updateAfterCTU</code>之后</li>
+<li>具体语句<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">#if PrintTemporalResult  </span><br><span class="line">      </span><br><span class="line">      if (!pCfg-&gt;getLCULevelRC())</span><br><span class="line">      &#123;</span><br><span class="line">        printf(&quot;|[no-ctu_rc]  |&quot;);</span><br><span class="line">      &#125;</span><br><span class="line">      else</span><br><span class="line">      &#123;</span><br><span class="line">        if (pcSlice-&gt;isIRAP())</span><br><span class="line">        &#123;</span><br><span class="line">          printf(&quot;no-update]  |&quot;);</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">#endif</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="inter"><a href="#inter" class="headerlink" title="inter"></a>inter</h4><ul>
+<li>文件<br>  RateCtrl.cpp </li>
+<li><p>位置<br>  updateAfterCTU,更新参数之前</p>
+</li>
+<li><p>具体语句</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">#if PrintTemporalResult  </span><br><span class="line">  double bpp_real = (double)m_picActualBits / (double)m_numberOfPixel;</span><br><span class="line">  double bpp_comp = (double)m_targetBits / (double)m_numberOfPixel;</span><br><span class="line"></span><br><span class="line">  printf(&quot;ctu_update  %f  %f&quot;, bpp_comp, bpp_real);</span><br><span class="line">  printf(&quot;  %f  %f]  |&quot;, (alpha)*pow(bpp_comp, (beta)), (alpha)*pow(bpp_real, (beta)));</span><br><span class="line">#endif</span><br></pre></td></tr></table></figure>
+<h3 id="未打开CTU级码率控制时的修改"><a href="#未打开CTU级码率控制时的修改" class="headerlink" title="未打开CTU级码率控制时的修改"></a>未打开CTU级码率控制时的修改</h3><p>见CTU更新的IRAP部分</p>
+
           
         
       
