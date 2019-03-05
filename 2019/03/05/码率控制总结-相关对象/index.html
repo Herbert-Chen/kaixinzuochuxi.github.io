@@ -96,22 +96,25 @@
 
 
 
-  <meta name="keywords" content="游戏">
+  <meta name="description" content="简介承接上文，继续总结码率控制涉及到的变量，对象">
+<meta name="keywords" content="码率控制">
 <meta property="og:type" content="article">
-<meta property="og:title" content="隐形守护者">
-<meta property="og:url" content="http://yoursite.com/2019/02/27/隐形守护者/index.html">
+<meta property="og:title" content="码率控制总结---相关对象">
+<meta property="og:url" content="http://yoursite.com/2019/03/05/码率控制总结-相关对象/index.html">
 <meta property="og:site_name" content="开心做出戏">
+<meta property="og:description" content="简介承接上文，继续总结码率控制涉及到的变量，对象">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-03-05T05:11:12.705Z">
+<meta property="og:updated_time" content="2019-03-05T05:09:27.739Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="隐形守护者">
+<meta name="twitter:title" content="码率控制总结---相关对象">
+<meta name="twitter:description" content="简介承接上文，继续总结码率控制涉及到的变量，对象">
 
 
 
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/02/27/隐形守护者/"/>
+  <link rel="canonical" href="http://yoursite.com/2019/03/05/码率控制总结-相关对象/"/>
 
 
 
@@ -121,7 +124,7 @@
   };
 </script>
 
-  <title>隐形守护者 | 开心做出戏</title>
+  <title>码率控制总结---相关对象 | 开心做出戏</title>
   
 
 
@@ -337,7 +340,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/27/隐形守护者/"/>
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/05/码率控制总结-相关对象/"/>
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Herbert"/>
@@ -354,7 +357,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">隐形守护者
+          <h1 class="post-title" itemprop="name headline">码率控制总结---相关对象
 
               
             
@@ -380,24 +383,12 @@
                 
               
 
-              <time title="创建时间：2019-02-27 08:39:37" itemprop="dateCreated datePublished" datetime="2019-02-27T08:39:37+08:00">2019-02-27</time>
+              <time title="创建时间：2019-03-05 12:25:13 / 修改时间：13:09:27" itemprop="dateCreated datePublished" datetime="2019-03-05T12:25:13+08:00">2019-03-05</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-03-05 13:11:12" itemprop="dateModified" datetime="2019-03-05T13:11:12+08:00">2019-03-05</time>
               
             
           </span>
@@ -414,7 +405,21 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/游戏/" itemprop="url" rel="index"><span itemprop="name">游戏</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/学习/" itemprop="url" rel="index"><span itemprop="name">学习</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/学习/视频编码/" itemprop="url" rel="index"><span itemprop="name">视频编码</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/学习/视频编码/码率控制/" itemprop="url" rel="index"><span itemprop="name">码率控制</span></a></span>
 
                 
                 
@@ -449,7 +454,78 @@
       
 
       
-        <a id="more"></a>
+        <h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>承接上文，继续总结码率控制涉及到的变量，对象</p>
+<a id="more"></a>
+<h1 id="相关对象"><a href="#相关对象" class="headerlink" title="相关对象"></a>相关对象</h1><p>此处将所有涉及到的变量，数据分为3类</p>
+<ul>
+<li>源信息，主要是视频固有的信息。</li>
+<li>编码参数，进行编码时的具体参数。</li>
+<li>编码结果，编码结束后的RD信息等。<h2 id="视频的组织结构"><a href="#视频的组织结构" class="headerlink" title="视频的组织结构"></a>视频的组织结构</h2>序列<br>GOP<br>帧<br>条/片<br>CTU</li>
+</ul>
+<h2 id="组织结构中的变量"><a href="#组织结构中的变量" class="headerlink" title="组织结构中的变量"></a>组织结构中的变量</h2><h3 id="序列"><a href="#序列" class="headerlink" title="序列"></a>序列</h3><h4 id="源信息"><a href="#源信息" class="headerlink" title="源信息"></a>源信息</h4><ul>
+<li>序列中帧的宽度</li>
+<li>序列中帧的高度</li>
+<li>序列总帧数</li>
+<li>视频内容<h4 id="编码参数"><a href="#编码参数" class="headerlink" title="编码参数"></a>编码参数</h4></li>
+<li>序列的QP/码率</li>
+<li>编码结构：RA/AI/LD</li>
+<li>GOP的大小<h4 id="编码结果"><a href="#编码结果" class="headerlink" title="编码结果"></a>编码结果</h4></li>
+<li>序列的失真</li>
+<li>序列的码率<ul>
+<li>给定码率</li>
+<li>实际码率</li>
+</ul>
+</li>
+<li>编码的时间</li>
+</ul>
+<h3 id="GOP"><a href="#GOP" class="headerlink" title="GOP"></a>GOP</h3><h4 id="源信息-1"><a href="#源信息-1" class="headerlink" title="源信息"></a>源信息</h4><ul>
+<li>序列中帧的宽度</li>
+<li>序列中帧的高度</li>
+<li>视频内容<h4 id="编码参数-1"><a href="#编码参数-1" class="headerlink" title="编码参数"></a>编码参数</h4></li>
+<li>序列的QP/码率</li>
+<li>编码结构：RA/AI/LD</li>
+<li>GOP的大小<h4 id="编码结果-1"><a href="#编码结果-1" class="headerlink" title="编码结果"></a>编码结果</h4></li>
+<li>GOP的失真</li>
+<li>GOP的码率<ul>
+<li>给定码率</li>
+<li>实际码率</li>
+</ul>
+</li>
+<li>编码的时间</li>
+</ul>
+<h3 id="帧"><a href="#帧" class="headerlink" title="帧"></a>帧</h3><h4 id="源信息-2"><a href="#源信息-2" class="headerlink" title="源信息"></a>源信息</h4><ul>
+<li>帧的宽度</li>
+<li>帧的高度</li>
+<li>图片内容</li>
+</ul>
+<h4 id="编码参数-2"><a href="#编码参数-2" class="headerlink" title="编码参数"></a>编码参数</h4><ul>
+<li>当前帧的QP/lambda</li>
+<li>帧的类型</li>
+<li>ctu的大小</li>
+<li>图片中ctu个数<h4 id="编码结果-2"><a href="#编码结果-2" class="headerlink" title="编码结果"></a>编码结果</h4></li>
+<li>当前帧的失真</li>
+<li>当前帧的bit/bpp<ul>
+<li>给定</li>
+<li>实际</li>
+</ul>
+</li>
+<li>当前帧的RD模型</li>
+</ul>
+<h3 id="条-片"><a href="#条-片" class="headerlink" title="条/片"></a>条/片</h3><p>暂不考虑</p>
+<h3 id="CTU"><a href="#CTU" class="headerlink" title="CTU"></a>CTU</h3><h4 id="源信息-3"><a href="#源信息-3" class="headerlink" title="源信息"></a>源信息</h4><ul>
+<li>ctu的内容<h4 id="编码参数-3"><a href="#编码参数-3" class="headerlink" title="编码参数"></a>编码参数</h4></li>
+<li><p>ctu的大小</p>
+<h4 id="编码结果-3"><a href="#编码结果-3" class="headerlink" title="编码结果"></a>编码结果</h4></li>
+<li><p>当前ctu的失真</p>
+</li>
+<li>当前ctu的bit/bpp<ul>
+<li>给定</li>
+<li>实际</li>
+</ul>
+</li>
+<li>当前RD模型</li>
+</ul>
+
       
     </div>
 
@@ -472,7 +548,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/游戏/" rel="tag"># 游戏</a>
+            <a href="/tags/码率控制/" rel="tag"># 码率控制</a>
           
         </div>
       
@@ -485,8 +561,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/02/26/VTM中打印码率控制中间变量/" rel="next" title="VTM中打印码率控制中间变量">
-                <i class="fa fa-chevron-left"></i> VTM中打印码率控制中间变量
+              <a href="/2019/03/05/R-lambda的码率控制/" rel="next" title="R-lambda的码率控制">
+                <i class="fa fa-chevron-left"></i> R-lambda的码率控制
               </a>
             
           </div>
@@ -494,10 +570,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/03/05/码率控制总结---简介，作用，目标及衡量标准/" rel="prev" title="码率控制总结---简介，作用，目标及衡量标准">
-                码率控制总结---简介，作用，目标及衡量标准 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -542,8 +614,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -687,6 +768,23 @@
         </div>
       </div>
 
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#简介"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#相关对象"><span class="nav-number">2.</span> <span class="nav-text">相关对象</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#视频的组织结构"><span class="nav-number">2.1.</span> <span class="nav-text">视频的组织结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#组织结构中的变量"><span class="nav-number">2.2.</span> <span class="nav-text">组织结构中的变量</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#序列"><span class="nav-number">2.2.1.</span> <span class="nav-text">序列</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#源信息"><span class="nav-number">2.2.1.1.</span> <span class="nav-text">源信息</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#编码参数"><span class="nav-number">2.2.1.2.</span> <span class="nav-text">编码参数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#编码结果"><span class="nav-number">2.2.1.3.</span> <span class="nav-text">编码结果</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#GOP"><span class="nav-number">2.2.2.</span> <span class="nav-text">GOP</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#源信息-1"><span class="nav-number">2.2.2.1.</span> <span class="nav-text">源信息</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#编码参数-1"><span class="nav-number">2.2.2.2.</span> <span class="nav-text">编码参数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#编码结果-1"><span class="nav-number">2.2.2.3.</span> <span class="nav-text">编码结果</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#帧"><span class="nav-number">2.2.3.</span> <span class="nav-text">帧</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#源信息-2"><span class="nav-number">2.2.3.1.</span> <span class="nav-text">源信息</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#编码参数-2"><span class="nav-number">2.2.3.2.</span> <span class="nav-text">编码参数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#编码结果-2"><span class="nav-number">2.2.3.3.</span> <span class="nav-text">编码结果</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#条-片"><span class="nav-number">2.2.4.</span> <span class="nav-text">条/片</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CTU"><span class="nav-number">2.2.5.</span> <span class="nav-text">CTU</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#源信息-3"><span class="nav-number">2.2.5.1.</span> <span class="nav-text">源信息</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#编码参数-3"><span class="nav-number">2.2.5.2.</span> <span class="nav-text">编码参数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#编码结果-3"><span class="nav-number">2.2.5.3.</span> <span class="nav-text">编码结果</span></a></li></ol></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
       
 
       

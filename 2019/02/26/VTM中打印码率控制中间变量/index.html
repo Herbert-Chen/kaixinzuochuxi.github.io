@@ -96,18 +96,18 @@
 
 
 
-  <meta name="description" content="简介本文主要描述了在VTM中打印码率控制中间变量的方法，这些中间变量可以用来辅助分析RD模型 几个值得注意的地方 frame bpp计算是整帧的bit减去估计的header bit之后再计算bpp 输出frame 的target bit需要在buffer regularization之后，同时不同帧类型也会有refinement，所以针对3种类型要分别添加(AI，非AI的I，B/P)基本格式预期输">
+  <meta name="description" content="简介本文主要描述了在VTM中打印码率控制中间变量的方法，这些中间变量可以用来辅助分析RD模型">
 <meta name="keywords" content="VTM,video coding">
 <meta property="og:type" content="article">
 <meta property="og:title" content="VTM中打印码率控制中间变量">
 <meta property="og:url" content="http://yoursite.com/2019/02/26/VTM中打印码率控制中间变量/index.html">
 <meta property="og:site_name" content="开心做出戏">
-<meta property="og:description" content="简介本文主要描述了在VTM中打印码率控制中间变量的方法，这些中间变量可以用来辅助分析RD模型 几个值得注意的地方 frame bpp计算是整帧的bit减去估计的header bit之后再计算bpp 输出frame 的target bit需要在buffer regularization之后，同时不同帧类型也会有refinement，所以针对3种类型要分别添加(AI，非AI的I，B/P)基本格式预期输">
+<meta property="og:description" content="简介本文主要描述了在VTM中打印码率控制中间变量的方法，这些中间变量可以用来辅助分析RD模型">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-03-04T10:49:43.230Z">
+<meta property="og:updated_time" content="2019-03-05T05:10:46.565Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="VTM中打印码率控制中间变量">
-<meta name="twitter:description" content="简介本文主要描述了在VTM中打印码率控制中间变量的方法，这些中间变量可以用来辅助分析RD模型 几个值得注意的地方 frame bpp计算是整帧的bit减去估计的header bit之后再计算bpp 输出frame 的target bit需要在buffer regularization之后，同时不同帧类型也会有refinement，所以针对3种类型要分别添加(AI，非AI的I，B/P)基本格式预期输">
+<meta name="twitter:description" content="简介本文主要描述了在VTM中打印码率控制中间变量的方法，这些中间变量可以用来辅助分析RD模型">
 
 
 
@@ -400,7 +400,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-03-04 18:49:43" itemprop="dateModified" datetime="2019-03-04T18:49:43+08:00">2019-03-04</time>
+                <time title="修改时间：2019-03-05 13:10:46" itemprop="dateModified" datetime="2019-03-05T13:10:46+08:00">2019-03-05</time>
               
             
           </span>
@@ -466,7 +466,7 @@
       
 
       
-        <h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>本文主要描述了在VTM中打印码率控制中间变量的方法，这些中间变量可以用来辅助分析RD模型</p>
+        <h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>本文主要描述了在VTM中打印码率控制中间变量的方法，这些中间变量可以用来辅助分析RD模型<br><a id="more"></a></p>
 <h2 id="几个值得注意的地方"><a href="#几个值得注意的地方" class="headerlink" title="几个值得注意的地方"></a>几个值得注意的地方</h2><ul>
 <li>frame bpp计算是整帧的bit减去估计的header bit之后再计算bpp</li>
 <li>输出frame 的target bit需要在buffer regularization之后，同时不同帧类型也会有refinement，所以针对3种类型要分别添加(AI，非AI的I，B/P)<h2 id="基本格式"><a href="#基本格式" class="headerlink" title="基本格式"></a>基本格式</h2>预期输出的格式如下，首先是格式，然后解释每一项具体内容<h3 id="IRAP帧"><a href="#IRAP帧" class="headerlink" title="IRAP帧"></a>IRAP帧</h3>对于IRAP，格式如下。注意，这些输出在编码得到的txt中为一行，在这里为了显示的方便，人为地进行分行，只要记住实际为1行就可以了。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">RC |Pic_comp_bits: 14655        </span><br><span class="line">|frame_level: </span><br><span class="line">|[IRAP madpp:23.078666    bpp:1.129687    bpp_1:20.429248 pic_lambda:92.377179    pic_QP:21]      |</span><br><span class="line">ctu_level: </span><br><span class="line">|[IRAP madpp:27.015124 bpp:1.281189    bpp_1:21.085979 ctu_lambda:97.747760    ctu_QP:21       no-update]      |</span><br><span class="line">|[IRAP madpp:14.089777 bpp:0.867920    bpp_1:16.233959 ctu_lambda:63.615234    ctu_QP:20       no-update]      |</span><br><span class="line">|[IRAP madpp:33.306836 bpp:1.789673    bpp_1:18.610572 ctu_lambda:78.206851    ctu_QP:20       no-update]      |</span><br><span class="line">|[IRAP madpp:23.004567 bpp:1.619629    bpp_1:14.203603 ctu_lambda:50.138345    ctu_QP:19       no-update]      |</span><br><span class="line">|[IRAP madpp:28.990221 bpp:1.972796    bpp_1:14.694994 ctu_lambda:51.288322    ctu_QP:19       no-update]      |</span><br><span class="line">|[IRAP madpp:10.071074 bpp:0.986747    bpp_1:10.206343 ctu_lambda:50.138345    ctu_QP:19       no-update]      |</span><br><span class="line">|[IRAP madpp:27.242691 bpp:2.680664    bpp_1:10.162665 ctu_lambda:50.138345    ctu_QP:19       no-update]      |</span><br><span class="line">|[IRAP madpp:20.061599 bpp:7.831473    bpp_1:2.561664  ctu_lambda:50.138345    ctu_QP:19       no-update]      |</span><br><span class="line">POC    0 TId: 0 ( I-SLICE, QP 21 )     102184 bits [Y 41.8476 dB    U 44.8285 dB    V 44.9024 dB] [MS-SSIM Y 0.995731    U 0.995461    V 0.996197] [Y MSE 67.9896  U MSE 34.2256  V MSE 33.6483] [ET    31 ] [L0 ] [L1 ]       |[pic_update:1.129687   1.022596 134.362311      112.467106]     |</span><br><span class="line">|[frame-level-para 103.366762  1.771833]</span><br></pre></td></tr></table></figure>
@@ -685,7 +685,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">10</span>
+                    <span class="site-state-item-count">13</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -724,7 +724,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">13</span>
+                      
+                    
+                    <span class="site-state-item-count">14</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -759,7 +761,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">11</span>
+                      
+                    
+                    <span class="site-state-item-count">12</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
