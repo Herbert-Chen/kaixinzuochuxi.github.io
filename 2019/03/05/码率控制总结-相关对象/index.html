@@ -104,7 +104,7 @@
 <meta property="og:site_name" content="开心做出戏">
 <meta property="og:description" content="简介承接码率控制总结—简介，作用，目标及衡量标准，继续总结码率控制涉及到的变量，对象">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-03-05T05:16:21.169Z">
+<meta property="og:updated_time" content="2019-03-05T05:40:58.795Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="码率控制总结---相关对象">
 <meta name="twitter:description" content="简介承接码率控制总结—简介，作用，目标及衡量标准，继续总结码率控制涉及到的变量，对象">
@@ -383,7 +383,7 @@
                 
               
 
-              <time title="创建时间：2019-03-05 12:25:13 / 修改时间：13:16:21" itemprop="dateCreated datePublished" datetime="2019-03-05T12:25:13+08:00">2019-03-05</time>
+              <time title="创建时间：2019-03-05 12:25:13 / 修改时间：13:40:58" itemprop="dateCreated datePublished" datetime="2019-03-05T12:25:13+08:00">2019-03-05</time>
             
 
             
@@ -458,10 +458,38 @@
 <a id="more"></a>
 <h1 id="相关对象"><a href="#相关对象" class="headerlink" title="相关对象"></a>相关对象</h1><p>此处将所有涉及到的变量，数据分为3类</p>
 <ul>
-<li>源信息，主要是视频固有的信息。</li>
-<li>编码参数，进行编码时的具体参数。</li>
-<li>编码结果，编码结束后的RD信息等。<h2 id="视频的组织结构"><a href="#视频的组织结构" class="headerlink" title="视频的组织结构"></a>视频的组织结构</h2>序列<br>GOP<br>帧<br>条/片<br>CTU</li>
+<li>源信息，主要是视频固有的信息。<ul>
+<li>分辨率，宽/高</li>
+<li>内容信息</li>
+<li>位置信息：总帧数/POC/raster scan</li>
 </ul>
+</li>
+<li>编码参数，进行编码时的具体参数。<ul>
+<li>编码结构/帧的类型/TID</li>
+<li>编码的决策参数：QP/lambda</li>
+<li>具体的编码模式</li>
+</ul>
+</li>
+<li>编码结果，编码结束后的RD信息等。<ul>
+<li>失真D<ul>
+<li>ssim，mse，psnr…</li>
+<li>Y, U, V, YUV</li>
+</ul>
+</li>
+<li>资源R<ul>
+<li>bit，bpp， header bit…</li>
+<li>actual，target</li>
+</ul>
+</li>
+<li>RD关系<ul>
+<li>关系</li>
+<li>参数</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="视频的组织结构"><a href="#视频的组织结构" class="headerlink" title="视频的组织结构"></a>视频的组织结构</h2><p>序列<br>GOP<br>帧<br>条/片<br>CTU</p>
 <h2 id="组织结构中的变量"><a href="#组织结构中的变量" class="headerlink" title="组织结构中的变量"></a>组织结构中的变量</h2><h3 id="序列"><a href="#序列" class="headerlink" title="序列"></a>序列</h3><h4 id="源信息"><a href="#源信息" class="headerlink" title="源信息"></a>源信息</h4><ul>
 <li>序列中帧的宽度</li>
 <li>序列中帧的高度</li>
@@ -571,6 +599,10 @@
 
           <div class="post-nav-prev post-nav-item">
             
+              <a href="/2019/03/05/码率控制总结-步骤/" rel="prev" title="码率控制总结---步骤">
+                码率控制总结---步骤 <i class="fa fa-chevron-right"></i>
+              </a>
+            
           </div>
         </div>
       
@@ -639,7 +671,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">13</span>
+                    <span class="site-state-item-count">15</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
