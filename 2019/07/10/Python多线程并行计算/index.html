@@ -96,25 +96,24 @@
 
 
 
-  <meta name="description" content="简介本文主要介绍了码率控制的 作用，目标及衡量标准。">
-<meta name="keywords" content="码率控制">
+  <meta name="description" content="本文主要介绍了在Python中实现并行计算的办法。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="码率控制总结---简介，作用，目标及衡量标准">
-<meta property="og:url" content="http://yoursite.com/2019/03/05/码率控制总结---简介，作用，目标及衡量标准/index.html">
+<meta property="og:title" content="Python多线程并行计算">
+<meta property="og:url" content="http://yoursite.com/2019/07/10/Python多线程并行计算/index.html">
 <meta property="og:site_name" content="开心做出戏">
-<meta property="og:description" content="简介本文主要介绍了码率控制的 作用，目标及衡量标准。">
+<meta property="og:description" content="本文主要介绍了在Python中实现并行计算的办法。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-03-05T05:02:32.839Z">
+<meta property="og:updated_time" content="2019-07-10T09:31:32.132Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="码率控制总结---简介，作用，目标及衡量标准">
-<meta name="twitter:description" content="简介本文主要介绍了码率控制的 作用，目标及衡量标准。">
+<meta name="twitter:title" content="Python多线程并行计算">
+<meta name="twitter:description" content="本文主要介绍了在Python中实现并行计算的办法。">
 
 
 
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/03/05/码率控制总结---简介，作用，目标及衡量标准/"/>
+  <link rel="canonical" href="http://yoursite.com/2019/07/10/Python多线程并行计算/"/>
 
 
 
@@ -124,7 +123,7 @@
   };
 </script>
 
-  <title>码率控制总结---简介，作用，目标及衡量标准 | 开心做出戏</title>
+  <title>Python多线程并行计算 | 开心做出戏</title>
   
 
 
@@ -340,7 +339,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/05/码率控制总结---简介，作用，目标及衡量标准/"/>
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/10/Python多线程并行计算/"/>
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Herbert"/>
@@ -357,7 +356,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">码率控制总结---简介，作用，目标及衡量标准
+          <h1 class="post-title" itemprop="name headline">Python多线程并行计算
 
               
             
@@ -383,7 +382,7 @@
                 
               
 
-              <time title="创建时间：2019-03-05 10:25:09 / 修改时间：13:02:32" itemprop="dateCreated datePublished" datetime="2019-03-05T10:25:09+08:00">2019-03-05</time>
+              <time title="创建时间：2019-07-10 16:00:03 / 修改时间：17:31:32" itemprop="dateCreated datePublished" datetime="2019-07-10T16:00:03+08:00">2019-07-10</time>
             
 
             
@@ -393,38 +392,6 @@
             
           </span>
 
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/学习/" itemprop="url" rel="index"><span itemprop="name">学习</span></a></span>
-
-                
-                
-                  ，
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/学习/视频编码/" itemprop="url" rel="index"><span itemprop="name">视频编码</span></a></span>
-
-                
-                
-                  ，
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/学习/视频编码/码率控制/" itemprop="url" rel="index"><span itemprop="name">码率控制</span></a></span>
-
-                
-                
-              
-            </span>
           
 
           
@@ -454,18 +421,32 @@
       
 
       
-        <h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>本文主要介绍了码率控制的 作用，目标及衡量标准。</p>
+        <p>本文主要介绍了在Python中实现并行计算的办法。</p>
 <a id="more"></a>
-<h1 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h1><p>对未编码视频给定一个码率，使得编码之后的视频码率尽可能接近给定码率，同时质量尽可能高</p>
-<h1 id="目标及衡量标准"><a href="#目标及衡量标准" class="headerlink" title="目标及衡量标准"></a>目标及衡量标准</h1><p>码率控制有多个目标及衡量标准，列举如下：</p>
-<h2 id="码率准确性"><a href="#码率准确性" class="headerlink" title="码率准确性"></a>码率准确性</h2><p>主要比较输出码率与给定码率的差距</p>
-<p>$accuracy=|\frac{BR_{target}-BR_{actual}}{BR_{target}}|$</p>
-<h2 id="RD性能"><a href="#RD性能" class="headerlink" title="RD性能"></a>RD性能</h2><h3 id="D"><a href="#D" class="headerlink" title="D"></a>D</h3><p>主要分为3类，PSNR, SSIM, MSE</p>
-<p>每一类可以分为，Y,U,V,YUV四个分量。前三个是三个分量的失真，最后是按照给定的规律计算出来的综合失真</p>
-<p>一般来说序列D是每帧D的平均</p>
-<h3 id="R"><a href="#R" class="headerlink" title="R"></a>R</h3><p>一般来说考虑最后的平均码率</p>
-<h3 id="RD综合考虑"><a href="#RD综合考虑" class="headerlink" title="RD综合考虑"></a>RD综合考虑</h3><h4 id="BD-BR"><a href="#BD-BR" class="headerlink" title="BD-BR"></a>BD-BR</h4><p>相同PSNR下，码率的节省情况。<br>为负表示质量相同码率节省，当前算法较优；为正表示质量相同码率增加，当前算法较劣。</p>
-<h4 id="BD-PSNR"><a href="#BD-PSNR" class="headerlink" title="BD-PSNR"></a>BD-PSNR</h4><p>相同码率下，PSNR的变化情况。<br>为正表示相同码率下，视频的质量好，算法较优；为负则视频质量差，算法较劣。</p>
+<h1 id="问题场景"><a href="#问题场景" class="headerlink" title="问题场景"></a>问题场景</h1><p>最简单的场景：<br>同一个函数，需要在不同的输入下分别运行，此时即可使用并行计算方法。</p>
+<p><strong>参考文献</strong>：<br><a href="https://blog.csdn.net/SeeTheWorld518/article/details/49639651" target="_blank" rel="noopener">Python 多进程 multiprocessing.Pool类详解</a><br><a href="https://abcdabcd987.com/python-multiprocessing/" target="_blank" rel="noopener">Python 多核并行计算</a></p>
+<h1 id="模块与类"><a href="#模块与类" class="headerlink" title="模块与类"></a>模块与类</h1><p>此部分介绍了两种多线程的方法，分别为<code>multiprocessing.Process()</code>和<code>multiprocessing.Pool()</code>。<br>他们之间的区别为：</p>
+<ul>
+<li>任务与进程的对应关系，<code>Process()</code>一个任务对应一个进程，但<code>Pool()</code>并没有准确的对应关系，每来一个任务，如果进程池没满，就会创建一个进程执行；如果进程池满了，则会等待池中进程结束再来执行当前任务。<ul>
+<li>由此导致在进程数量管理上，<code>Pool()</code>比<code>Process()</code>更方便，不需要手动为任务分配进程。</li>
+</ul>
+</li>
+</ul>
+<h2 id="multiprocessing-Process"><a href="#multiprocessing-Process" class="headerlink" title="multiprocessing.Process()"></a><code>multiprocessing.Process()</code></h2><h3 id="构造方法"><a href="#构造方法" class="headerlink" title="构造方法"></a>构造方法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">__init__(self, group=None, target=None, name=None, args=(), kwargs=&#123;&#125;)</span><br></pre></td></tr></table></figure>
+<p>目前需要注意的是，target表示调用对象，如函数名，args是函数的输入参数。</p>
+<p>借用参考文献中的例子：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">#coding=utf-8</span><br><span class="line">import multiprocessing</span><br><span class="line"></span><br><span class="line">def do(n) :</span><br><span class="line">  #获取当前线程的名字</span><br><span class="line">  name = multiprocessing.current_process().name</span><br><span class="line">  print name,&apos;starting&apos;</span><br><span class="line">  print &quot;worker &quot;, n</span><br><span class="line">  return </span><br><span class="line"></span><br><span class="line">if __name__ == &apos;__main__&apos; :</span><br><span class="line">  numList = []</span><br><span class="line">  for i in xrange(5) :</span><br><span class="line">    p = multiprocessing.Process(target=do, args=(i,))</span><br><span class="line">    numList.append(p)</span><br><span class="line">    p.start()</span><br><span class="line">    p.join()</span><br><span class="line">    print &quot;Process end.&quot;</span><br></pre></td></tr></table></figure></p>
+<p><code>p.start()</code>,启动进程，<code>p.join()</code>,等待当前进程结束之后再继续，常用于进程间的同步。</p>
+<h2 id="multiprocessing-Pool"><a href="#multiprocessing-Pool" class="headerlink" title="multiprocessing.Pool()"></a><code>multiprocessing.Pool()</code></h2><p>流程：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">pool = Pool(5)</span><br><span class="line">rl =pool.map(func, Para_inter) # 可以设置左值，对于函数没有返回值的情况</span><br><span class="line">pool.close()</span><br><span class="line">pool.join()</span><br></pre></td></tr></table></figure></p>
+<p>例子：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">import time</span><br><span class="line">from multiprocessing import Pool</span><br><span class="line">def run(fn):</span><br><span class="line">  #fn: 函数参数是数据列表的一个元素</span><br><span class="line">  time.sleep(1)</span><br><span class="line">  return fn*fn</span><br><span class="line"></span><br><span class="line">if __name__ == &quot;__main__&quot;:</span><br><span class="line">  testFL = [1,2,3,4,5,6]  </span><br><span class="line">  print &apos;shunxu:&apos; #顺序执行(也就是串行执行，单进程)</span><br><span class="line">  s = time.time()</span><br><span class="line">  for fn in testFL:</span><br><span class="line">    run(fn)</span><br><span class="line"></span><br><span class="line">  e1 = time.time()</span><br><span class="line">  print &quot;顺序执行时间：&quot;, int(e1 - s)</span><br><span class="line"></span><br><span class="line">  print &apos;concurrent:&apos; #创建多个进程，并行执行</span><br><span class="line">  pool = Pool(5)  #创建拥有5个进程数量的进程池</span><br><span class="line">  #testFL:要处理的数据列表，run：处理testFL列表中数据的函数</span><br><span class="line">  rl =pool.map(run, testFL) </span><br><span class="line">  pool.close()#关闭进程池，不再接受新的进程</span><br><span class="line">  pool.join()#主进程阻塞等待子进程的退出</span><br><span class="line">  e2 = time.time()</span><br><span class="line">  print &quot;并行执行时间：&quot;, int(e2-e1)</span><br><span class="line">  print rl</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">map(func, iterable[, chunksize=None])</span><br></pre></td></tr></table></figure>
+<p>func为函数名，后面的迭代器中为函数参数。map的赋值对象表示返回值的列表，等所有进程执行完毕之后才回返回。顺序不一定与输入顺序一致。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">close()</span><br></pre></td></tr></table></figure>
+<p>关闭进程池，不接受新的任务，已经接受的任务会继续进行</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">terminate()</span><br></pre></td></tr></table></figure>
+<p>结束所有的进程</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">join()</span><br></pre></td></tr></table></figure>
+<p>主进程阻塞等待子进程的退出，然后再执行后面的语句，join方法必须在close或terminate之后使用。</p>
+<p>如果函数需要传递多个参数，则需要分别构建每个参数的列表，zip，并且重新定义函数为单一变量函数，将所有变量作为一个tuple传入：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">def f_zipped(para):</span><br><span class="line">    f(para[0]...)</span><br><span class="line"></span><br><span class="line">pool.map(f_zipped,zip(paralist1,paralist2...))</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -487,12 +468,6 @@
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/码率控制/" rel="tag"># 码率控制</a>
-          
-        </div>
-      
 
       
       
@@ -502,8 +477,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/02/27/隐形守护者/" rel="next" title="隐形守护者">
-                <i class="fa fa-chevron-left"></i> 隐形守护者
+              <a href="/2019/07/09/VTM4-0中的QPA/" rel="next" title="VTM4.0�е�QPA">
+                <i class="fa fa-chevron-left"></i> VTM4.0�е�QPA
               </a>
             
           </div>
@@ -511,10 +486,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/03/05/R-lambda的码率控制/" rel="prev" title="R-lambda的码率控制">
-                R-lambda的码率控制 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -724,7 +695,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#简介"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#作用"><span class="nav-number">2.</span> <span class="nav-text">作用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#目标及衡量标准"><span class="nav-number">3.</span> <span class="nav-text">目标及衡量标准</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#码率准确性"><span class="nav-number">3.1.</span> <span class="nav-text">码率准确性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#RD性能"><span class="nav-number">3.2.</span> <span class="nav-text">RD性能</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#D"><span class="nav-number">3.2.1.</span> <span class="nav-text">D</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#R"><span class="nav-number">3.2.2.</span> <span class="nav-text">R</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#RD综合考虑"><span class="nav-number">3.2.3.</span> <span class="nav-text">RD综合考虑</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#BD-BR"><span class="nav-number">3.2.3.1.</span> <span class="nav-text">BD-BR</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#BD-PSNR"><span class="nav-number">3.2.3.2.</span> <span class="nav-text">BD-PSNR</span></a></li></ol></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#问题场景"><span class="nav-number">1.</span> <span class="nav-text">问题场景</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#模块与类"><span class="nav-number">2.</span> <span class="nav-text">模块与类</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#multiprocessing-Process"><span class="nav-number">2.1.</span> <span class="nav-text">multiprocessing.Process()</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#构造方法"><span class="nav-number">2.1.1.</span> <span class="nav-text">构造方法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#multiprocessing-Pool"><span class="nav-number">2.2.</span> <span class="nav-text">multiprocessing.Pool()</span></a></li></ol></li></ol></div>
             
 
           </div>
