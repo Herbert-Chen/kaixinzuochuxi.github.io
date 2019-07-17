@@ -96,17 +96,17 @@
 
 
 
-  <meta name="description" content="������Ҫ�����ˣ�QPA��VTM4.0�е�QPA����᰸��ԭ����ʵ�֡�">
+  <meta name="description" content="本文主要介绍了：QPA，VTM4.0中的QPA相关提案，原理与实现。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="VTM4-0�е�QPA">
+<meta property="og:title" content="VTM4-0中的QPA">
 <meta property="og:url" content="http://yoursite.com/2019/07/09/VTM4-0中的QPA/index.html">
 <meta property="og:site_name" content="开心做出戏">
-<meta property="og:description" content="������Ҫ�����ˣ�QPA��VTM4.0�е�QPA����᰸��ԭ����ʵ�֡�">
+<meta property="og:description" content="本文主要介绍了：QPA，VTM4.0中的QPA相关提案，原理与实现。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-07-17T13:05:58.205Z">
+<meta property="og:updated_time" content="2019-07-17T13:09:52.314Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="VTM4-0�е�QPA">
-<meta name="twitter:description" content="������Ҫ�����ˣ�QPA��VTM4.0�е�QPA����᰸��ԭ����ʵ�֡�">
+<meta name="twitter:title" content="VTM4-0中的QPA">
+<meta name="twitter:description" content="本文主要介绍了：QPA，VTM4.0中的QPA相关提案，原理与实现。">
 
 
 
@@ -123,7 +123,7 @@
   };
 </script>
 
-  <title>VTM4-0�е�QPA | 开心做出戏</title>
+  <title>VTM4-0中的QPA | 开心做出戏</title>
   
 
 
@@ -356,7 +356,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">VTM4-0�е�QPA
+          <h1 class="post-title" itemprop="name headline">VTM4-0中的QPA
 
               
             
@@ -399,7 +399,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-07-17 21:05:58" itemprop="dateModified" datetime="2019-07-17T21:05:58+08:00">2019-07-17</time>
+                <time title="修改时间：2019-07-17 21:09:52" itemprop="dateModified" datetime="2019-07-17T21:09:52+08:00">2019-07-17</time>
               
             
           </span>
@@ -433,48 +433,48 @@
       
 
       
-        <p>������Ҫ�����ˣ�QPA��VTM4.0�е�QPA����᰸��ԭ����ʵ�֡�</p>
+        <p>本文主要介绍了：QPA，VTM4.0中的QPA相关提案，原理与实现。</p>
 <a id="more"></a>
-<h1 id="QPA"><a href="#QPA" class="headerlink" title="QPA"></a>QPA</h1><p>QPA ��quantization parameter adaption ����д��Ҳ���Ա�ʾΪAQP�� adaptive quantization parameter��</p>
-<p>��������;�ǣ���fix QP�����У�ͨ��������Ƶ��content information����frame level����ctu level��QP�������Ӷ��ﵽ�Ż�����RD���ܵ�Ŀ�ġ�</p>
-<p>�Ż�ctu level��QP�����¼���˼·��</p>
+<h1 id="QPA"><a href="#QPA" class="headerlink" title="QPA"></a>QPA</h1><p>QPA 是quantization parameter adaption 的缩写，也可以表示为AQP， adaptive quantization parameter。</p>
+<p>常见的用途是，在fix QP编码中，通过分析视频的content information进行frame level或者ctu level的QP调整，从而达到优化整体RD性能的目的。</p>
+<p>优化ctu level的QP有以下几种思路：</p>
 <ul>
-<li>ROI�Ż�<ul>
-<li>�������������Ż�</li>
-<li>�Բ�ͬJND�����Ż�</li>
+<li>ROI优化<ul>
+<li>对显著性区域优化</li>
+<li>对不同JND区域优化</li>
 </ul>
 </li>
-<li>���������ϵ�Ż�<ul>
-<li>����֡������ģ��(����D��ǰ��)�����Ż�</li>
-<li>����֡��������ǿ��(CU-Tree)�����Ż�</li>
+<li>块的依赖关系优化<ul>
+<li>依据帧间依赖模型(后续D的前移)进行优化</li>
+<li>根据帧间依赖的强度(CU-Tree)进行优化</li>
 </ul>
 </li>
 </ul>
-<h1 id="VTM4-0�е�QPA����᰸"><a href="#VTM4-0�е�QPA����᰸" class="headerlink" title="VTM4.0�е�QPA����᰸"></a>VTM4.0�е�QPA����᰸</h1><p>�����᰸��Improved perceptually optimized QP adaptation and associated distortion measure�� JVET-K0206<br>�������᰸���������֤�Ͳ��ֲ����޸ģ�������JVET-H0047-v5��JVET-M0091-v1��</p>
-<p>��Ҫ�ο�JVET-K0206��JVET-H0047-v5���ɡ�</p>
-<h1 id="VTM4-0�е�QPA��ԭ��"><a href="#VTM4-0�е�QPA��ԭ��" class="headerlink" title="VTM4.0�е�QPA��ԭ��"></a>VTM4.0�е�QPA��ԭ��</h1><p>���������͹�ʽ����JVET-K0206���ҵ���</p>
-<p>key words�� perceptually suboptimal, low-medium bitrates, visual activity<br>˼·�������������������������͸���������������<br>ԭ���Ӿ��ϣ������������ʧ���������</p>
-<p>������ڵ����⣺�����PSNR�����½�<br>ԭ��û�������Ӿ��ļ�ȨЧ��<br>���裺ͬһ֡�Ŀ����ж����ԣ����Ը������SSEʧ����Ե��ӡ�<br>ԭʼ�汾RDO��<br>$$<br>\begin{aligned}<br> J &amp;=D_{pic}+\lambda_{pic}\cdot R_{pic}\<br> &amp;=\sum_{k} D_{k}+ \lambda_{pic}\cdot(\sum_kR_{k})<br>\end{aligned}<br>$$<br>��Ȩ�汾RDO,�������Լ��裺<br>$$<br>\begin{aligned}<br> J &amp;=D_{pic}+\lambda_{pic}\cdot R_{pic}\<br> &amp;=\sum_{k} w_k\cdot D_{k}+ \lambda_{pic}\cdot(\sum_kR_{k})\<br> &amp;=\sum_{k} (w_k\cdot D_{k}+\lambda_{pic}\cdot R_{k})\<br> &amp;=\sum_{k} w_k\cdot(D_{k}+\lambda_{pic}/w_k \cdot R_{k})\<br> &amp;=\sum_{k} w_k\cdot(D_{k}+\lambda_{k} \cdot R_{k})<br>\end{aligned}<br>$$<br>����$$\lambda_{k}\propto \triangle_k^2 (\text{QP stepsize}) \propto 2^{\frac{QP_k}{6}}$$, ����$$QP_k=QP-3\log_2w_k$$</p>
-<p>WPSNR�ļ��㣺$$WPSNR=10\log_{10}(\frac{W\cdot H \cdot 255^2 \cdot 2^{2B-16}}{D_{pic}^{WSSE}})$$, �ʹ�ͳ��PSNR���������SSE�Ǽ�Ȩ��SSE��</p>
-<h2 id="���岽�裺"><a href="#���岽�裺" class="headerlink" title="���岽�裺"></a>���岽�裺</h2><ul>
-<li>���㵱ǰ���Ȩ��<ul>
-<li>��ͨ�˲���4��ͷ,���㵱ǰλ�����غ����������ĸ����صĲ��$$H(x,y)=4S(x,y)-S(x+1,y)-S(x-1,y)-S(x,y+1)-S(x,y-1)$$</li>
-<li>��ÿ����$B_k$, ����local activity(�������ƽ���̶ȣ�����������Ӷ�)��$$a_k=\max(1,(\frac{1}{|B_k^<em>|}\sum|h(x,y)|)^2)$$��$B_k^</em>$��ʾ��ǰ��ȥ��������һȦ���صĿ�(h-2,w-2)</li>
-<li>��֡�����п���ƽ��$a_{pic}$</li>
-<li>���Ȩ��$$w_k=(\frac{a_{pic}}{a_k})^{\beta}$$,$\beta=0.5$</li>
+<h1 id="VTM4-0中的QPA相关提案"><a href="#VTM4-0中的QPA相关提案" class="headerlink" title="VTM4.0中的QPA相关提案"></a>VTM4.0中的QPA相关提案</h1><p>最早提案：Improved perceptually optimized QP adaptation and associated distortion measure， JVET-K0206<br>后续的提案对其进行验证和部分参数修改，包括：JVET-H0047-v5，JVET-M0091-v1。</p>
+<p>主要参考JVET-K0206和JVET-H0047-v5即可。</p>
+<h1 id="VTM4-0中的QPA的原理"><a href="#VTM4-0中的QPA的原理" class="headerlink" title="VTM4.0中的QPA的原理"></a>VTM4.0中的QPA的原理</h1><p>具体描述和公式可在JVET-K0206中找到。</p>
+<p>key words： perceptually suboptimal, low-medium bitrates, visual activity<br>思路：提升低纹理区域质量，降低高纹理区域质量。<br>原因：视觉上，低纹理区域的失真更加明显</p>
+<p>结果存在的问题：整体的PSNR有所下降<br>原因：没有体现视觉的加权效果<br>假设：同一帧的块间具有独立性，所以各个块的SSE失真可以叠加。<br>原始版本RDO：<br>$$<br>\begin{aligned}<br> J &amp;=D_{pic}+\lambda_{pic}\cdot R_{pic}\<br> &amp;=\sum_{k} D_{k}+ \lambda_{pic}\cdot(\sum_kR_{k})<br>\end{aligned}<br>$$<br>加权版本RDO,块间独立性假设：<br>$$<br>\begin{aligned}<br> J &amp;=D_{pic}+\lambda_{pic}\cdot R_{pic}\<br> &amp;=\sum_{k} w_k\cdot D_{k}+ \lambda_{pic}\cdot(\sum_kR_{k})\<br> &amp;=\sum_{k} (w_k\cdot D_{k}+\lambda_{pic}\cdot R_{k})\<br> &amp;=\sum_{k} w_k\cdot(D_{k}+\lambda_{pic}/w_k \cdot R_{k})\<br> &amp;=\sum_{k} w_k\cdot(D_{k}+\lambda_{k} \cdot R_{k})<br>\end{aligned}<br>$$<br>由于$$\lambda_{k}\propto \triangle_k^2 (\text{QP stepsize}) \propto 2^{\frac{QP_k}{6}}$$, 所以$$QP_k=QP-3\log_2w_k$$</p>
+<p>WPSNR的计算：$$WPSNR=10\log_{10}(\frac{W\cdot H \cdot 255^2 \cdot 2^{2B-16}}{D_{pic}^{WSSE}})$$, 和传统的PSNR的区别就是SSE是加权的SSE。</p>
+<h2 id="具体步骤："><a href="#具体步骤：" class="headerlink" title="具体步骤："></a>具体步骤：</h2><ul>
+<li>计算当前块的权重<ul>
+<li>高通滤波，4抽头,计算当前位置像素和上下左右四个像素的差别。$$H(x,y)=4S(x,y)-S(x+1,y)-S(x-1,y)-S(x,y+1)-S(x,y-1)$$</li>
+<li>对每个块$B_k$, 计算local activity(负相关与平滑程度，相关于纹理复杂度)。$$a_k=\max(1,(\frac{1}{|B_k^<em>|}\sum|h(x,y)|)^2)$$，$B_k^</em>$表示当前块去掉最外面一圈像素的块(h-2,w-2)</li>
+<li>对帧内所有块求平均$a_{pic}$</li>
+<li>求出权重$$w_k=(\frac{a_{pic}}{a_k})^{\beta}$$,$\beta=0.5$</li>
 </ul>
 </li>
-<li>��⵱ǰ���QPA$$QP_k=QP-3\log_2w_k$$</li>
+<li>求解当前块的QPA$$QP_k=QP-3\log_2w_k$$</li>
 </ul>
-<h2 id="�����k���"><a href="#�����k���" class="headerlink" title="�����ķ���"></a>�����ķ���</h2><ol>
-<li>����Խƽ����Ȩ��Խ�ߣ�$QP_k$ԽС</li>
-<li>$a_k=\max(1,(\frac{1}{|B_k^*|}\sum|h(x,y)|)^2)$��1�����ã�ƽ�������<strong>�ض�</strong>Ȩ�ء�Խ����ƽ������Ȩ��ԽС��ԽС��ƽ������Ȩ��Խ��</li>
-<li>$\beta=0.5$��ͬ������Ȩ�صķ��䡣�Եõ���Ȩ��ֱ�ӽ���ָ��<strong>����</strong>������Ȩ�صķֲ���Խ����ֲ�Խ��ɢ��ƽ���븴������Ĳ��Խ��ԽС��ֲ�Խ���У����ԽС��<h2 id="ԭ�������"><a href="#ԭ�������" class="headerlink" title="ԭ�������"></a>ԭ�������</h2></li>
-<li>�����Ȩ�ص����ܲ��ܴ����Ӿ����ԣ�Ŀǰ��֪���Ӿ�������saliency��JND��һ����˵������������saliency�Ƚϸߣ�JNDҲ�Ƚϸߣ���ô���ּ���Ӧ�����������һ������JND��Ȩ�أ������Ƿ�����д���ȶ��</li>
-<li>�������Լ��裬���������ȽϿ��̡�</li>
+<h2 id="参数的分析"><a href="#参数的分析" class="headerlink" title="参数的分析"></a>参数的分析</h2><ol>
+<li>区域越平滑，权重越高，$QP_k$越小</li>
+<li>$a_k=\max(1,(\frac{1}{|B_k^*|}\sum|h(x,y)|)^2)$中1的作用，平滑区域的<strong>截断</strong>权重。越大则平滑区域权重越小，越小则平滑区域权重越大</li>
+<li>$\beta=0.5$，同样控制权重的分配。对得到的权重直接进行指数<strong>缩放</strong>，调整权重的分布。越大则分布越分散，平滑与复杂区域的差别越大，越小则分布越集中，差别越小。<h2 id="原理的批判"><a href="#原理的批判" class="headerlink" title="原理的批判"></a>原理的批判</h2></li>
+<li>计算的权重到底能不能代表视觉特性？目前已知的视觉特性有saliency和JND，一般来说，纹理复杂区域saliency比较高，JND也比较高，那么此种计算应该算出来的是一种类似JND的权重，但是是否合理有待商榷。</li>
+<li>块间独立性假设，成立条件比较苛刻。</li>
 </ol>
-<h1 id="VTM4-0�е�QPA�L���"><a href="#VTM4-0�е�QPA�L���" class="headerlink" title="VTM4.0�е�QPA�Ŀ���"></a>VTM4.0�е�QPA�Ŀ���</h1><p>�ڵ�ǰ<code>software manual</code>�У�AQP����<code>--AdaptiveQP</code>��<code>-aqp</code>�������ʵ���ϴ�����������Ч�ġ�Ŀǰ����Ĳ���Ӧ����<code>-qpa 1</code>����ʱPSNRΪδ��ȨPSNR,����õ���Ȩ��WPSNR����Ҫ<code>-wpsnr 1</code></p>
-<h1 id="VTM4-0�е�QPA�J���"><a href="#VTM4-0�е�QPA�J���" class="headerlink" title="VTM4.0�е�QPA�Ĵ���"></a>VTM4.0�е�QPA�Ĵ���</h1>
+<h1 id="VTM4-0中的QPA的开关"><a href="#VTM4-0中的QPA的开关" class="headerlink" title="VTM4.0中的QPA的开关"></a>VTM4.0中的QPA的开关</h1><p>在当前<code>software manual</code>中，AQP是用<code>--AdaptiveQP</code>或<code>-aqp</code>来开启，但实际上此项配置是无效的。目前开启的参数应该是<code>-qpa 1</code>，此时PSNR为未加权PSNR,如需得到加权的WPSNR，需要<code>-wpsnr 1</code></p>
+<h1 id="VTM4-0中的QPA的代码"><a href="#VTM4-0中的QPA的代码" class="headerlink" title="VTM4.0中的QPA的代码"></a>VTM4.0中的QPA的代码</h1>
       
     </div>
 
@@ -726,7 +726,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#QPA"><span class="nav-number">1.</span> <span class="nav-text">QPA</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#VTM4-0�е�QPA����᰸"><span class="nav-number">2.</span> <span class="nav-text">VTM4.0�е�QPA����᰸</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#VTM4-0�е�QPA��ԭ��"><span class="nav-number">3.</span> <span class="nav-text">VTM4.0�е�QPA��ԭ��</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#���岽�裺"><span class="nav-number">3.1.</span> <span class="nav-text">���岽�裺</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#�����k���"><span class="nav-number">3.2.</span> <span class="nav-text">�����ķ���</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ԭ�������"><span class="nav-number">3.3.</span> <span class="nav-text">ԭ�������</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#VTM4-0�е�QPA�L���"><span class="nav-number">4.</span> <span class="nav-text">VTM4.0�е�QPA�Ŀ���</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#VTM4-0�е�QPA�J���"><span class="nav-number">5.</span> <span class="nav-text">VTM4.0�е�QPA�Ĵ���</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#QPA"><span class="nav-number">1.</span> <span class="nav-text">QPA</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#VTM4-0中的QPA相关提案"><span class="nav-number">2.</span> <span class="nav-text">VTM4.0中的QPA相关提案</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#VTM4-0中的QPA的原理"><span class="nav-number">3.</span> <span class="nav-text">VTM4.0中的QPA的原理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#具体步骤："><span class="nav-number">3.1.</span> <span class="nav-text">具体步骤：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参数的分析"><span class="nav-number">3.2.</span> <span class="nav-text">参数的分析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#原理的批判"><span class="nav-number">3.3.</span> <span class="nav-text">原理的批判</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#VTM4-0中的QPA的开关"><span class="nav-number">4.</span> <span class="nav-text">VTM4.0中的QPA的开关</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#VTM4-0中的QPA的代码"><span class="nav-number">5.</span> <span class="nav-text">VTM4.0中的QPA的代码</span></a></li></ol></div>
             
 
           </div>
