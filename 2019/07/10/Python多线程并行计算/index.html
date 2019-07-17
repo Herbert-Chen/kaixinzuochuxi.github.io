@@ -103,7 +103,7 @@
 <meta property="og:site_name" content="开心做出戏">
 <meta property="og:description" content="本文主要介绍了在Python中实现并行计算的办法。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-07-10T09:31:32.132Z">
+<meta property="og:updated_time" content="2019-07-17T12:44:13.017Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python多线程并行计算">
 <meta name="twitter:description" content="本文主要介绍了在Python中实现并行计算的办法。">
@@ -382,12 +382,24 @@
                 
               
 
-              <time title="创建时间：2019-07-10 16:00:03 / 修改时间：17:31:32" itemprop="dateCreated datePublished" datetime="2019-07-10T16:00:03+08:00">2019-07-10</time>
+              <time title="创建时间：2019-07-10 16:00:03" itemprop="dateCreated datePublished" datetime="2019-07-10T16:00:03+08:00">2019-07-10</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-07-17 20:44:13" itemprop="dateModified" datetime="2019-07-17T20:44:13+08:00">2019-07-17</time>
               
             
           </span>
@@ -447,6 +459,13 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">join()</span><br></pre></td></tr></table></figure>
 <p>主进程阻塞等待子进程的退出，然后再执行后面的语句，join方法必须在close或terminate之后使用。</p>
 <p>如果函数需要传递多个参数，则需要分别构建每个参数的列表，zip，并且重新定义函数为单一变量函数，将所有变量作为一个tuple传入：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">def f_zipped(para):</span><br><span class="line">    f(para[0]...)</span><br><span class="line"></span><br><span class="line">pool.map(f_zipped,zip(paralist1,paralist2...))</span><br></pre></td></tr></table></figure></p>
+<h1 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h1><p>Pool和Process都是多进程，擅长于处理计算任务，如果IO任务多，则需要使用多线程。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">from multiprocessing.dummy import Pool as ThreadPool</span><br><span class="line">pool=ThreadPool(5)</span><br></pre></td></tr></table></figure></p>
+<p>其他类似。需要注意的有2点：</p>
+<ul>
+<li>不可直接通过<code>multiprocessing.dummy.Pool</code>来创建对象，必须通过<code>import</code>的方式才行</li>
+<li>所有的线程都在一个进程之内，仅适合多IO任务，不适合多计算任务</li>
+</ul>
+<p>同时，opencv和Image类不适合多进程，进程开多了容易报错，目前暂无解决的办法。</p>
 
       
     </div>
@@ -477,8 +496,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/07/09/VTM4-0中的QPA/" rel="next" title="VTM4.0�е�QPA">
-                <i class="fa fa-chevron-left"></i> VTM4.0�е�QPA
+              <a href="/2019/07/09/VTM4-0中的QPA/" rel="next" title="VTM4-0�е�QPA">
+                <i class="fa fa-chevron-left"></i> VTM4-0�е�QPA
               </a>
             
           </div>
@@ -486,6 +505,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/07/17/OPENCV-Python实现8-10比特YUV2RGB/" rel="prev" title="OPENCV+Python实现8/10比特YUV2RGB">
+                OPENCV+Python实现8/10比特YUV2RGB <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -555,7 +578,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">19</span>
+                    <span class="site-state-item-count">20</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -695,7 +718,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#问题场景"><span class="nav-number">1.</span> <span class="nav-text">问题场景</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#模块与类"><span class="nav-number">2.</span> <span class="nav-text">模块与类</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#multiprocessing-Process"><span class="nav-number">2.1.</span> <span class="nav-text">multiprocessing.Process()</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#构造方法"><span class="nav-number">2.1.1.</span> <span class="nav-text">构造方法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#multiprocessing-Pool"><span class="nav-number">2.2.</span> <span class="nav-text">multiprocessing.Pool()</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#问题场景"><span class="nav-number">1.</span> <span class="nav-text">问题场景</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#模块与类"><span class="nav-number">2.</span> <span class="nav-text">模块与类</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#multiprocessing-Process"><span class="nav-number">2.1.</span> <span class="nav-text">multiprocessing.Process()</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#构造方法"><span class="nav-number">2.1.1.</span> <span class="nav-text">构造方法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#multiprocessing-Pool"><span class="nav-number">2.2.</span> <span class="nav-text">multiprocessing.Pool()</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#注意事项"><span class="nav-number">3.</span> <span class="nav-text">注意事项</span></a></li></ol></div>
             
 
           </div>
